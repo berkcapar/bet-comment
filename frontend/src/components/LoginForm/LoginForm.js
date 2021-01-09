@@ -14,6 +14,12 @@ const LoginForm = () => {
     palette: { primary: { main: '#1CC84C' }, secondary: { main: '#F1F444' } }
   })
 
+  const styles = (theme) => ({
+    input: {
+      color: 'white'
+    }
+  })
+
   return (
     <form onSubmit={handleLogin} noValidate autoComplete="off">
       <Box m={1} display="flex">
@@ -24,16 +30,22 @@ const LoginForm = () => {
             id="outlined-basic"
             label="Email"
             variant="outlined"
+            InputProps={{
+              classname: styles.input
+            }}
           />
         </Box>
         <Box width="35%">
-          <TextField
-            size="small"
-            name="password"
-            id="outlined-basic"
-            label="Şifre"
-            variant="outlined"
-          />
+          <MuiThemeProvider theme={loginTheme}>
+            <TextField
+              size="small"
+              name="password"
+              id="outlined-basic"
+              label="Şifre"
+              variant="outlined"
+              color="primary"
+            />
+          </MuiThemeProvider>
         </Box>
         <Box display="flex" ml={1}>
           <MuiThemeProvider theme={loginTheme}>

@@ -3,7 +3,7 @@
 }
 
 .logo{
-    margin: 1rem;
+    margin: 0.5rem;
     font-size: 1.5rem;
 }
 
@@ -34,12 +34,10 @@
     .navigation-container{
         display: flex;
         justify-content: space-around;
-        padding-bottom: 2rem;
        padding-top: 0.5rem;
         
     }
     .logo{
-        padding: 0;
         width: 30%;
        
     }
@@ -48,11 +46,8 @@
     }
     .nav-elements{
         display: flex;
-        border-top: 1px solid white;
         justify-content: flex-end;
-        border: 2px solid red;
-        margin-top: 4rem;
-        width: 100%;      
+        width: 90%;      
     }
     .nav-elements li {
      margin: 0;
@@ -64,7 +59,12 @@
       display: flex;
       border-bottom: 1px solid white;
       justify-content: space-around;
-      width: 100%;
+ 
+    }
+    .logo-login-link{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
 }
