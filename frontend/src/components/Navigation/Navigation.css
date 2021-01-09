@@ -4,18 +4,22 @@
 
 .logo{
     margin: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 60%;
 }
-
-.logo-icons{
+.logo-icon{
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+    
 }
 .icons{
     display: flex;
-    margin: 1rem;
     color: white;
     font-size: 1.5rem;
+    width: 20%;
+    margin-top: 0.8rem;
 }
 .icons div+div{
     margin-left: 1rem;
@@ -28,6 +32,7 @@
 .nav-elements li{
     text-align: center;
     margin: 15px auto;
+   
 }
 
 @media(min-width:675px){
@@ -38,8 +43,7 @@
         
     }
     .logo{
-        width: 30%;
-       
+        width: 100%;
     }
     .icons{
         display: none;
@@ -52,11 +56,13 @@
     .nav-elements li {
      margin: 0;
      padding-right: 1.5em;
-     padding-top: 0.2em;
+     font-weight: 600;
 
     }
     .logo-login{
       display: flex;
+      flex-direction: row;
+      padding-bottom: 0.5rem;
       border-bottom: 1px solid white;
       justify-content: space-around;
  
