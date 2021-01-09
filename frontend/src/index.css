@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding:0;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Lato'
@@ -10,6 +11,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.link{
+  text-decoration: none;
+  color: white;
+}
+li{
+  list-style: none
 }
 
 
