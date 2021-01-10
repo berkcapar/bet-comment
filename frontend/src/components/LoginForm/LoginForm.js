@@ -1,11 +1,14 @@
-import TextField from '@material-ui/core/TextField'
+import { TextField, InputAdornment, IconButton } from '@material-ui/core/'
 import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import { useState } from 'react'
-import { createStyles, FormHelperText, withStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
-const styles = createStyles({
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
+
+const useStyles = makeStyles({
   '@media (max-width:675px)': {
     formContainer: {
       display: 'none'
@@ -47,9 +50,10 @@ const styles = createStyles({
   }
 })
 
-const LoginForm = withStyles(styles)(({ classes }) => {
-  const [loginclick, setLoginclick] = useState(false)
-  const handleloginClick = () => setLoginclick(!loginclick)
+const LoginForm = (loginclick) => {
+  const [showPassword, setShowPassword] = useState(false)
+  const handleClickShowPassword = () => setShowPassword(!showPassword)
+  const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
   const handleLogin = (event) => {
     event.preventDefault()
@@ -60,12 +64,10 @@ const LoginForm = withStyles(styles)(({ classes }) => {
   const loginTheme = createMuiTheme({
     palette: { primary: { main: '#1CC84C' }, secondary: { main: '#F1F444' } }
   })
+  const classes = useStyles()
 
   return (
     <form onSubmit={handleLogin} noValidate autoComplete="off">
-      <Box className={classes.icon}>
-        <i onClick={handleloginClick} className="fas fa-user"></i>
-      </Box>
       <Box
         className={loginclick ? classes.active : classes.formContainer}
         m={1}
@@ -92,10 +94,22 @@ const LoginForm = withStyles(styles)(({ classes }) => {
               size="small"
               name="password"
               label="Şifre"
+              type={showPassword ? 'text' : 'password'}
               variant="outlined"
               InputProps={{
                 style: {
-                  color: 'black'
+                  color: 'black',
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
                 }
               }}
             />
@@ -118,6 +132,6 @@ const LoginForm = withStyles(styles)(({ classes }) => {
       </Box>
     </form>
   )
-})
+}
 
 export default LoginForm

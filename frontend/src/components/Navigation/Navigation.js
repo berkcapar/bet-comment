@@ -6,8 +6,10 @@ import LoginForm from '../LoginForm/LoginForm'
 const Navigation = () => {
   const [menuclick, setMenuclick] = useState(false)
   const handlemenuClick = () => setMenuclick(!menuclick)
-
   const closeMobileMenu = () => setMenuclick(false)
+
+  const [loginclick, setLoginclick] = useState(false)
+  const handleloginClick = () => setLoginclick(!loginclick)
 
   return (
     <BrowserRouter>
@@ -28,6 +30,7 @@ const Navigation = () => {
                     }
                   ></i>
                 </div>
+                <i onClick={handleloginClick} className="fas fa-user"></i>
               </div>
             </div>
             <LoginForm />

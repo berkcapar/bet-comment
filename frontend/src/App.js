@@ -1,7 +1,11 @@
-import Navigation from './components/Navigation/Navigation'
+const { default: Routes } = require('./Routes')
 
-function App() {
-  return <Navigation />
+const App = () => {
+  return (
+    <div>
+      <Routes />
+    </div>
+  )
 }
 
 export default App
