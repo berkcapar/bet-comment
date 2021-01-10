@@ -4,9 +4,10 @@ import './Navigation.css'
 import LoginForm from '../LoginForm/LoginForm'
 
 const Navigation = () => {
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
+  const [menuclick, setMenuclick] = useState(false)
+  const handlemenuClick = () => setMenuclick(!menuclick)
+
+  const closeMobileMenu = () => setMenuclick(false)
 
   return (
     <BrowserRouter>
@@ -18,23 +19,20 @@ const Navigation = () => {
                 BET COMMENT
               </Link>
               <div className="icons">
-                <div className="menu-icon" onClick={handleClick}>
+                <div className="menu-icon" onClick={handlemenuClick}>
                   <i
                     className={
-                      click
+                      menuclick
                         ? 'navigation-fas fas fa-times'
                         : 'navigation-fas fas fa-bars'
                     }
                   ></i>
                 </div>
-                <div>
-                  <i className="fas fa-user"></i>{' '}
-                </div>
               </div>
             </div>
             <LoginForm />
           </div>
-          <ul className={click ? 'nav-elements active' : 'nav-elements'}>
+          <ul className={menuclick ? 'nav-elements active' : 'nav-elements'}>
             <li>
               {' '}
               <Link
