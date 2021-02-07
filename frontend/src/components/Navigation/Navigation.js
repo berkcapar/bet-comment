@@ -2,6 +2,7 @@ import { Link, BrowserRouter } from 'react-router-dom'
 import { useState } from 'react'
 import './Navigation.css'
 import LoginForm from '../LoginForm/LoginForm'
+import LeagueDropdown from './LeagueDropdown'
 
 const Navigation = () => {
   const [menuclick, setMenuclick] = useState(false)
@@ -10,6 +11,23 @@ const Navigation = () => {
 
   const [loginclick, setLoginclick] = useState(false)
   const handleloginClick = () => setLoginclick(!loginclick)
+  const [dropdown, setDropdown] = useState(false)
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false)
+    } else {
+      setDropdown(true)
+    }
+  }
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false)
+    } else {
+      setDropdown(false)
+    }
+  }
 
   return (
     <BrowserRouter>
@@ -46,14 +64,15 @@ const Navigation = () => {
                 Takım İnceleme
               </Link>
             </li>
-            <li>
+            <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
               <Link
                 className="link nav-links"
-                to="lig-incele"
+                to="/lig-incele"
                 onClick={closeMobileMenu}
               >
-                Lig İnceleme
+                Lig İnceleme <i className="fas fa-caret-down" />
               </Link>
+              {dropdown && <LeagueDropdown />}
             </li>
             <li>
               {' '}

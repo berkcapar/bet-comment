@@ -4,7 +4,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Lato';
-  background-color: #D6D4D4
+  background-color: #D6D4D4;
+}
+:root{
+  --speed:500ms
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -22,7 +25,10 @@ li{
 }
 
 img{
-  max-width: 400px;
+  max-width: 520px;
+}
+p {
+  margin: 0;
 }
 
 

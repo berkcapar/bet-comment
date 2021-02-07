@@ -1,6 +1,16 @@
 import Carousel from 'react-material-ui-carousel'
-import { Paper } from '@material-ui/core'
+import { makeStyles, Paper } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
+
+const useStyle = makeStyles({
+  '@media(min-width:675px)': {
+    carousel: {
+      marginLeft: '4.5rem',
+      width: '45%'
+    }
+  },
+  carousel: {}
+})
 
 export const CarouselArea = () => {
   const items = [
@@ -13,9 +23,9 @@ export const CarouselArea = () => {
       alt: 'Hello World!'
     }
   ]
-
+  const classes = useStyle()
   return (
-    <Box width="31%" ml="10%" mt="2rem">
+    <Box className={classes.carousel}>
       <Carousel>
         {items.map((item, i) => (
           <CarouselItem key={i} item={item} />
@@ -26,9 +36,12 @@ export const CarouselArea = () => {
 }
 
 export const CarouselItem = ({ item }) => {
+  const classes = useStyle()
   return (
-    <Paper>
-      <img alt={item.alt} src={item.imageSrc} />
-    </Paper>
+    <Box className={classes.carouselitem}>
+      <Paper>
+        <img alt={item.alt} src={item.imageSrc} />
+      </Paper>
+    </Box>
   )
 }

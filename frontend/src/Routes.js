@@ -8,6 +8,9 @@ const Routes = () => {
         <Route exact path="/">
           <HomePage />
         </Route>
+        <Route exact path="/lig-incele">
+          <HomePage />
+        </Route>
       </Switch>
     </BrowserRouter>
   )
