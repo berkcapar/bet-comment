@@ -1,0 +1,77 @@
+.item-logo-container{
+    display: flex;
+    justify-content: space-evenly;
+    display: none;
+}
+.item-logo-container img{
+    mix-blend-mode: multiply;
+    width: 20%;
+}
+.item-logo-container h2{
+   width: 70%;
+}
+
+.standing-header{
+    display: flex;
+    background-color: white;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+}
+.sezon{
+margin-left: 20%;
+}
+
+table{
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+}
+td{
+  text-align: left;
+  border: 1px solid #dddddd;
+
+}
+.head{
+    background-color: white;
+}
+th{
+    border: 1px solid whitesmoke
+}
+
+.info-header{
+    display: flex;
+    background-color:#F1FFF1;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.info-header img{
+    mix-blend-mode: multiply;
+    width: 20%;
+}
+.info-main{
+    background-color:#F1FFF1;
+    border-top: 1px solid gray;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.kuruluş,
+.piyasa,
+.endeğerli{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+   
+}
+.kuruluş,
+.piyasa{
+    border-bottom: 1px solid  gray
+}
+.info-answer{
+  width: 55%;
+}

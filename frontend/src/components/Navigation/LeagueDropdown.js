@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { LeagueDropdownItems } from './LeagueDropdownItems'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './LeagueDropdown.css'
 
 const LeagueDropdown = () => {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
+  const history = useHistory()
 
   return (
     <div>
@@ -18,10 +19,16 @@ const LeagueDropdown = () => {
             <li key={index}>
               <Link
                 className="dropdown-link"
-                to={item.path}
-                onClick={() => setClick(false)}
+                to={`/ligler/${item.path}`}
+                onClick={() => {
+                  history.push(`/ligler/${item.path}`)
+                  setClick(false)
+                }}
               >
-                {item.logo} {item.name}
+                <div className="text-logo">
+                  <img className="logo" alt="logo" src={item.logo}></img>
+                  <div className="text">{item.name} </div>
+                </div>
               </Link>
             </li>
           )

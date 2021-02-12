@@ -60,11 +60,15 @@
         justify-content: flex-end;
         width: 90%;      
     }
+  
     .nav-elements li {
      margin: 0;
-     padding-right: 1.5em;
+     padding-right: 1em;
      font-weight: 600;
-
+     text-align: center;
+    }
+    .nav-elements li:hover {
+     color: black;
     }
     .logo-login{
       display: flex;
@@ -83,5 +87,6 @@
         
         border-bottom:none
     }
+    
 
 }

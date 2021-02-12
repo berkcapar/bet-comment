@@ -3,13 +3,19 @@ import { makeStyles, Paper } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 
 const useStyle = makeStyles({
+  carousel: {
+    width: '100%'
+  },
+  image: {
+    width: '100%'
+  },
+  carouselitem: {},
   '@media(min-width:675px)': {
     carousel: {
       marginLeft: '4.5rem',
-      width: '45%'
+      width: '40%'
     }
-  },
-  carousel: {}
+  }
 })
 
 export const CarouselArea = () => {
@@ -40,7 +46,7 @@ export const CarouselItem = ({ item }) => {
   return (
     <Box className={classes.carouselitem}>
       <Paper>
-        <img alt={item.alt} src={item.imageSrc} />
+        <img className={classes.image} alt={item.alt} src={item.imageSrc} />
       </Paper>
     </Box>
   )

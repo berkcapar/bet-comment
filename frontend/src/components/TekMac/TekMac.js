@@ -48,8 +48,10 @@ const TekMac = () => {
           Juventus
         </Typography>
       </Box>
+
       <Box className={classes.result}>
         <Typography>KG Var</Typography>
+        <Typography>1.54</Typography>
         <Typography>95%</Typography>
       </Box>
     </Box>

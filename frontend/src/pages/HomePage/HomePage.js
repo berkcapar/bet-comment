@@ -9,25 +9,31 @@ import AnaSayfaFikstür from '../../components/AnaSayfaFikstür/AnaSayfaFikstür
 import LigBazlıCarousel from '../../components/LigBazlıCarousel/LigBazlıCarousel'
 
 const useStyle = makeStyles({
-  '@media(max-width:675px)': {
-    firsthomecontainer: {
-      flexDirection: 'column',
-      minHeight: 'calc(100vh - 180px)'
-    },
-    secondhomecontainer: {
-      flexDirection: 'column',
-      minHeight: 'calc(100vh - 180px)'
-    }
-  },
   firsthomecontainer: {
-    flexDirection: 'row',
     width: '90%',
-    margin: '1rem auto'
+    margin: '1rem auto',
+    flexDirection: 'column'
   },
   secondhomecontainer: {
-    flexDirection: 'row',
-    width: '98%',
-    margin: '1rem auto'
+    width: '90%',
+    margin: '1rem auto',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  allcontainer: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  '@media(min-width:675px)': {
+    firsthomecontainer: {
+      display: 'flex',
+      flexDirection: 'row'
+    },
+    secondhomecontainer: {
+      flexDirection: 'row',
+      width: '90%',
+      display: 'flex'
+    }
   }
 })
 
@@ -36,16 +42,18 @@ const HomePage = () => {
   return (
     <div className="container">
       <Navigation />
-      <Box display="flex" className={classes.firsthomecontainer}>
-        <CarouselArea />
-        <HaftanınYuksek />
-      </Box>
-      <Box display="flex" className={classes.secondhomecontainer}>
-        <AnaSayfaFikstür />
-        <GecenHafta />
-      </Box>
-      <Box>
-        <LigBazlıCarousel />
+      <Box className={classes.allcontainer}>
+        <Box display="flex" className={classes.firsthomecontainer}>
+          <CarouselArea />
+          <HaftanınYuksek />
+        </Box>
+        <Box display="flex" className={classes.secondhomecontainer}>
+          <AnaSayfaFikstür />
+          <GecenHafta />
+        </Box>
+        <Box>
+          <LigBazlıCarousel />
+        </Box>
       </Box>
 
       <Footer className="footer" />

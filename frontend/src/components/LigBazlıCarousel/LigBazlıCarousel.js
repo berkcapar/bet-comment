@@ -5,15 +5,24 @@ import Box from '@material-ui/core/Box'
 const useStyle = makeStyles({
   ligbazlıcontainer: {
     display: 'flex',
-    width: '79%',
+    width: '79.5%',
     margin: '0 auto'
   },
   ligcarouselitem: {
-    display: 'flex'
+    display: 'flex',
+    justifyContent: 'space-around'
   },
   carouseltext: {
     margin: 'auto 0',
-    border: '1px solid red'
+    width: '40%',
+    maxWidth: '310px'
+  },
+  logoarea: {
+    width: '40%'
+  },
+  logoareaimage: {
+    height: '200px',
+    width: '200px'
   }
 })
 
@@ -21,43 +30,39 @@ const LigBazlıCarousel = () => {
   const items = [
     {
       text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      imageSrc: '/images/ligler/superlig.jpg',
       alt: 'Probably the most random thing you have ever seen!'
     },
     {
       text:
         'İngiltere Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      imageSrc: '/images/ligler/premierlig.jpg',
+      alt: 'İngiltere Premier Lig'
+    },
+    {
+      text: `Bundesliga'da haftanın maçlarına dair akıllı analizler burada!`,
+      imageSrc: '/images/ligler/bundesliga.jpg',
       alt: 'Hello World!'
     },
     {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      text: `Serie A'da nefes kesen maçlara dair kazandıran akıllı analizlere göz at!`,
+      imageSrc: '/images/ligler/seriea.jpg',
       alt: 'Hello World!'
     },
     {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      text: `La Liga'da haftanın kazandıran akıllı analizlerine göz at!`,
+      imageSrc: '/images/ligler/laliga.jpg',
       alt: 'Hello World!'
     },
     {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      text: 'Fransa Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
+      imageSrc: '/images/ligler/leagueone.jpg',
       alt: 'Hello World!'
     },
     {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
-      alt: 'Hello World!'
-    },
-    {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
-      alt: 'Hello World!'
-    },
-    {
-      text: 'Türkiye Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
-      imageSrc: '/images/carousel/carousel1.jpeg',
+      text:
+        'Sürprizlerle dolu Hollanda Ligine dair hiçbir yerde olmayan akıllı analizler burada!',
+      imageSrc: '/images/ligler/eredevise.jpg',
       alt: 'Hello World!'
     }
   ]
@@ -83,8 +88,12 @@ export const CarouselItem = ({ item }) => {
         <Box className={classes.carouseltext}>
           <p>{item.text}</p>
         </Box>
-        <Box>
-          <img alt={item.alt} src={item.imageSrc} />
+        <Box className={classes.logoarea}>
+          <img
+            className={classes.logoareaimage}
+            alt={item.alt}
+            src={item.imageSrc}
+          />
         </Box>
       </Paper>
     </Box>

@@ -2,13 +2,14 @@
 .dropdown-menu {
     width: 15%;
     position: absolute;
-    top: 120px;
+    top: 150px;
     list-style: none;
     text-align: start;
+
   }
   
   .dropdown-menu li {
-    background: #FFF8F8;
+    background:white;
     cursor: pointer;
     border-bottom: 1px solid lightgray;
   }
@@ -27,7 +28,19 @@
     width: 100%;
     text-decoration: none;
     color: black;
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  .logo{
+    max-width: 30px;
+  }
+  .text-logo{
+    display: flex;
+  }
+  .text{
+   margin: auto 0;
+   font-size: 13px;
+   font-weight: 500;
+  
   }
   
   @media screen and (max-width: 960px) {

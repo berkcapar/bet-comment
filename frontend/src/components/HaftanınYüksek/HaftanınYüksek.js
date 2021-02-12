@@ -10,31 +10,39 @@ const useStyle = makeStyles({
     borderBottom: '1px solid lightgray',
     paddingLeft: '1rem',
     fontWeight: '600',
-    marginTop: '1rem',
-    paddingBottom: '1rem'
+    marginTop: '0.5rem',
+    paddingBottom: '0.5rem'
   },
   link: {
     textDecoration: 'none',
     color: '#0B7723',
     fontWeight: '600',
     paddingLeft: '1rem',
+    paddingBottom: '0.5rem',
     display: 'flex',
     '&:hover': {
       background: '#B4FCCD'
     }
   },
   haftanınyuksek: {
-    width: '80%',
+    width: '100%',
+
     backgroundColor: '#FFF8F8'
   },
   icon: {
     marginLeft: '0.3rem',
-    marginTop: '0.9rem'
+    marginTop: '0.5rem'
+  },
+  p: {
+    marginTop: '0.6rem'
   },
   '@media(min-width:675px)': {
     haftanınyuksek: {
       width: '30%',
       marginLeft: '1rem'
+    },
+    p: {
+      marginTop: '0.5rem'
     }
   }
 })

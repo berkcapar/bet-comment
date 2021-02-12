@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import LigDetay from './components/LigDetay/LigDetay'
 import HomePage from './pages/HomePage/HomePage'
 
 const Routes = () => {
@@ -8,8 +9,8 @@ const Routes = () => {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/lig-incele">
-          <HomePage />
+        <Route path="/ligler/:path">
+          <LigDetay />
         </Route>
       </Switch>
     </BrowserRouter>

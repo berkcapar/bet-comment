@@ -8,8 +8,8 @@ const useStyle = makeStyles({
     borderBottom: '1px solid lightgray',
     paddingLeft: '1rem',
     fontWeight: '600',
-    marginTop: '1rem',
-    paddingBottom: '1rem'
+    marginTop: '0.5rem',
+    paddingBottom: '0.5rem'
   },
   gecenhaftanın: {
     width: '80%',
@@ -17,8 +17,7 @@ const useStyle = makeStyles({
   },
   '@media(min-width:675px)': {
     gecenhaftanın: {
-      width: '27.5%',
-      marginLeft: '2rem',
+      width: '30.5%',
       border: '1px solid gray'
     }
   }

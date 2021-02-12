@@ -8,11 +8,13 @@ const AnaSayfaFikstür = () => {
   return (
     <Tabs className="tab-container">
       <p className="title">24.Haftanın Maçları</p>
-      <TabList>
-        {LeagueDropdownItems.slice(0, 3).map((item, index) => {
-          return <Tab key={index}>{item.name}</Tab>
-        })}
-      </TabList>
+      <div className="tab-title">
+        <TabList>
+          {LeagueDropdownItems.slice(0, 3).map((item, index) => {
+            return <Tab key={index}>{item.name}</Tab>
+          })}
+        </TabList>
+      </div>
       <TabPanel>
         <div className="tarih-maclar">
           <p className="date">06.02.21</p>
