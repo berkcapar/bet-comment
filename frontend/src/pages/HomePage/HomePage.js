@@ -33,6 +33,12 @@ const useStyle = makeStyles({
       flexDirection: 'row',
       width: '90%',
       display: 'flex'
+    },
+    carousel: {
+      width: '48%'
+    },
+    yuksek: {
+      width: '30%'
     }
   }
 })
@@ -44,8 +50,12 @@ const HomePage = () => {
       <Navigation />
       <Box className={classes.allcontainer}>
         <Box display="flex" className={classes.firsthomecontainer}>
-          <CarouselArea />
-          <HaftanınYuksek />
+          <div className={classes.carousel}>
+            <CarouselArea />
+          </div>
+          <div className={classes.yuksek}>
+            <HaftanınYuksek />
+          </div>
         </Box>
         <Box display="flex" className={classes.secondhomecontainer}>
           <AnaSayfaFikstür />

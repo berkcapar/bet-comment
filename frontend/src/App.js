@@ -1,4 +1,4 @@
-const { default: Routes } = require('./Routes')
+import Routes from './Routes'
 
 const App = () => {
   return (

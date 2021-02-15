@@ -38,7 +38,7 @@ const useStyle = makeStyles({
   },
   '@media(min-width:675px)': {
     haftanınyuksek: {
-      width: '30%',
+      width: '100%',
       marginLeft: '1rem'
     },
     p: {
@@ -61,7 +61,7 @@ const HaftanınYuksek = () => {
       <BrowserRouter>
         <Typography>
           <Link className={classes.link} to="/butun-ihtimaller">
-            <p className={classes.p}> Bütün İhtimallere Göz At!</p>
+            <p className={classes.p}> Bütün Maçlara Göz At!</p>
             <ArrowForwardIcon className={classes.icon} />
           </Link>
         </Typography>

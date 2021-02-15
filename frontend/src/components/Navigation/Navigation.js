@@ -30,74 +30,72 @@ const Navigation = () => {
   }
 
   return (
-    <BrowserRouter>
-      <div className="navigation-container">
-        <div className="logo-login-link">
-          <div className="logo-login">
-            <div className="logo-icon">
-              <Link className="link logo" to="/">
-                BET COMMENT
-              </Link>
-              <div className="icons">
-                <div className="menu-icon" onClick={handlemenuClick}>
-                  <i
-                    className={
-                      menuclick
-                        ? 'navigation-fas fas fa-times'
-                        : 'navigation-fas fas fa-bars'
-                    }
-                  ></i>
-                </div>
-                <i onClick={handleloginClick} className="fas fa-user"></i>
+    <div className="navigation-container">
+      <div className="logo-login-link">
+        <div className="logo-login">
+          <div className="logo-icon">
+            <Link className="link logo" to="/">
+              BET COMMENT
+            </Link>
+            <div className="icons">
+              <div className="menu-icon" onClick={handlemenuClick}>
+                <i
+                  className={
+                    menuclick
+                      ? 'navigation-fas fas fa-times'
+                      : 'navigation-fas fas fa-bars'
+                  }
+                ></i>
               </div>
+              <i onClick={handleloginClick} className="fas fa-user"></i>
             </div>
-            <LoginForm />
           </div>
-          <ul className={menuclick ? 'nav-elements active' : 'nav-elements'}>
-            <li>
-              {' '}
-              <Link
-                className="link nav-links"
-                to="/takım-incele"
-                onClick={closeMobileMenu}
-              >
-                Takım İnceleme
-              </Link>
-            </li>
-            <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-              <Link
-                className="link nav-links"
-                to="/lig-incele"
-                onClick={closeMobileMenu}
-              >
-                Lig İnceleme <i className="fas fa-caret-down" />
-              </Link>
-              {dropdown && <LeagueDropdown />}
-            </li>
-            <li>
-              {' '}
-              <Link
-                className="link nav-links"
-                to="fikstur"
-                onClick={closeMobileMenu}
-              >
-                Fikstür
-              </Link>
-            </li>
-            <li>
-              {' '}
-              <Link
-                className="link nav-links"
-                to="kazandıran-analizler"
-                onClick={closeMobileMenu}
-              >
-                Kazandıran Analizler
-              </Link>
-            </li>
-          </ul>
+          <LoginForm />
         </div>
+        <ul className={menuclick ? 'nav-elements active' : 'nav-elements'}>
+          <li>
+            {' '}
+            <Link
+              className="link nav-links"
+              to="/takım-incele"
+              onClick={closeMobileMenu}
+            >
+              Takım İnceleme
+            </Link>
+          </li>
+          <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <Link
+              className="link nav-links"
+              to="/lig-incele"
+              onClick={closeMobileMenu}
+            >
+              Lig İnceleme <i className="fas fa-caret-down" />
+            </Link>
+            {dropdown && <LeagueDropdown />}
+          </li>
+          <li>
+            {' '}
+            <Link
+              className="link nav-links"
+              to="fikstur"
+              onClick={closeMobileMenu}
+            >
+              Fikstür
+            </Link>
+          </li>
+          <li>
+            {' '}
+            <Link
+              className="link nav-links"
+              to="kazandıran-analizler"
+              onClick={closeMobileMenu}
+            >
+              Kazandıran Analizler
+            </Link>
+          </li>
+        </ul>
       </div>
-    </BrowserRouter>
+    </div>
   )
 }
 

@@ -4,6 +4,7 @@ import '../Navigation/LeagueDropdownItems'
 import './LigDetay.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import TekMac from '../AnaSayfaFikstür/TekMac'
+import Navigation from '../Navigation/Navigation'
 
 const LigDetay = () => {
   let match = useRouteMatch('/ligler/:path')
@@ -13,6 +14,7 @@ const LigDetay = () => {
 
   return (
     <div>
+      <Navigation />
       <div className="item-logo-container">
         <img alt={item.alt} src={item.logo} />
         <h2>{item.name}</h2>
