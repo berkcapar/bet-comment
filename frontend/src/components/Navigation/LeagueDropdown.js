@@ -26,7 +26,7 @@ const LeagueDropdown = () => {
                 }}
               >
                 <div className="text-logo">
-                  <img className="logo" alt="logo" src={item.logo}></img>
+                  <img className="lig-logo" alt="logo" src={item.logo}></img>
                   <div className="text">{item.name} </div>
                 </div>
               </Link>

@@ -1,0 +1,60 @@
+.takımdetay-container{
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.overallinfo-standing{
+    order: 1;
+}
+.overallinfo{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding-bottom: 1rem;
+}
+.overallinfo img{
+ width: 20%;
+}
+.overallinfo p{
+    margin: auto 1rem;
+}
+.overallinfo-header{
+    display: flex;
+    border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+.text-info{
+    display: flex;
+}
+.lig,
+.hoca,
+.stat{
+    display: flex;   
+    margin-top: 0.5rem; 
+}
+.hoca,
+.stat{
+    margin-top: 0.5rem;
+}
+.stat-answer{
+    padding-left: 15%
+}
+.lig-answer{
+  padding-left: 2%;
+}
+.standing{
+    width: 90%;
+    margin: 1rem auto;
+}
+.games-squad{
+    order: 2;
+    width: 90%;
+}
+.games{
+   
+    width: 90%;
+}

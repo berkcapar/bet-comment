@@ -23,7 +23,15 @@ const useStyles = makeStyles({
     marginLeft: '1.5rem'
   },
   footerlinkcontainer: {
-    width: '25%'
+    width: '25%',
+    display: 'flex'
+  },
+  '@media(max-width:675px)': {
+    footerlinkcontainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '30%'
+    }
   }
 })
 

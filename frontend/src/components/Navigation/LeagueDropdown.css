@@ -1,13 +1,11 @@
 
 .dropdown-menu {
-    width: 15%;
+    width: 10%;
     position: absolute;
-    top: 150px;
+    top: 110px;
     list-style: none;
     text-align: start;
-
   }
-  
   .dropdown-menu li {
     background:white;
     cursor: pointer;
@@ -30,8 +28,9 @@
     color: black;
     padding: 0.5rem;
   }
-  .logo{
+  .lig-logo{
     max-width: 30px;
+    mix-blend-mode: multiply;
   }
   .text-logo{
     display: flex;

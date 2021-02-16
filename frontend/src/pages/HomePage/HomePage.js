@@ -35,7 +35,7 @@ const useStyle = makeStyles({
       display: 'flex'
     },
     carousel: {
-      width: '48%'
+      width: '50%'
     },
     yuksek: {
       width: '30%'

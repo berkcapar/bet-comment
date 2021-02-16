@@ -50,7 +50,9 @@ const Navigation = () => {
               <i onClick={handleloginClick} className="fas fa-user"></i>
             </div>
           </div>
-          <LoginForm />
+          <div className={loginclick ? 'loginform active' : 'loginform'}>
+            <LoginForm />
+          </div>
         </div>
         <ul className={menuclick ? 'nav-elements active' : 'nav-elements'}>
           <li>

@@ -6,25 +6,25 @@
     margin: 0.5rem;
     font-size: 2rem;
     font-weight: 500;
-    width: 60%;
+    width: 100%;
+
 }
 .logo-icon{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 0.1rem solid white;
 }
 .icons{
     display: flex;
     color: white;
     font-size: 1.5rem;
-    width: 5%;
-    margin-right: 5%;
+    width: 15%;
     margin-top: 0.8rem;
 }
-.icons div+div{
-    margin-left: 1rem;
+.menu-icon{
+   padding-right: 1rem;
 }
+
 .nav-elements{
     padding-bottom: 0.5rem;
     display: none;
@@ -36,6 +36,15 @@
 .active {
     display: block;
   }
+
+.loginform{
+    display: none;
+}
+.loginform.active{
+    display: block;
+}  
+
+
 .nav-elements li{
     text-align: center;
     margin: 15px auto;
@@ -45,12 +54,8 @@
 @media(min-width:675px){
     .navigation-container{
         display: flex;
-        justify-content: space-around;
-       padding-top: 0.5rem;
-        
-    }
-    .logo{
-        width: 100%;
+        padding-top: 0.5rem; 
+       
     }
     .icons{
         display: none;
@@ -60,7 +65,6 @@
         justify-content: flex-end;
         width: 90%;      
     }
-  
     .nav-elements li {
      margin: 0;
      padding-right: 1em;
@@ -75,8 +79,9 @@
       flex-direction: row;
       padding-bottom: 0.5rem;
       border-bottom: 1px solid white;
+      padding-left: 10%;
       justify-content: space-around;
- 
+     
     }
     .logo-login-link{
         display: flex;
@@ -84,8 +89,12 @@
         width: 100%;
     }
     .logo-icon{
-        
         border-bottom:none
+    }
+    .loginform{
+        display: flex;
+        margin-left: 12%
+ 
     }
     
 
