@@ -47,13 +47,13 @@ margin-left: 20%;
 .logo-head{
    display: none;
 }
-table{
+.standing table{
     border-collapse: collapse;
     width: 100%;
     margin: 0 auto;
     background-color:#F1FFF1 ;
 }
-td{
+.standing td{
   text-align: left;
   border: 1px solid #dddddd;
 
@@ -61,7 +61,7 @@ td{
 .head{
     background-color: white;
 }
-th{
+.standing th{
     border: 1px solid whitesmoke
 }
 

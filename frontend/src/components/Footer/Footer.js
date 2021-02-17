@@ -17,13 +17,13 @@ const useStyles = makeStyles({
     marginLeft: '1rem'
   },
   footerlogo: {
-    fontSize: '2rem',
+    fontSize: '1.3rem',
     textDecoration: 'none',
     color: 'white',
     marginLeft: '1.5rem'
   },
   footerlinkcontainer: {
-    width: '25%',
+    width: '30%',
     display: 'flex'
   },
   '@media(max-width:675px)': {
