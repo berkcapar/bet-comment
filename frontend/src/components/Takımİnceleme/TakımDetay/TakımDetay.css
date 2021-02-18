@@ -104,6 +104,9 @@
 .games-table td{
     text-align: left;
     border: 1px solid #dddddd;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
   }
 
 .games-tarih,
@@ -233,11 +236,51 @@
 }
 
 @media(min-width:675px){
-   .takımdetay-container{
+ .takımdetay-container{
    flex-direction: row;
+   width: 70%;
+  
 }
 .overallinfo-standing{
     order: 2;
+    margin: 0 auto;
+    width: 40%;
 }
+.games-squad{
+   align-items: center;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.games{
+    width: 90%;
+   
+}
+.games table{
+    font-size: medium
+}
+.squad-container{
+    width: 90%;
+}
+
+.oyuncu-header{
+    font-size: medium
+}
+
+.oyuncu-table td{
+    font-size: medium
+}
+.kaleci,
+.stoper,
+.sağbek,
+.solbek,
+.ortasaha,
+.sağkanat,
+.solkanat,
+.ofansif-ortasaha,
+.forvet{
+    font-size: medium;
+}
+
 }
 
