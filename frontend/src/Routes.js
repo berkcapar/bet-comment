@@ -3,6 +3,7 @@ import LigDetay from './components/LigDetay/LigDetay'
 import HomePage from './pages/HomePage/HomePage'
 import FikstürDetay from './components/Fikstür/FikstürDetay/FikstürDetay'
 import TakımDetay from './components/Takımİnceleme/TakımDetay/TakımDetay'
+import Macİncele from './components/Macİncele/Macİncele'
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
         </Route>
         <Route path="/takım-incele">
           <TakımDetay />
+        </Route>
+        <Route path="/mac-incele">
+          <Macİncele />
         </Route>
       </Switch>
     </BrowserRouter>
