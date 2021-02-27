@@ -24,6 +24,7 @@ const Routes = () => {
         <Route path="/mac-incele">
           <Macİncele />
         </Route>
+        <Route path="/profil"></Route>
       </Switch>
     </BrowserRouter>
   )

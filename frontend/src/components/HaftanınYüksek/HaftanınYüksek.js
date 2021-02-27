@@ -63,14 +63,12 @@ const HaftanınYuksek = () => {
       <TekMac />
       <TekMac />
 
-      <BrowserRouter>
-        <Typography>
-          <Link className={classes.link} to="/butun-ihtimaller">
-            <p className={classes.p}> Bütün Maçlara Göz At!</p>
-            <ArrowForwardIcon className={classes.icon} />
-          </Link>
-        </Typography>
-      </BrowserRouter>
+      <Typography>
+        <Link className={classes.link} to="/fikstur">
+          <p className={classes.p}> Bütün Maçlara Göz At!</p>
+          <ArrowForwardIcon className={classes.icon} />
+        </Link>
+      </Typography>
     </Box>
   )
 }

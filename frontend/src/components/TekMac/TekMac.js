@@ -16,7 +16,10 @@ const useStyle = makeStyles({
     color: 'white',
     paddingRight: '1rem',
     paddingLeft: '1rem',
-    paddingTop: '1rem'
+    display: 'flex',
+    flexDirection: 'column',
+    paddingTop: '0.4rem',
+    fontWeight: '550'
   },
   lig: {
     color: 'gray',
@@ -29,6 +32,24 @@ const useStyle = makeStyles({
     marginTop: '0.5rem',
     marginLeft: '1rem',
     paddingBottom: '0.5rem'
+  },
+  secimresultcontainer: {
+    display: 'flex',
+    borderLeft: '1px solid lightgray',
+    paddingLeft: '0.8rem'
+  },
+  iddiasecim: {
+    marginTop: '0.4rem'
+  },
+  iddiasecimheader: {
+    color: 'gray'
+  },
+  iddiasecimdetails: {
+    marginRight: '0.5rem',
+    marginTop: '0.3rem'
+  },
+  secim: {
+    fontWeight: '550'
   }
 })
 
@@ -49,10 +70,28 @@ const TekMac = () => {
         </Typography>
       </Box>
 
-      <Box className={classes.result}>
-        <Typography>KG Var</Typography>
-        <Typography>1.54</Typography>
-        <Typography>95%</Typography>
+      <Box className={classes.secimresultcontainer}>
+        <Box className={classes.iddiasecim}>
+          <Box className={classes.iddiasecimheader}>
+            <Typography variant="body2">Seçim</Typography>
+          </Box>
+          <Box className={classes.iddiasecimdetails}>
+            <Typography className={classes.secim} variant="body2">
+              KG Var
+            </Typography>
+            <Typography className={classes.secim} variant="body2">
+              1.54
+            </Typography>
+          </Box>
+        </Box>
+        <Box className={classes.result}>
+          <Box>
+            <p>Analiz</p>
+          </Box>
+          <Box classname={classes.oran}>
+            <Typography style={{ marginTop: '0.3rem' }}>%95</Typography>
+          </Box>
+        </Box>
       </Box>
     </Box>
   )
