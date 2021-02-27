@@ -2,7 +2,7 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import TekMac from '../TekMac/TekMac'
-import { Link, BrowserRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 
 const useStyle = makeStyles({
@@ -40,7 +40,6 @@ const useStyle = makeStyles({
   '@media(min-width:675px)': {
     haftanınyuksek: {
       width: '100%',
-
       marginTop: '0'
     },
     header: {

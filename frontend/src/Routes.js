@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage'
 import FikstürDetay from './components/Fikstür/FikstürDetay/FikstürDetay'
 import TakımDetay from './components/Takımİnceleme/TakımDetay/TakımDetay'
 import Macİncele from './components/Macİncele/Macİncele'
+import SignupForm from './components/Signup/SignupForm'
 
 const Routes = () => {
   return (
@@ -25,6 +26,9 @@ const Routes = () => {
           <Macİncele />
         </Route>
         <Route path="/profil"></Route>
+        <Route path="/kaydol">
+          <SignupForm />
+        </Route>
       </Switch>
     </BrowserRouter>
   )

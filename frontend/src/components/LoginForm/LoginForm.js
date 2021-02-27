@@ -4,9 +4,9 @@ import Box from '@material-ui/core/Box'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   '@media (max-width:675px)': {
@@ -123,9 +123,11 @@ const LoginForm = (loginclick) => {
               </Button>
             </Box>
             <Box ml={1}>
-              <Button color="secondary" variant="contained">
-                Kaydol
-              </Button>
+              <Link style={{ textDecoration: 'none' }} to="/kaydol">
+                <Button color="secondary" variant="contained">
+                  Kaydol
+                </Button>
+              </Link>
             </Box>
           </MuiThemeProvider>
         </Box>
