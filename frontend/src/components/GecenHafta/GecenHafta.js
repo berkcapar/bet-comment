@@ -12,13 +12,15 @@ const useStyle = makeStyles({
     paddingBottom: '0.5rem'
   },
   gecenhaftanın: {
-    width: '80%',
-    backgroundColor: '#FFF8F8'
+    width: '90%',
+    backgroundColor: '#FFF8F8',
+    margin: '2rem auto'
   },
   '@media(min-width:675px)': {
     gecenhaftanın: {
-      width: '30.5%',
-      border: '1px solid gray'
+      width: '40%',
+      border: '1px solid solidgray',
+      marginTop: '0'
     }
   }
 })

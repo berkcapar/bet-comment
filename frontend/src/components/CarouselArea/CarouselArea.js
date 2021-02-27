@@ -12,8 +12,10 @@ const useStyle = makeStyles({
   carouselitem: {},
   '@media(min-width:675px)': {
     carousel: {
-      marginLeft: '4.5rem',
-      width: '80%'
+      maxWidth: '500px'
+    },
+    image: {
+      width: '100%'
     }
   }
 })

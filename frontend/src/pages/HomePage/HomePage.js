@@ -10,12 +10,12 @@ import LigBazlıCarousel from '../../components/LigBazlıCarousel/LigBazlıCarou
 
 const useStyle = makeStyles({
   firsthomecontainer: {
-    width: '90%',
+    width: '80%',
     margin: '1rem auto',
     flexDirection: 'column'
   },
   secondhomecontainer: {
-    width: '90%',
+    width: '87%',
     margin: '1rem auto',
     display: 'flex',
     flexDirection: 'column'
@@ -25,20 +25,34 @@ const useStyle = makeStyles({
     flexDirection: 'column'
   },
   '@media(min-width:675px)': {
+    allcontainer: {
+      width: '100%',
+      margin: '0 auto'
+    },
     firsthomecontainer: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      justifyContent: 'center',
+      maxWidth: '1000px'
     },
     secondhomecontainer: {
       flexDirection: 'row',
-      width: '90%',
-      display: 'flex'
+      maxWidth: '1000px',
+      width: '80%',
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: '1rem'
     },
     carousel: {
-      width: '50%'
+      width: '55%'
     },
     yuksek: {
-      width: '30%'
+      width: '40%'
+    },
+    ligbazlıcontainer: {
+      width: '80%',
+      margin: '1rem auto',
+      maxWidth: '1000px'
     }
   }
 })
@@ -61,11 +75,10 @@ const HomePage = () => {
           <AnaSayfaFikstür />
           <GecenHafta />
         </Box>
-        <Box>
+        <div className={classes.ligbazlıcontainer}>
           <LigBazlıCarousel />
-        </Box>
+        </div>
       </Box>
-
       <Footer className="footer" />
     </div>
   )

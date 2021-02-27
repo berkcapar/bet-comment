@@ -828,16 +828,73 @@ const Macİncele = () => {
                 <p>Chelsea</p>
               </div>
             </div>
-            <div className="en-iyi-oyuncular-sub-header">Piyasa Değeri</div>
+            <p className="en-iyi-oyuncular-sub-header">Piyasa Değeri</p>
             <div className="en-iyi-oyuncular-content">
               <div className="en-iyi-oyuncular-content-ev-sahibi">
                 <p> Harry Kane </p> <p>150Mil£</p>
               </div>
-              <div className="en-iyi-oyuncular-content-ev-sahibi">
+              <div className="en-iyi-oyuncular-content-deplasman">
                 <p> Timo Werner </p> <p>140Mil£</p>
               </div>
             </div>
-            <div className="en-iyi-oyuncular-sub-header">Piyasa Değeri</div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+
+            <p className="en-iyi-oyuncular-sub-header">Performans Puanı</p>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
+            <div className="en-iyi-oyuncular-content">
+              <div className="en-iyi-oyuncular-content-ev-sahibi">
+                <p> Harry Kane </p> <p>150Mil£</p>
+              </div>
+              <div className="en-iyi-oyuncular-content-deplasman">
+                <p> Timo Werner </p> <p>140Mil£</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

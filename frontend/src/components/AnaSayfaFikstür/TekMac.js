@@ -7,11 +7,27 @@ const useStyle = makeStyles({
     borderBottom: '0.1rem solid lightgray',
     justifyContent: 'center'
   },
+  evsahibi: {
+    fontSize: 'small'
+  },
   macsaati: {
-    marginLeft: '1rem'
+    marginLeft: '1rem',
+    fontSize: 'small'
   },
   deplasman: {
-    marginLeft: '1rem'
+    marginLeft: '1rem',
+    fontSize: 'small'
+  },
+  '@media(min-width:675px)': {
+    evsahibi: {
+      fontSize: 'medium'
+    },
+    macsaati: {
+      fontSize: 'medium'
+    },
+    deplasman: {
+      fontSize: 'medium'
+    }
   }
 })
 

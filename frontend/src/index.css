@@ -5,6 +5,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Lato';
   background-color: #D6D4D4;
+  
+
 }
 :root{
   --speed:500ms

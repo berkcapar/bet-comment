@@ -5,24 +5,33 @@ import Box from '@material-ui/core/Box'
 const useStyle = makeStyles({
   ligbazlıcontainer: {
     display: 'flex',
-    width: '79.5%',
+    width: '78%',
     margin: '0 auto'
   },
   ligcarouselitem: {
     display: 'flex',
-    justifyContent: 'space-around'
+    height: '200px'
   },
   carouseltext: {
-    margin: 'auto 0',
-    width: '40%',
+    margin: 'auto 1rem',
+    width: '50%',
     maxWidth: '310px'
   },
   logoarea: {
-    width: '40%'
+    width: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   logoareaimage: {
-    height: '200px',
-    width: '200px'
+    width: '168px',
+    heigth: '100px'
+  },
+  '@media(min-width:675px)': {
+    ligbazlıcontainer: {
+      display: 'flex',
+      marginLeft: '2rem'
+    }
   }
 })
 
@@ -83,7 +92,7 @@ const LigBazlıCarousel = () => {
 export const CarouselItem = ({ item }) => {
   const classes = useStyle()
   return (
-    <Box>
+    <Box className={classes.ligcarouselitemcontainer}>
       <Paper className={classes.ligcarouselitem}>
         <Box className={classes.carouseltext}>
           <p>{item.text}</p>

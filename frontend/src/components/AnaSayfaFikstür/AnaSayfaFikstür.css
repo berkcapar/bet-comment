@@ -1,6 +1,6 @@
 .tab-container{
     width: 91%;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     background-color: white;
     margin: 0 auto;
 }
@@ -21,6 +21,7 @@
 .tarih-maclar{
     display: flex;
     justify-content: space-around;
+    border-bottom: 0.1rem solid lightgray;
     
 }
 .maclar{
@@ -31,6 +32,9 @@
 .date{
     font-weight: 700;
     margin-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: small;
 }
 .title{
     text-align: center;
@@ -38,9 +42,8 @@
 
 @media (min-width:675px){
     .tab-container{
-        width: 40%;
-        margin-left: 4rem;
-        margin-right: 1.5rem;         
+        width: 50%;
+        margin-left: 2rem;
     }
     .tab-title{
         font-size: medium;

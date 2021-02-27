@@ -11,6 +11,7 @@ const useStyle = makeStyles({
     paddingLeft: '1rem',
     fontWeight: '600',
     marginTop: '0.5rem',
+    paddingTop: '0.5rem',
     paddingBottom: '0.5rem'
   },
   link: {
@@ -39,7 +40,11 @@ const useStyle = makeStyles({
   '@media(min-width:675px)': {
     haftanınyuksek: {
       width: '100%',
-      marginLeft: '1rem'
+
+      marginTop: '0'
+    },
+    header: {
+      marginTop: '0'
     },
     p: {
       marginTop: '0.5rem'
