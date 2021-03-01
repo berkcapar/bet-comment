@@ -1,0 +1,409 @@
+.macincele-container{
+    width: 100%;  
+}
+.macincele-header{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #F1FFF1;
+   
+}
+.macincele-header-hometeam img{
+width: 80%;
+}
+.macincele-header-deplasmanteam img{
+    width: 70%;
+}
+.macincele-header-hometeam,
+.macincele-header-deplasmanteam{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    margin: auto 0;
+}
+.macincele-header-hometeam p,
+.macincele-header-deplasmanteam p{
+    margin-top: 1rem;
+}
+
+.macincele-header-macinfo{
+    width: 30%;
+    font-size: small;
+    border: 1px solid lightgray;
+
+   }
+
+.macincele-header-macinfo-time{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    justify-content: space-evenly;
+}
+.macincele-header-macinfo-time-hafta{
+    display: none;
+}
+.macincele-header-macinfo-time-hafta-tarih{
+    border-right: 1px solid lightgray;
+    padding-right: 0.2rem;
+}
+
+.macincele-header-macinfo-skor{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   border-bottom: 1px solid lightgray;
+   
+}
+
+.macincele-header-macinfo-hakemstat-hakem{
+    border-bottom: 1px solid lightgray;
+    display: flex;
+
+}
+.macincele-header-macinfo-hakemstat-hakem img{
+    mix-blend-mode: multiply;
+    width: 25%;
+}
+.macincele-header-macinfo-hakemstat-hakem p{
+   margin: auto 0;
+}
+
+.macincele-header-macinfo-hakemstat-stat{
+    display: flex;
+}
+
+.macincele-header-macinfo-hakemstat-stat p{
+    margin: auto 0;
+ }
+
+.macincele-header-macinfo-hakemstat-stat img{
+    mix-blend-mode: multiply;
+    width: 25%
+}
+
+.macincele-tabs-tablist{
+    display: flex;
+    border-bottom: 1px solid gray;
+    width: 100%;
+  
+    padding-left: 0;
+    justify-content: center;
+    background-color: #8FBC8F;
+   
+
+  
+  
+}
+.macincele-tabs-tablist-analiz-tab{
+    width: 25%;
+    margin-top: 0.1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid gray;
+  
+}
+.macincele-tabs-tablist-kadro-incele-tab,
+.macincele-tabs-tablist-karsılastırma-tab,
+.macincele-tabs-tablist-sonmaclar-tab
+{
+    padding-left: 0.2rem;
+    margin-top: 0.1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-right: 1px solid gray;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.tabpanel-header{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+.tabpanel-content{
+    width: 100%;
+    background-color: #F1FFF1;
+}
+.ev-kazanır,
+.ev-kaybetmez,
+.deplasman-kaybetmez,
+.ikiüç-gol,
+.artıyedi-gol,
+.kg-yok{
+    display: flex;
+    justify-content: center;
+}
+.ev-kazanır-seçim,
+.ev-kaybetmez-seçim,
+.deplasman-kaybetmez-seçim,
+.ikiüç-gol-seçim,
+.artıyedi-gol-seçim,
+.kg-yok-seçim{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: smaller;
+    background-color: whitesmoke;
+    border: 0.1px solid gray;
+}
+.ev-kazanır-progressbar,
+.ev-kaybetmez-progressbar,
+.deplasman-kaybetmez-progressbar,
+.ikiüç-gol-progressbar,
+.artıyedi-gol-progressbar,
+.kg-yok-progressbar{
+    transform: scaleX(-1);
+}
+.ev-kazanır-progressbar h2,
+.ev-kaybetmez-progressbar h2,
+.deplasman-kaybetmez-progressbar h2,
+.ikiüç-gol-progressbar h2,
+.artıyedi-gol-progressbar h2,
+.kg-yok-progressbar h2{
+    transform: scaleX(-1);
+}
+.kg-yok-progressbar-second{
+}
+
+.alt-üst-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.1rem;
+}
+.alt-üst-container p+p{
+    margin-left: 3rem;
+}
+
+.evsahibi-deplasman-tabpanel-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #8FBC8F;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.evsahibi-tek-oyuncu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.evsahibi-tek-oyuncu:nth-child(even){
+    background-color: #dddddd;
+}
+.evsahibi-tek-oyuncu:nth-child(odd){
+    background-color: white;
+}
+
+.evsahibi-tek-oyuncu-info{
+    display: flex;
+    width: 65%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.evsahibi-forma{
+    width: 10%;
+}
+.evsahibi-mevki{
+    width: 10%;
+}
+.evsahibi-isim{
+    width: 50%;
+}
+
+.evsahibi-tek-oyuncu img{
+    width: 15%;
+    mix-blend-mode: multiply;
+}
+.evsahibi-tek-oyuncu-performans{
+    width: 25%;
+    margin: auto 0;
+}
+
+.takım-karşılaştırması-container h3{
+    text-align: center;
+}
+
+.performans-karşılaştırması-container table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.karşılaştırma-tek-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  
+}
+.karşılaştırma-tek-container:nth-child(even){
+    background-color: #dddddd;
+}
+.karşılaştırma-tek-container:nth-child(odd){
+    background-color: white;
+}
+
+.sonmaçlar-aralarındaki p{
+    background-color: #0A581B;
+    color: white;
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+}
+
+.sonmaçlar-aralarındaki-table{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    background-color:#F1FFF1 ;
+    font-size: small;
+}
+
+.sonmaçlar-aralarındaki-table th{
+    border: 1px solid whitesmoke;
+    text-align: left;
+}
+.sonmaçlar-aralarındaki-table td{
+    text-align: left;
+    border: 1px solid #dddddd;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+}
+
+.other-container{
+    display: none;
+}
+
+@media(min-width:675px){
+    .macincele-allpage{
+        display: flex;
+        justify-content: center;
+    }
+    .macincele-container{
+        width: 40%;
+        margin-top: 1rem;
+    }
+    .macincele-header{
+        width: 100%;
+    }
+    .macincele-header-hometeam img{
+        width: 60%;
+        }
+        .macincele-header-deplasmanteam img{
+        width: 60%;
+       
+        }
+        .macincele-header-hometeam,
+        .macincele-header-deplasmanteam{
+    width: 30%;
+}
+.macincele-tabs-tablist{
+    width: 100%;
+}
+.macincele-header-macinfo{
+    width: 50%;
+    font-size: medium;
+    border: 1px solid lightgray;
+    font-weight: 600;
+}
+.macincele-header-macinfo-time-hafta{
+    display: block;
+}
+.macincele-header-macinfo-time-hafta-tarih{
+    border-left: 1px solid lightgray;
+    padding-left: 0.2rem;
+}
+.tabpanel-content{
+    width: 100%;
+ background-color: #F1FFF1;
+}
+.other-container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.en-iyi-oyuncular-container{
+    background-color: #F1FFF1;
+    width: 100%;
+    border: 1px solid lightgray;
+}
+.en-iyi-oyuncular-header h3{
+    background-color: #0A581B;
+    color: white;
+    width: 100%;
+    margin-top: 0rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.2rem;
+    margin-bottom: 0rem;
+}
+.en-iyi-oyuncular-header-takımlar{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+.en-iyi-oyuncular-header-takımlar > :first-child{
+  border-right: 1px solid gray;
+  
+}
+.en-iyi-oyuncular-header-takımlar p{
+    width: 50%;
+    padding-left: 0.2rem;
+    font-weight: 700;
+}
+.en-iyi-oyuncular-sub-header{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.2rem;
+    background-color: #8FBC8F;
+    }
+.en-iyi-oyuncular-content,
+.en-iyi-oyuncular-content-ev-sahibi,
+.en-iyi-oyuncular-content-deplasman
+{
+    display: flex;
+}
+.en-iyi-oyuncular-content div{
+    width: 50%;
+    padding-left: 0.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.en-iyi-oyuncular-content-ev-sahibi{
+    border-right: 1px solid gray;
+}
+.en-iyi-oyuncular-content-ev-sahibi p+p{
+   margin-left: 1rem;
+}
+.en-iyi-oyuncular-content-deplasman p+p{
+    margin-left: 1rem;
+}
+
+.en-iyi-oyuncular-content:nth-child(even){
+    background-color: #dddddd;
+}
+.en-iyi-oyuncular-content:nth-child(odd){
+    background-color: white;
+}
+
+
+}
+
+
