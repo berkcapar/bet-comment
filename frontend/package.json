@@ -12,6 +12,8 @@
     "react-animated-progress-bar": "^1.0.4",
     "react-dom": "^17.0.1",
     "react-material-ui-carousel": "^2.1.1",
+    "react-phone-input-2": "^2.13.9",
+    "react-phone-number-input": "^3.1.16",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
