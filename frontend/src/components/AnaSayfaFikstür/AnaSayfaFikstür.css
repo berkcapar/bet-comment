@@ -1,0 +1,54 @@
+.tab-container{
+    width: 91%;
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: 0 auto;
+}
+.tab-title{
+    font-size: small;
+    
+}
+
+.title{
+   background-color:green;
+   color: white;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   font-weight: 700;
+   padding-left: 0.5rem;
+}
+
+.tarih-maclar{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.1rem solid lightgray;
+    
+}
+.maclar{
+    margin-top: 0.9rem;
+    width: 80%;
+ 
+}  
+.date{
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: small;
+}
+.title{
+    text-align: center;
+}
+
+@media (min-width:675px){
+    .tab-container{
+        width: 50%;
+        margin-left: 2rem;
+    }
+    .tab-title{
+        font-size: medium;
+    }
+   
+}
+
+   
