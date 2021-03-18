@@ -1,0 +1,22 @@
+.fikstürdetay-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+@media(min-width:675px){
+    .fikstürdetay-container{
+     display: flex;
+     flex-direction: row;
+     margin-top: 1rem;
+}
+.fikstür{
+    width: 70%;
+}
+.fikstürdetay-other{
+    width: 30%;
+    display: flex;
+
+}
+
+}
