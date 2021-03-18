@@ -3,6 +3,9 @@ import { useState } from 'react'
 import './Navigation.css'
 import LoginForm from '../LoginForm/LoginForm'
 import LeagueDropdown from './LeagueDropdown'
+import InstagramIcon from '@material-ui/icons/Instagram'
+import TwitterIcon from '@material-ui/icons/Twitter'
+import FacebookIcon from '@material-ui/icons/Facebook'
 
 const Navigation = () => {
   const [menuclick, setMenuclick] = useState(false)
@@ -31,11 +34,25 @@ const Navigation = () => {
 
   return (
     <div className="navigation-container">
+      <div className="navigation-ustbant">
+        <div className="navigation-ustbant-icons-text">
+          <div className="navigation-ustbant-icons">
+            <FacebookIcon />
+            <TwitterIcon style={{ marginLeft: '1rem' }} />
+            <InstagramIcon style={{ marginLeft: '1rem' }} />
+          </div>
+          <p>Bizi sosyal medya hesaplarımızdan da takip edin!</p>
+        </div>
+        <div className="navigation-ustbant-links">
+          <a>Hakkımızda</a>
+          <a>Biz Ulaşın</a>
+        </div>
+      </div>
       <div className="logo-login-link">
         <div className="logo-login">
           <div className="logo-icon">
             <Link className="link logo" to="/">
-              BET COMMENT
+              <img src="/images/logo1.png" alt="bahis peşinde" />
             </Link>
             <div className="icons">
               <div className="menu-icon" onClick={handlemenuClick}>
