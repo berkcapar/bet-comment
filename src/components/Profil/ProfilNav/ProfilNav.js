@@ -8,6 +8,9 @@ const ProfilNav = () => {
       </div>
       <div className="profilnav-links">
         <Link to="profil/kuponların">Kuponların</Link>
+        <Link to="profil/kuponların">Kuponların</Link>
+        <Link to="profil/kuponların">Kuponların</Link>
+        <Link to="profil/kuponların">Kuponların</Link>
       </div>
       <div className="profilnav-çıkış"></div>
       <div className="profilnav-logo"></div>
