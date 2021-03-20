@@ -1,0 +1,101 @@
+.navigation-container{
+    background-color: #0A581B;
+}
+
+.logo{
+    margin: 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+
+}
+.logo-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.icons{
+    display: flex;
+    color: white;
+    font-size: 1.5rem;
+    width: 15%;
+    margin-top: 0.8rem;
+}
+.menu-icon{
+   padding-right: 1rem;
+}
+
+.nav-elements{
+    padding-bottom: 0.5rem;
+    display: none;
+}
+.nav-elements.active {
+    border-top: 0.1rem solid white;
+  }
+ 
+.active {
+    display: block;
+  }
+
+.loginform{
+    display: none;
+}
+.loginform.active{
+    display: block;
+}  
+
+
+.nav-elements li{
+    text-align: center;
+    margin: 15px auto;
+   
+}
+
+@media(min-width:675px){
+    .navigation-container{
+        display: flex;
+        padding-top: 0.5rem; 
+       
+    }
+    .icons{
+        display: none;
+    }
+    .nav-elements{
+        display: flex;
+        justify-content: flex-end;
+        width: 90%;      
+    }
+    .nav-elements li {
+     margin: 0;
+     padding-right: 1em;
+     font-weight: 600;
+     text-align: center;
+    }
+    .nav-elements li:hover {
+     color: black;
+    }
+    .logo-login{
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid white;
+      padding-left: 10%;
+      justify-content: space-around;
+     
+    }
+    .logo-login-link{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .logo-icon{
+        border-bottom:none
+    }
+    .loginform{
+        display: flex;
+        margin-left: 12%
+ 
+    }
+    
+
+}

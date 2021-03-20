@@ -1,5 +1,6 @@
 .navigation-container{
-    background-color: #0A581B;
+    background-color: white;
+  
 }
 
 .logo{
@@ -54,8 +55,36 @@
 @media(min-width:675px){
     .navigation-container{
         display: flex;
-        padding-top: 0.5rem; 
-       
+        flex-direction: column; 
+        background-color: white;
+    }
+    .navigation-ustbant{
+        background-color: #48b42c;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 0.5rem;
+    }
+    .navigation-ustbant-icons-text{
+       display: flex;
+       width: 30%;
+    }
+    .navigation-ustbant-icons{
+        width: 20%;
+        border-right: 1px solid lightgray;       
+    }
+    .navigation-ustbant-icons-text p{
+        width: 70%;
+        margin-left: 1rem;
+     }
+    .navigation-ustbant-links{
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navigation-ustbant-links a+a{
+        margin-left: 3rem;
     }
     .icons{
         display: none;
