@@ -71,6 +71,9 @@ const Navigation = () => {
             <LoginForm />
           </div>
         </div>
+        <div
+          style={{ width: '100%', borderBottom: '0.08rem solid lightgray' }}
+        ></div>
         <ul className={menuclick ? 'nav-elements active' : 'nav-elements'}>
           <li>
             {' '}

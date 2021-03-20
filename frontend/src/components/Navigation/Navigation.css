@@ -1,15 +1,7 @@
 .navigation-container{
     background-color: white;
-  
 }
 
-.logo{
-    margin: 0.5rem;
-    font-size: 2rem;
-    font-weight: 500;
-    width: 100%;
-
-}
 .logo-icon{
     display: flex;
     flex-direction: row;
@@ -64,30 +56,40 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        padding-top: 0.5rem;
+        font-size: small;
+        font-weight: 700;
+      
     }
     .navigation-ustbant-icons-text{
        display: flex;
-       width: 30%;
+       width: 40%;
+       padding-top: 0.3rem;
+       padding-bottom: 0.3rem;
+      
     }
     .navigation-ustbant-icons{
-        width: 20%;
-        border-right: 1px solid lightgray;       
+        width: 25%;
     }
     .navigation-ustbant-icons-text p{
         width: 70%;
-        margin-left: 1rem;
+        font-size: small;
+        margin: auto 0;
      }
     .navigation-ustbant-links{
         width: 30%;
         display: flex;
         justify-content: flex-end;
+        margin: auto 0;
+        font-weight: 700;
     }
     .navigation-ustbant-links a+a{
-        margin-left: 3rem;
+        margin-left: 2rem;
+    }
+    .logo{
+        margin-top: 1rem;
     }
     .logo img{
-        border: 1px solid red;
+       
     }
     .icons{
         display: none;
@@ -95,7 +97,8 @@
     .nav-elements{
         display: flex;
         justify-content: flex-end;
-        width: 90%;      
+        width: 90%;
+        color: black;      
     }
     .nav-elements li {
      margin: 0;
@@ -110,10 +113,9 @@
       display: flex;
       flex-direction: row;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid white;
-      padding-left: 10%;
-      justify-content: space-around;
-     
+      width: 70%;
+      margin: 0 auto;
+      justify-content: space-between;
     }
     .logo-login-link{
         display: flex;
@@ -121,11 +123,12 @@
         width: 100%;
     }
     .logo-icon{
-        border-bottom:none
+        border-bottom:none;
     }
     .loginform{
         display: flex;
-        margin-left: 12%
+        margin: auto 0;
+        width: 40%;
  
     }
     

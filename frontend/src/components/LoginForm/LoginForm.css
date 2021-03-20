@@ -1,0 +1,15 @@
+.button-üyeol{
+background-color: #18b42c;
+color: white;
+padding: 1rem;
+border: 0.01rem solid lightgray;
+border-radius: 0.3rem;
+font-weight: 800;
+}
+.button-giriş{
+background: white;
+padding: 1rem;
+border: 0.01rem solid #18b42c;
+border-radius: 0.3rem;
+font-weight: 800;
+}

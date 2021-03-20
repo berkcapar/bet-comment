@@ -1,11 +1,9 @@
-import { TextField, InputAdornment, IconButton } from '@material-ui/core/'
-import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Visibility from '@material-ui/icons/Visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import './LoginForm.css'
+
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -76,15 +74,11 @@ const LoginForm = (loginclick) => {
         <Box display="flex" className={classes.buttons} ml={1}>
           <MuiThemeProvider theme={loginTheme}>
             <Box ml={1}>
-              <Button color="primary" variant="contained">
-                <p style={{ color: 'white' }}>HEMEN ÜYE OL</p>
-              </Button>
+              <button className="button-üyeol">HEMEN ÜYE OL</button>
             </Box>
             <Box ml={1}>
               <Link style={{ textDecoration: 'none' }} to="/kaydol">
-                <Button color="primary" variant="contained">
-                  <p style={{ color: 'white' }}>ÜYE GİRİŞİ</p>
-                </Button>
+                <button className="button-giriş">ÜYE GİRİŞİ </button>
               </Link>
             </Box>
           </MuiThemeProvider>
