@@ -73,59 +73,17 @@ const LoginForm = (loginclick) => {
         m={1}
         display="flex"
       >
-        <Box className={classes.email} width="35%">
-          <TextField
-            style={{ backgroundColor: 'HONEYDEW' }}
-            size="small"
-            name="email"
-            label="Email"
-            variant="outlined"
-            InputProps={{
-              style: {
-                color: 'black'
-              }
-            }}
-          />
-        </Box>
-        <Box className={classes.password} ml={1} width="35%">
-          <MuiThemeProvider theme={loginTheme}>
-            <TextField
-              style={{ backgroundColor: 'HONEYDEW' }}
-              size="small"
-              name="password"
-              label="Şifre"
-              type={showPassword ? 'text' : 'password'}
-              variant="outlined"
-              InputProps={{
-                style: {
-                  color: 'black',
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                      >
-                        {showPassword ? <Visibility /> : <VisibilityOff />}
-                      </IconButton>
-                    </InputAdornment>
-                  )
-                }
-              }}
-            />
-          </MuiThemeProvider>
-        </Box>
         <Box display="flex" className={classes.buttons} ml={1}>
           <MuiThemeProvider theme={loginTheme}>
             <Box ml={1}>
               <Button color="primary" variant="contained">
-                Giriş
+                <p style={{ color: 'white' }}>HEMEN ÜYE OL</p>
               </Button>
             </Box>
             <Box ml={1}>
               <Link style={{ textDecoration: 'none' }} to="/kaydol">
-                <Button color="secondary" variant="contained">
-                  Kaydol
+                <Button color="primary" variant="contained">
+                  <p style={{ color: 'white' }}>ÜYE GİRİŞİ</p>
                 </Button>
               </Link>
             </Box>
