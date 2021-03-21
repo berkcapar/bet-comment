@@ -96,15 +96,19 @@
     }
     .nav-elements{
         display: flex;
-        justify-content: flex-end;
-        width: 90%;
-        color: black;      
+        justify-content: center;
+        width: 75%;
+        color: #48b42c;
     }
     .nav-elements li {
      margin: 0;
      padding-right: 1em;
-     font-weight: 600;
+     font-weight: 700;
+     font-size: small;
      text-align: center;
+    }
+    .nav-elements li :hover{
+        color: #48b42c;
     }
     .nav-elements li:hover {
      color: black;
@@ -131,6 +135,4 @@
         width: 40%;
  
     }
-    
-
 }

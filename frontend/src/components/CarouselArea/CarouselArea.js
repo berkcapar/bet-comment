@@ -3,17 +3,13 @@ import { makeStyles, Paper } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 
 const useStyle = makeStyles({
-  carousel: {
-    width: '100%'
-  },
+  carousel: {},
   image: {
     width: '100%'
   },
   carouselitem: {},
   '@media(min-width:675px)': {
-    carousel: {
-      maxWidth: '500px'
-    },
+    carousel: {},
     image: {
       width: '100%'
     }

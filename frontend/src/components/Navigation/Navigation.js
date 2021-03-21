@@ -79,10 +79,30 @@ const Navigation = () => {
             {' '}
             <Link
               className="link nav-links"
+              to="fikstur"
+              onClick={closeMobileMenu}
+            >
+              FİKSTÜR
+            </Link>
+          </li>
+          <li>
+            {' '}
+            <Link
+              className="link nav-links"
               to="/takım-incele"
               onClick={closeMobileMenu}
             >
-              Takım İnceleme
+              TAKIM İNCELEME
+            </Link>
+          </li>
+          <li>
+            {' '}
+            <Link
+              className="link nav-links"
+              to="/takım-incele"
+              onClick={closeMobileMenu}
+            >
+              MAÇ İNCELEME
             </Link>
           </li>
           <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
@@ -91,18 +111,19 @@ const Navigation = () => {
               to="/lig-incele"
               onClick={closeMobileMenu}
             >
-              Lig İnceleme <i className="fas fa-caret-down" />
+              LİG İNCELEME <i className="fas fa-caret-down" />
             </Link>
             {dropdown && <LeagueDropdown />}
           </li>
+
           <li>
             {' '}
             <Link
               className="link nav-links"
-              to="fikstur"
+              to="kazandıran-analizler"
               onClick={closeMobileMenu}
             >
-              Fikstür
+              İSTATİSTİK
             </Link>
           </li>
           <li>
@@ -112,7 +133,7 @@ const Navigation = () => {
               to="kazandıran-analizler"
               onClick={closeMobileMenu}
             >
-              Kazandıran Analizler
+              AKILLI İSTATİSTİK
             </Link>
           </li>
         </ul>

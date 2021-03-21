@@ -26,8 +26,8 @@ const useStyle = makeStyles({
   },
   '@media(min-width:675px)': {
     allcontainer: {
-      width: '100%',
-      margin: '0 auto'
+      width: '70%',
+      margin: '1rem auto'
     },
     firsthomecontainer: {
       display: 'flex',
@@ -44,7 +44,7 @@ const useStyle = makeStyles({
       marginTop: '1rem'
     },
     carousel: {
-      width: '55%'
+      width: '100%'
     },
     yuksek: {
       width: '40%'
@@ -63,14 +63,14 @@ const HomePage = () => {
     <div className="container">
       <Navigation />
       <Box className={classes.allcontainer}>
-        <Box display="flex" className={classes.firsthomecontainer}>
-          <div className={classes.carousel}>
-            <CarouselArea />
-          </div>
-          <div className={classes.yuksek}>
-            <HaftanınYuksek />
-          </div>
-        </Box>
+        <div className={classes.carousel}>
+          <CarouselArea />
+          <img
+            style={{ width: '100%', borderRadius: '0.3rem' }}
+            alt="istatistikler"
+            src="/images/istatistiklerbanner.png"
+          />
+        </div>
         <Box display="flex" className={classes.secondhomecontainer}>
           <AnaSayfaFikstür />
           <GecenHafta />
