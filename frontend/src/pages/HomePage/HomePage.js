@@ -4,8 +4,8 @@ import HaftanınYuksek from '../../components/HaftanınYüksek/HaftanınYüksek'
 import Footer from '../../components/Footer/Footer'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
-import GecenHafta from '../../components/GecenHafta/GecenHafta'
-import AnaSayfaFikstür from '../../components/AnaSayfaFikstür/AnaSayfaFikstür'
+import AnaSayfaYarışma from '../../components/AnaSayfaYarışma/AnaSayfaYarışma'
+import { GününMaçlarıCarouselArea } from '../../components/GününMaçlarıCarouselArea/GününMaçlarıCarouselArea'
 import LigBazlıCarousel from '../../components/LigBazlıCarousel/LigBazlıCarousel'
 
 const useStyle = makeStyles({
@@ -16,7 +16,7 @@ const useStyle = makeStyles({
   },
   secondhomecontainer: {
     width: '87%',
-    margin: '1rem auto',
+
     display: 'flex',
     flexDirection: 'column'
   },
@@ -37,10 +37,9 @@ const useStyle = makeStyles({
     },
     secondhomecontainer: {
       flexDirection: 'row',
-      maxWidth: '1000px',
-      width: '80%',
+      justifyContent: 'space-between',
+      width: '100%',
       display: 'flex',
-      justifyContent: 'center',
       marginTop: '1rem'
     },
     carousel: {
@@ -53,6 +52,12 @@ const useStyle = makeStyles({
       width: '80%',
       margin: '1rem auto',
       maxWidth: '1000px'
+    },
+    günümüzmaçları: {
+      width: '50%'
+    },
+    yarışma: {
+      width: '47%'
     }
   }
 })
@@ -72,12 +77,14 @@ const HomePage = () => {
           />
         </div>
         <Box display="flex" className={classes.secondhomecontainer}>
-          <AnaSayfaFikstür />
-          <GecenHafta />
+          <Box className={classes.günümüzmaçları}>
+            <GününMaçlarıCarouselArea />
+          </Box>
+          <Box className={classes.yarışma}>
+            <AnaSayfaYarışma className={classes.anasayfayarışma} />
+          </Box>
         </Box>
-        <div className={classes.ligbazlıcontainer}>
-          <LigBazlıCarousel />
-        </div>
+        <div className={classes.ligbazlıcontainer}></div>
       </Box>
       <Footer className="footer" />
     </div>

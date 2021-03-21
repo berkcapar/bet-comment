@@ -1,0 +1,88 @@
+.carousel-container{
+background-color: black;
+border-radius: 0.3rem;
+padding: 1rem;
+padding-right: 1.5rem;
+width: 100%;
+}
+.carousel-container img{
+   width: 20%;
+   margin-top: 0.5rem;
+    }
+.günün-maçları-header{
+border-radius: 0.125rem;
+background-color: #48b42c;
+color: white;
+width: 40%;
+font-weight: 700;
+font-size: small;
+padding: 0.2rem;
+}
+.league-time{
+    color: #48b42c;
+    display: flex;
+}
+.seperator{
+    border-right: 1px solid #48b42c;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.team-names{
+    color: white;
+    display: flex;
+    border-bottom: 1px solid white;
+}
+.team-names h3+h3{
+padding-left: 0.5rem;
+
+}
+.sonuçlar-container{
+    color: white;
+    display: flex;
+    font-size: smaller;
+    margin-top: 0.5rem;
+}
+.sonuçlar-container div+div{
+    margin-left: 1rem;
+}
+.sonuçlar{
+    border: 0.125px solid lightgray;
+    background-color: white;
+    border-radius: 0.3rem;
+    color: black;
+    display: flex;
+   
+}
+.sonuçlar-ms1,
+.sonuçlar-ms2,
+.sonuçlar-kg,
+.sonuçlar-daha-fazlası{
+width: 25%;
+
+}
+.sonuçlar-seperator{
+    border-left: 1px solid black;
+}
+.algoritma {
+    background-color: #48b42c;
+    color: white;
+    width: 50%;
+    text-align: center; 
+    font-weight: 900; 
+    padding: 0.3rem;
+}
+.iddia{
+    width: 50%; 
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.sonuçlar-daha-fazlası{
+    border: 1px solid white;
+    background-color: black;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+
+}
+   
