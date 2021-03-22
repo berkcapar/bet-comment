@@ -1,75 +1,127 @@
-"""bp URL Configuration
+# todos/views.py
+from rest_framework import generics
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
-from . import views
-
-urlpatterns = [
+from .models import LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga
+from .serializers import LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya
 
 ######################################## Ligler #########################################################
 
-    path('superlig', views.Superlig.as_view()),
-    path('<int:pk>', views.Deneme.as_view()),
+class Superlig(generics.ListCreateAPIView):
+    queryset = LigSuperlig.objects.all()
+    serializer_class = LigTurkey
 
-    path('laliga', views.Laliga.as_view()),
-    path('<int:pk>', views.Deneme7.as_view()),
+class Deneme(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigSuperlig.objects.all()
+    serializer_class = LigTurkey
 
-    path('seriea', views.Seriea.as_view()),
-    path('<int:pk>', views.Deneme8.as_view()),
+class Laliga(generics.ListCreateAPIView):
+    queryset = LigLaliga.objects.all()
+    serializer_class = LigSpain
 
-    path('premierleague', views.PremierLeague.as_view()),
-    path('<int:pk>', views.Deneme9.as_view()),
+class Deneme7(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigLaliga.objects.all()
+    serializer_class = LigSpain
 
-    path('bundesliga', views.Bundesliga.as_view()),
-    path('<int:pk>', views.Deneme10.as_view()),
+class Seriea(generics.ListCreateAPIView):
+    queryset = LigSeriea.objects.all()
+    serializer_class = LigItaly
 
-    path('ligue1', views.Ligue1.as_view()),
-    path('<int:pk>', views.Deneme11.as_view()),
+class Deneme8(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigSeriea.objects.all()
+    serializer_class = LigItaly
+
+class PremierLeague(generics.ListCreateAPIView):
+    queryset = LigPremier.objects.all()
+    serializer_class = LigEngland
+
+class Deneme9(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigPremier.objects.all()
+    serializer_class = LigEngland
+
+class Bundesliga(generics.ListCreateAPIView):
+    queryset = LigBundesliga.objects.all()
+    serializer_class = LigGermany
+
+class Deneme10(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigBundesliga.objects.all()
+    serializer_class = LigGermany
+
+class Ligue1(generics.ListCreateAPIView):
+    queryset = LigLigue1.objects.all()
+    serializer_class = LigFrance
+
+class Deneme11(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigLigue1.objects.all()
+    serializer_class = LigFrance
 
 ######################################## Fikstür #########################################################
 
-    path('fiksturbundesliga', views.BundesligaFikstur.as_view()),
-    path('<int:pk>', views.Deneme1.as_view()),
+class BundesligaFikstur(generics.ListCreateAPIView):
+    queryset = FiksturBundesliga.objects.all()
+    serializer_class = FiksBundesliga
 
-    path('fiksturlaliga', views.LaligaFikstur.as_view()),
-    path('<int:pk>', views.Deneme2.as_view()),
+class Deneme1(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturBundesliga.objects.all()
+    serializer_class = FiksBundesliga
 
-    path('fiksturseriea', views.SerieaFikstur.as_view()),
-    path('<int:pk>', views.Deneme3.as_view()),
+class LaligaFikstur(generics.ListCreateAPIView):
+    queryset = FiksturLaliga.objects.all()
+    serializer_class = FiksLaliga
 
-    path('fikstursuperlig', views.SuperligFikstur.as_view()),
-    path('<int:pk>', views.Deneme4.as_view()),
+class Deneme2(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturLaliga.objects.all()
+    serializer_class = FiksLaliga
 
-    path('fiksturpremier', views.PremierLeagueFikstur.as_view()),
-    path('<int:pk>', views.Deneme5.as_view()),
+class SerieaFikstur(generics.ListCreateAPIView):
+    queryset = FiksturSeriea.objects.all()
+    serializer_class = FiksSeriea
 
-    path('fiksturligue1', views.Ligue1Fikstur.as_view()),
-    path('<int:pk>', views.Deneme6.as_view()),
+class Deneme3(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturSeriea.objects.all()
+    serializer_class = FiksSeriea
+
+class SuperligFikstur(generics.ListCreateAPIView):
+    queryset = FiksturSuperlig.objects.all()
+    serializer_class = FiksSuperlig
+
+class Deneme4(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturSuperlig.objects.all()
+    serializer_class = FiksSuperlig
+
+class PremierLeagueFikstur(generics.ListCreateAPIView):
+    queryset = FiksturPremier.objects.all()
+    serializer_class = FiksPremier
+
+class Deneme5(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturPremier.objects.all()
+    serializer_class = FiksPremier
+
+class Ligue1Fikstur(generics.ListCreateAPIView):
+    queryset = FiksturLigue1.objects.all()
+    serializer_class = FiksLigue1
+
+class Deneme6(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturLigue1.objects.all()
+    serializer_class = FiksLigue1
 
 ######################################## Oyuncular #########################################################
 
-    path('superligoyuncu', views.SuperligOyuncular.as_view()),
-    path('<int:pk>', views.Deneme12.as_view()),
+class SuperligOyuncular(generics.ListCreateAPIView):
+    queryset = OyuncularSuperlig.objects.all()
+    serializer_class = OyuncuTurkey
+
+class Deneme12(generics.RetrieveUpdateDestroyAPIView):
+    queryset = OyuncularSuperlig.objects.all()
+    serializer_class = OyuncuTurkey
 
 
 
 ######################################## Puan Tablosu #########################################################
 
-    path('puanalmanya', views.PuanTablosuAlmanya.as_view()),
-    path('<int:pk>', views.Deneme18.as_view()),
+class PuanTablosuAlmanya(generics.ListCreateAPIView):
+    queryset = PuanBundesliga.objects.all()
+    serializer_class = PuanAlmanya
 
-]
-
+class Deneme18(generics.RetrieveUpdateDestroyAPIView):
+    queryset = PuanBundesliga.objects.all()
+    serializer_class = PuanAlmanya
