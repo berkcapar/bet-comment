@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import AnaSayfaYarışma from '../../components/AnaSayfaYarışma/AnaSayfaYarışma'
 import { GününMaçlarıCarouselArea } from '../../components/GününMaçlarıCarouselArea/GününMaçlarıCarouselArea'
 import LigBazlıCarousel from '../../components/LigBazlıCarousel/LigBazlıCarousel'
+import BPKartlar from '../../components/BPKartlar/BPKartlar'
+import PopülerLigler from '../../components/PopülerLigler/PopülerLigler'
 
 const useStyle = makeStyles({
   firsthomecontainer: {
@@ -49,8 +51,7 @@ const useStyle = makeStyles({
       width: '40%'
     },
     ligbazlıcontainer: {
-      width: '80%',
-      margin: '1rem auto',
+      width: '100%',
       maxWidth: '1000px'
     },
     günümüzmaçları: {
@@ -84,7 +85,12 @@ const HomePage = () => {
             <AnaSayfaYarışma className={classes.anasayfayarışma} />
           </Box>
         </Box>
-        <div className={classes.ligbazlıcontainer}></div>
+        <div className={classes.ligbazlıcontainer}>
+          <BPKartlar />
+        </div>
+        <div className={classes.ligbazlıcontainer}>
+          <PopülerLigler />
+        </div>
       </Box>
       <Footer className="footer" />
     </div>
