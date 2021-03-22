@@ -4,11 +4,11 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   footer: {
-    backgroundColor: '#0A581B',
+    backgroundColor: '#48b42c',
     display: 'flex',
     height: '80px',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     marginTop: '10rem'
   },
   footerlink: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     fontSize: '1.3rem',
     textDecoration: 'none',
     color: 'white',
-    marginLeft: '1.5rem'
+    marginLeft: '20%'
   },
   footerlinkcontainer: {
     width: '30%',
@@ -42,7 +42,7 @@ const Footer = () => {
       <BrowserRouter>
         <Box width="50%">
           <Link className={classes.footerlogo} to="/">
-            BET COMMENT
+            <img src="/images/logo3.png" alt="bahis peşinde" />
           </Link>
         </Box>
         <Box className={classes.footerlinkcontainer}>

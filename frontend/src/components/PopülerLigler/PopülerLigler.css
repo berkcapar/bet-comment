@@ -2,21 +2,31 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+}
+.popüler-ligler-container h2{
+    text-align: center;
 }
 .lig-kartları-container{
     display: flex;
     justify-content: space-between;
-
 }
 .lig-kart{
-    width: 18%;
+    width: 17%;
     display: flex;
-    font-size: small;
     background-color: white;
-    padding:1.7rem;
     border-radius: 0.3rem;
+    padding: 1rem;
 }
-.lig-kart img{
+.lig-kart-image{
     mix-blend-mode: multiply;
+    width: 40%;  
+}
+.lig-kart-image img{
+    width: 100%;
+}
+.lig-kart-header{
+    width: 60%;
+    font-size: small;
+    margin: auto 0;  
 }
