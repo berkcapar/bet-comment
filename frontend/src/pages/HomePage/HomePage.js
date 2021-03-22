@@ -59,6 +59,9 @@ const useStyle = makeStyles({
     },
     yarışma: {
       width: '47%'
+    },
+    altbant: {
+      width: '100%'
     }
   }
 })
@@ -92,7 +95,9 @@ const HomePage = () => {
           <PopülerLigler />
         </div>
       </Box>
-      <Footer className="footer" />
+      <div className={classes.altbant}>
+        <Footer />
+      </div>
     </div>
   )
 }

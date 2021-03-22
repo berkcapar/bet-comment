@@ -8,35 +8,57 @@ const PopülerLigler = () => {
       </header>
       <div className="lig-kartları-container">
         <div className="lig-kart">
-          <img src="/images/ligler-yeşil/superlig.png" />
-          <p>
-            <b>Süper</b>Lig
-          </p>
+          <div className="lig-kart-image">
+            <img src="/images/ligler-yeşil/superlig.png" />
+          </div>
+          <div className="lig-kart-header">
+            <p>
+              <b>Süper</b> Lig
+            </p>
+          </div>
         </div>
-        <div className="lig-kart">
-          <img src="/images/ligler-yeşil/premierlig.png" />
-          <p>
-            <b>Premier</b>League
-          </p>
-        </div>
-        <div className="lig-kart">
-          <img src="/images/ligler-yeşil/laliga.png" />
-          <p>
-            <b>La Liga</b>
-          </p>
-        </div>
-        <div className="lig-kart">
-          <img src="/images/ligler-yeşil/bundesliga.png" />
-          <p>
-            <b>Bundesliga</b>
-          </p>
-        </div>
-        <div className="lig-kart">
-          <img src="/images/ligler-yeşil/seriea.png" />
 
-          <p>
-            <b>Serie A</b>
-          </p>
+        <div className="lig-kart">
+          <div className="lig-kart-image">
+            <img src="/images/ligler-yeşil/premierlig.png" />
+          </div>
+          <div className="lig-kart-header">
+            <p>
+              <b>Premier</b> Lig
+            </p>
+          </div>
+        </div>
+
+        <div className="lig-kart">
+          <div className="lig-kart-image">
+            <img src="/images/ligler-yeşil/laliga.png" />
+          </div>
+          <div className="lig-kart-header">
+            <p>
+              <b>La Liga</b>
+            </p>
+          </div>
+        </div>
+
+        <div className="lig-kart">
+          <div className="lig-kart-image">
+            <img src="/images/ligler-yeşil/superlig.png" />
+          </div>
+          <div className="lig-kart-header">
+            <p>
+              <b>Bundesliga</b>
+            </p>
+          </div>
+        </div>
+        <div className="lig-kart">
+          <div className="lig-kart-image">
+            <img src="/images/ligler-yeşil/superlig.png" />
+          </div>
+          <div className="lig-kart-header">
+            <p>
+              <b>Serie A</b>
+            </p>
+          </div>
         </div>
       </div>
     </div>
