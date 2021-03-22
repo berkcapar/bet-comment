@@ -58,4 +58,18 @@ urlpatterns = [
 
     path('fiksturligue1', views.Ligue1Fikstur.as_view()),
     path('<int:pk>', views.Deneme6.as_view()),
+
+######################################## Oyuncular #########################################################
+
+    path('superligoyuncu', views.SuperligOyuncular.as_view()),
+    path('<int:pk>', views.Deneme12.as_view()),
+
+
+
+######################################## Puan Tablosu #########################################################
+
+    path('puanalmanya', views.PuanTablosuAlmanya.as_view()),
+    path('<int:pk>', views.Deneme18.as_view()),
+
 ]
+
