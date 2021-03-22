@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1
+from .models import LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1
 
 
 ########################################## Fikstür #############################################
@@ -241,3 +241,148 @@ class LigFrance(serializers.ModelSerializer):
 
         )
         model = LigLigue1
+
+########################################## Oyuncular #############################################
+
+class OyuncuTurkey(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+        'takim_adi'
+        'oyuncu_adi'
+        'oyuncu_soyadi'
+        'oyuncu_pozisyon'
+        'oyuncu_yanpozisyon'
+        'transfermarkt_id'
+        'oyuncu_uyruk'
+        'oyuncu_dogum_tarihi'
+        'guncel_tarihi'
+        'oyuncu_yas'
+        'oyuncu_boy'
+        'oyuncu_piyasadegeri'
+        'oyuncu_ortalama'
+        'oyuncu_hucum'
+        'oyuncu_defans'
+        'oyuncu_teknik'
+        'oyuncu_zihinsel'
+        'oyuncu_fiziksel'
+        'oyuncu_hiz'
+        'oyuncu_rate2021'
+        'oyuncu_rate1920'
+        'oyuncu_rate1819'
+        'oyuncu_mac'
+        'oyuncu_gol'
+        'oyuncu_asist'
+        'oyuncu_kollektif'
+        )
+        model = OyuncularSuperlig
+        fields = '__all__'
+
+######################################## Puan Tablosu #########################################################
+
+class PuanAlmanya(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanBundesliga
+        fields = '__all__'
+
+class PuanTablosuIspanya(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanLaliga
+        fields = '__all__'
+
+class PuanTablosuFransa(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanLigue1
+        fields = '__all__'
+
+class PuanTablosuIngiltere(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanPremier
+        fields = '__all__'
+
+class PuanTablosuItalya(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanSeriea
+        fields = '__all__'
+
+class PuanTablosuTurkey(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+        )
+        model = PuanSuperlig
+        fields = '__all__'

@@ -649,7 +649,7 @@ class OyuncularSuperlig(models.Model):
     oyuncu_soyadi = models.CharField(max_length=30)
     oyuncu_pozisyon = models.CharField(max_length=30)
     oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
-    transfermarkt_id = models.CharField(max_length=2500)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
     oyuncu_uyruk = models.CharField(max_length=30)
     oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
     guncel_tarih = models.DateField(blank=True, null=True)
@@ -676,11 +676,120 @@ class OyuncularSuperlig(models.Model):
         db_table = 'oyuncular_superlig'
 
 
+class PuanBundesliga(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_bundesliga'
+
+
+class PuanLaliga(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_laliga'
+
+
+class PuanLigue1(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_ligue1'
+
+
+class PuanPremier(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_premier'
+
+
+class PuanSeriea(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_seriea'
+
+
+class PuanSuperlig(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(blank=True, null=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_superlig'
+
+
 class Takimlar(models.Model):
     team_id = models.AutoField(primary_key=True)
     team_name = models.CharField(max_length=50)
     team_league = models.CharField(max_length=50)
     team_value = models.FloatField()
+    logo_link = models.CharField(max_length=5000, blank=True, null=True)
 
     class Meta:
         managed = False
