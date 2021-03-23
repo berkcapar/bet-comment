@@ -1,6 +1,6 @@
 import './FikstürTekMaç.css'
 
-const FikstürTekMaç = () => {
+const FikstürTekMaç = ({ superLigfixture }) => {
   return (
     <div className="tekmac-container">
       <div className="mac-detay">
@@ -10,11 +10,11 @@ const FikstürTekMaç = () => {
         <div className="ev-deplasman">
           <div className="ev-sahibi">
             <img />
-            <p>Ev Sahibi</p>
+            <p>{superLigfixture.takim1}</p>
           </div>
           <div className="deplasman">
             <img />
-            <p>Deplasman</p>
+            <p>{superLigfixture.takim2}</p>
           </div>
         </div>
       </div>

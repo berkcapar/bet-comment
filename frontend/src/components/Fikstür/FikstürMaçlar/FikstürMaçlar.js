@@ -1,7 +1,19 @@
 import FikstürTekMaç from '../FikstürTekMaç/FikstürTekMaç'
 import './FikstürMaçlar.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { getSuperLigFiksturFromState } from '../../../redux/selectors'
+import { useEffect } from 'react'
+import { initSuperLeagueFikstür } from '../../../redux/reducers/fikstürReducer'
 
 const FikstürMaçlar = () => {
+  const superLigfixtures = useSelector(getSuperLigFiksturFromState)
+  console.log(superLigfixtures)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(initSuperLeagueFikstür())
+  }, [dispatch])
+
   return (
     <div>
       <div className="fikstür-lig">
@@ -16,7 +28,12 @@ const FikstürMaçlar = () => {
           </div>
         </div>
         <div className="tek-mac">
-          <FikstürTekMaç />
+          {superLigfixtures.map((superLigfixture) => (
+            <FikstürTekMaç
+              key={superLigfixture.id}
+              superLigfixture={superLigfixture}
+            />
+          ))}
         </div>
         <div className="fikstür-lig-header">
           <div className="logo-name">
