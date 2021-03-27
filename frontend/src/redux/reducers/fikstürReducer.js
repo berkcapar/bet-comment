@@ -1,19 +1,41 @@
 import fiksturService from '../../services/fikstürler'
 
-export const initSuperLeagueFikstür = () => {
+// type State = { status: 'loading' } | { status: 'success', data: SunucudanGelecek } | { status: 'failure', error: Error }
+
+const INITIAL_STATE = { status: 'loading' }
+
+export const fetchSuperLeagueFikstür = () => {
   return async (dispatch) => {
-    const SuperLigFikstür = await fiksturService.getSuperLigFikstür()
-    dispatch({
-      type: 'INIT_SUPER_LEAGUE',
-      data: SuperLigFikstür
-    })
+    try {
+      const data = await fiksturService.getSuperLigFikstür()
+
+      dispatch({
+        type: 'FETCH_SUPER_LEAGUE_SUCCESS',
+        data
+      })
+    } catch (error) {
+      dispatch({
+        type: 'FETCH_SUPER_LEAGUE_FAILURE',
+        error
+      })
+    }
   }
 }
 
-const fikstürReducer = (state = [], action) => {
+const fikstürReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'INIT_SUPER_LEAGUE':
-      return action.data
+    case 'FETCH_SUPER_LEAGUE_SUCCESS':
+      return {
+        status: 'success',
+        data: action.data
+      }
+
+    case 'FETCH_SUPER_LEAGUE_FAILURE':
+      return {
+        status: 'failure',
+        error: action.error
+      }
+
     default:
       return state
   }

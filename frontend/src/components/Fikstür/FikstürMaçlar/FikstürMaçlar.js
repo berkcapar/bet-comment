@@ -3,119 +3,127 @@ import './FikstürMaçlar.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSuperLigFiksturFromState } from '../../../redux/selectors'
 import { useEffect } from 'react'
-import { initSuperLeagueFikstür } from '../../../redux/reducers/fikstürReducer'
+import { fetchSuperLeagueFikstür } from '../../../redux/reducers/fikstürReducer'
 
 const FikstürMaçlar = () => {
-  const superLigfixtures = useSelector(getSuperLigFiksturFromState)
-  console.log(superLigfixtures)
+  const fixtureState = useSelector(getSuperLigFiksturFromState)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(initSuperLeagueFikstür())
+    dispatch(fetchSuperLeagueFikstür())
   }, [dispatch])
 
-  return (
-    <div>
-      <div className="fikstür-lig">
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img src="/images/ligler/superlig.jpg" alt="superlig" />
-            <p>Türkiye Süper Lig</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
+  console.log(fixtureState)
+
+  switch (fixtureState.status) {
+    case 'failure':
+      return 'oopsanerror'
+
+    case 'loading':
+    default:
+      return 'loading goster'
+
+    case 'success':
+      return (
+        <div>
+          <div className="fikstür-lig">
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img src="/images/ligler/superlig.jpg" alt="superlig" />
+                <p>Türkiye Süper Lig</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              {fixtureState.data.map((match) => (
+                <FikstürTekMaç key={match.link} match={match} />
+              ))}
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img src="/images/ligler/premierlig.jpg" alt="premierlig" />
+                <p>İngiltere Premier Lig</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img src="/images/ligler/laliga.jpg" alt="laliga" />
+                <p>İspanya La Liga</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img alt="bundesliga" src="/images/ligler/bundesliga.jpg" />
+                <p>Almanya Bundesliga</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img src="/images/ligler/seriea.jpg" alt="serie a" />
+                <p>İtalya Serie A</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img alt="fransa ligi" src="/images/ligler/leagueone.jpg" />
+                <p>Fransa Lig 1</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
+            <div className="fikstür-lig-header">
+              <div className="logo-name">
+                <img src="/images/ligler/eredevise.jpg" alt="hollanda ligi" />
+                <p>Hollanda Eredevise</p>
+              </div>
+              <div className="ihtimal">
+                <p>En İyi Seçim</p>
+                <p>İhtimal</p>
+              </div>
+            </div>
+            <div className="tek-mac">
+              <FikstürTekMaç />
+            </div>
           </div>
         </div>
-        <div className="tek-mac">
-          {superLigfixtures.map((superLigfixture) => (
-            <FikstürTekMaç
-              key={superLigfixture.id}
-              superLigfixture={superLigfixture}
-            />
-          ))}
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img src="/images/ligler/premierlig.jpg" alt="premierlig" />
-            <p>İngiltere Premier Lig</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img src="/images/ligler/laliga.jpg" alt="laliga" />
-            <p>İspanya La Liga</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img alt="bundesliga" src="/images/ligler/bundesliga.jpg" />
-            <p>Almanya Bundesliga</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img src="/images/ligler/seriea.jpg" alt="serie a" />
-            <p>İtalya Serie A</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img alt="fransa ligi" src="/images/ligler/leagueone.jpg" />
-            <p>Fransa Lig 1</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-        <div className="fikstür-lig-header">
-          <div className="logo-name">
-            <img src="/images/ligler/eredevise.jpg" alt="hollanda ligi" />
-            <p>Hollanda Eredevise</p>
-          </div>
-          <div className="ihtimal">
-            <p>En İyi Seçim</p>
-            <p>İhtimal</p>
-          </div>
-        </div>
-        <div className="tek-mac">
-          <FikstürTekMaç />
-        </div>
-      </div>
-    </div>
-  )
+      )
+  }
 }
 
 export default FikstürMaçlar

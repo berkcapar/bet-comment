@@ -3,7 +3,7 @@ import { LeagueDropdownItems } from '../Navigation/LeagueDropdownItems'
 import '../Navigation/LeagueDropdownItems'
 import './LigDetay.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import TekMac from '../AnaSayfaFikstür/TekMac'
+import TekMac from '../TekMac/TekMac'
 import Navigation from '../Navigation/Navigation'
 import Footer from '../Footer/Footer'
 

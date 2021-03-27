@@ -1,24 +1,29 @@
 import './FikstürTekMaç.css'
 
-const FikstürTekMaç = ({ superLigfixture }) => {
-  return (
-    <div className="tekmac-container">
-      <div className="mac-detay">
-        <div>
-          <p>Maç Saati</p>
-        </div>
-        <div className="ev-deplasman">
-          <div className="ev-sahibi">
-            <img />
-            <p>{superLigfixture.takim1}</p>
+const FikstürTekMaç = ({ match }) => {
+  if (match) {
+    return (
+      <div className="tekmac-container">
+        <div className="mac-detay">
+          <div>
+            <p>Maç Saati</p>
           </div>
-          <div className="deplasman">
-            <img />
-            <p>{superLigfixture.takim2}</p>
+          <div className="ev-deplasman">
+            <div className="ev-sahibi">
+              <img />
+              <p>{match.takim1}</p>
+            </div>
+            <div className="deplasman">
+              <img />
+              <p>{match.takim2}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
+
+  return <>BANA MATCH PASSLE</>
 }
+
 export default FikstürTekMaç
