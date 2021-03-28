@@ -1,4 +1,4 @@
-import fiksturService from '../../services/fikstürler'
+import fiksturService from '../../../services/fikstürler'
 
 // type State = { status: 'loading' } | { status: 'success', data: SunucudanGelecek } | { status: 'failure', error: Error }
 
@@ -22,7 +22,7 @@ export const fetchSuperLeagueFikstür = () => {
   }
 }
 
-const fikstürReducer = (state = INITIAL_STATE, action) => {
+const SuperLigFikstürReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'FETCH_SUPER_LEAGUE_SUCCESS':
       return {
@@ -40,4 +40,4 @@ const fikstürReducer = (state = INITIAL_STATE, action) => {
       return state
   }
 }
-export default fikstürReducer
+export default SuperLigFikstürReducer
