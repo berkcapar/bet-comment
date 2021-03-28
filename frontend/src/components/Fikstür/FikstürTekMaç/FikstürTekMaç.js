@@ -6,7 +6,7 @@ const FikstürTekMaç = ({ match }) => {
       <div className="tekmac-container">
         <div className="mac-detay">
           <div>
-            <p>Maç Saati</p>
+            <p>{match.saat}</p>
           </div>
           <div className="ev-deplasman">
             <div className="ev-sahibi">

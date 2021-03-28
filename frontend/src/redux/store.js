@@ -6,12 +6,16 @@ import PremierLigFikstürReducer from './reducers/fikstür/PremierLigFikstürRed
 import leagueReducer from './reducers/leagueReducer'
 import teamReducer from './reducers/teamReducer'
 import { FetchAllFikstür } from './reducers/fikstür/FetchAllFikstür'
+import BundesligaFikstürReducer from './reducers/fikstür/BundesLigaFikstürReducer'
+import LaLigaFikstürReducer from './reducers/fikstür/LaLigaFikstürReducer'
 
 const reducer = combineReducers({
   league: leagueReducer,
   team: teamReducer,
   SuperLigFikstür: SuperLigFikstürReducer,
   PremierLigFikstür: PremierLigFikstürReducer,
+  BundesligaFikstür: BundesligaFikstürReducer,
+  LaLigaFikstür: LaLigaFikstürReducer,
   fetchAllFikstür: FetchAllFikstür
 })
 
