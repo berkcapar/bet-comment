@@ -8,6 +8,7 @@ import teamReducer from './reducers/teamReducer'
 import { FetchAllFikstür } from './reducers/fikstür/FetchAllFikstür'
 import BundesligaFikstürReducer from './reducers/fikstür/BundesLigaFikstürReducer'
 import LaLigaFikstürReducer from './reducers/fikstür/LaLigaFikstürReducer'
+import LigueOneFikstürReducer from './reducers/fikstür/LigueOneFikstürReducer'
 
 const reducer = combineReducers({
   league: leagueReducer,
@@ -16,6 +17,7 @@ const reducer = combineReducers({
   PremierLigFikstür: PremierLigFikstürReducer,
   BundesligaFikstür: BundesligaFikstürReducer,
   LaLigaFikstür: LaLigaFikstürReducer,
+  LigueOneFikstür: LigueOneFikstürReducer,
   fetchAllFikstür: FetchAllFikstür
 })
 

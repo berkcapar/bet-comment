@@ -2,8 +2,17 @@ import './Macİncele.css'
 import Navigation from '../Navigation/Navigation'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import ProgressBar from 'react-animated-progress-bar'
+import { useRouteMatch } from 'react-router'
+import { useSelector, useDispatch } from 'react-redux'
+import { getSuperLigFiksturFromState } from '../../redux/selectors'
+import { fetchSuperLeagueFikstür } from '../..//redux/reducers/fikstür/SuperLigFikstürReducer'
+import { useEffect } from 'react'
 
-const Macİncele = () => {
+const Macİncele = ({ game }) => {
+  // let evsahibi = SuperLigFixtureState.data.map((match) => match.takim1)
+  //let deplasman = SuperLigFixtureState.data.map((match) => match.takim2)
+  // let tarih = SuperLigFixtureState.data.map((match) => match.tarih)
+
   return (
     <div>
       <Navigation />
@@ -11,16 +20,16 @@ const Macİncele = () => {
         <div className="macincele-container">
           <div className="macincele-header">
             <div className="macincele-header-hometeam">
+              {game.takim1}
               <img src="https://tot-tmp.azureedge.net/media/2280/spurs-blue-no-text-300x300.png" />
-              <p>Tottenham </p>
             </div>
             <div className="macincele-header-macinfo">
               <div className="macincele-header-macinfo-time">
-                <p className="macincele-header-macinfo-time-hafta">13.Hafta</p>
-                <p className="macincele-header-macinfo-time-hafta-tarih">
-                  20.12.2020
+                <p className="macincele-header-macinfo-time-hafta">
+                  {game.hafta}.Hafta
                 </p>
-                <p>16.00</p>
+                <p className="macincele-header-macinfo-time-hafta-tarih"></p>
+                <p>{game.saat}</p>
               </div>
               <div className="macincele-header-macinfo-skor">
                 <h1>2</h1> <h1>-</h1>
@@ -29,17 +38,17 @@ const Macİncele = () => {
               <div className="macincele-header-macinfo-hakemstat">
                 <p className="macincele-header-macinfo-hakemstat-hakem">
                   <img src="/images/refree.png" />
-                  <p>Cüneyt Çakır</p>
+                  <p>{game.hakem}</p>
                 </p>
                 <p className="macincele-header-macinfo-hakemstat-stat">
                   <img src="/images/stad.png" />
-                  <p> San Siro</p>
+                  <p> {game.stadyum}</p>
                 </p>
               </div>
             </div>
             <div className="macincele-header-deplasmanteam">
+              {game.takim2}
               <img src="https://upload.wikimedia.org/wikipedia/tr/thumb/2/27/Chelsea_FC_arma.svg/1200px-Chelsea_FC_arma.svg.png" />
-              <p>Chelsea</p>
             </div>
           </div>
           <Tabs className="macincele-tabs-container">
@@ -901,4 +910,32 @@ const Macİncele = () => {
     </div>
   )
 }
-export default Macİncele
+
+const MacInceleContainer = () => {
+  const SuperLigFixtureState = useSelector(getSuperLigFiksturFromState)
+  let match = useRouteMatch('/mac-incele/:takim1/:takim2/:tarih')
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchSuperLeagueFikstür())
+  }, [dispatch])
+
+  switch (SuperLigFixtureState.status) {
+    case 'failure':
+      return 'error'
+    case 'loading':
+    default:
+      return 'loading'
+    case 'success':
+      const game = match
+        ? SuperLigFixtureState.data.find(
+            (game) =>
+              game.takim1 === match.params.takim1 &&
+              game.takim2 === match.params.takim2 &&
+              game.tarih === match.params.tarih
+          )
+        : null
+      return <Macİncele game={game} />
+  }
+}
+export default MacInceleContainer

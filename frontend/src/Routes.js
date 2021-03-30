@@ -5,6 +5,7 @@ import FikstürDetay from './components/Fikstür/FikstürDetay/FikstürDetay'
 import TakımDetay from './components/Takımİnceleme/TakımDetay/TakımDetay'
 import Macİncele from './components/Macİncele/Macİncele'
 import SignupForm from './components/Signup/SignupForm'
+import MacInceleContainer from './components/Macİncele/Macİncele'
 
 const Routes = () => {
   return (
@@ -22,8 +23,8 @@ const Routes = () => {
         <Route path="/takım-incele">
           <TakımDetay />
         </Route>
-        <Route path="/mac-incele">
-          <Macİncele />
+        <Route path="/mac-incele/:takim1/:takim2/:tarih">
+          <MacInceleContainer />
         </Route>
         <Route path="/profil"></Route>
         <Route path="/kaydol">
