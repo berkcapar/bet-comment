@@ -4,3 +4,4 @@ export const getBundesligaFikstürFromState = (state) => state.BundesligaFikstü
 export const getLaLigaFikstürFromState = (state) => state.LaLigaFikstür
 export const fetchAllFikstürFromState = (state) => state.FetchAllFikstür
 export const getLigueOneFikstürFromState = (state) => state.LigueOneFikstür
+export const getSuperLigPlayersFromState = (state) => state.SuperLigPlayers

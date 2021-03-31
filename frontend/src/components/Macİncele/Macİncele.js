@@ -5,10 +5,13 @@ import ProgressBar from 'react-animated-progress-bar'
 import { useRouteMatch } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
 import { getSuperLigFiksturFromState } from '../../redux/selectors'
-import { fetchSuperLeagueFikstür } from '../..//redux/reducers/fikstür/SuperLigFikstürReducer'
+import { fetchSuperLeagueFikstür } from '../../redux/reducers/fikstür/SuperLigFikstürReducer'
+import { fetchSuperLigPlayers } from '../../redux/reducers/players/SuperLigPlayersReducer'
 import { useEffect } from 'react'
+import { getSuperLigPlayersFromState } from '../../redux/selectors'
+import players from '../../services/players'
 
-const Macİncele = ({ game }) => {
+const Macİncele = ({ game, matchingtest1 }) => {
   // let evsahibi = SuperLigFixtureState.data.map((match) => match.takim1)
   //let deplasman = SuperLigFixtureState.data.map((match) => match.takim2)
   // let tarih = SuperLigFixtureState.data.map((match) => match.tarih)
@@ -363,41 +366,27 @@ const Macİncele = ({ game }) => {
                       <div className="evsahibi-tek-oyuncu-info">
                         <img src="/images/altayfoto.png" />
                         <p className="evsahibi-forma">1</p>
-                        <p className="evsahibi-mevki">KAL</p>
-                        <p className="evsahibi-isim">Altay Bayındır</p>
-                      </div>
-                      <div className="evsahibi-tek-oyuncu-performans">
-                        <p>57</p>
-                      </div>
-                    </div>
-                    <div className="evsahibi-tek-oyuncu">
-                      <div className="evsahibi-tek-oyuncu-info">
-                        <img src="/images/altayfoto.png" />
-                        <p className="evsahibi-forma">1</p>
-                        <p className="evsahibi-mevki">KAL</p>
-                        <p className="evsahibi-isim">Altay Bayındır</p>
-                      </div>
-                      <div className="evsahibi-tek-oyuncu-performans">
-                        <p>57</p>
-                      </div>
-                    </div>
-                    <div className="evsahibi-tek-oyuncu">
-                      <div className="evsahibi-tek-oyuncu-info">
-                        <img src="/images/altayfoto.png" />
-                        <p className="evsahibi-forma">1</p>
-                        <p className="evsahibi-mevki">KAL</p>
-                        <p className="evsahibi-isim">Altay Bayındır</p>
-                      </div>
-                      <div className="evsahibi-tek-oyuncu-performans">
-                        <p>57</p>
-                      </div>
-                    </div>
-                    <div className="evsahibi-tek-oyuncu">
-                      <div className="evsahibi-tek-oyuncu-info">
-                        <img src="/images/altayfoto.png" />
-                        <p className="evsahibi-forma">1</p>
-                        <p className="evsahibi-mevki">KAL</p>
-                        <p className="evsahibi-isim">Altay Bayındır</p>
+                        <div
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            width: '100%'
+                          }}
+                        >
+                          {matchingtest1.map((x) => {
+                            return (
+                              <li
+                                style={{
+                                  border: '1px solid red',
+                                  display: 'flex'
+                                }}
+                              >
+                                <div clas>{x.oyuncu_pozisyon}</div>
+                                {x.oyuncu_adi} {x.oyuncu_soyadi}
+                              </li>
+                            )
+                          })}
+                        </div>
                       </div>
                       <div className="evsahibi-tek-oyuncu-performans">
                         <p>57</p>
@@ -913,11 +902,16 @@ const Macİncele = ({ game }) => {
 
 const MacInceleContainer = () => {
   const SuperLigFixtureState = useSelector(getSuperLigFiksturFromState)
+  const SuperLigPlayerState = useSelector(getSuperLigPlayersFromState)
   let match = useRouteMatch('/mac-incele/:takim1/:takim2/:tarih')
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchSuperLeagueFikstür())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchSuperLigPlayers())
   }, [dispatch])
 
   switch (SuperLigFixtureState.status) {
@@ -935,7 +929,30 @@ const MacInceleContainer = () => {
               game.tarih === match.params.tarih
           )
         : null
-      return <Macİncele game={game} />
+      switch (SuperLigPlayerState.status) {
+        case 'failure':
+          return 'error'
+        case 'loading':
+        default:
+          return 'loading'
+        case 'success':
+          const playersteam = SuperLigPlayerState.data.map(
+            (players) => players.takim_adi
+          )
+          const uniqueplayersteam = [...new Set(playersteam)]
+
+          const matchingteam1 = uniqueplayersteam.filter(
+            (playerteam) => playerteam === game.takim1
+          )
+
+          const matchingtest1 = SuperLigPlayerState.data.filter(
+            (teamname) =>
+              teamname.takim_adi.toString() === matchingteam1.toString()
+          )
+
+          return <Macİncele matchingtest1={matchingtest1} game={game} />
+      }
   }
 }
+
 export default MacInceleContainer
