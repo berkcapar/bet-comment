@@ -9,7 +9,7 @@ const PopülerLigler = () => {
       <div className="lig-kartları-container">
         <div className="lig-kart">
           <div className="lig-kart-image">
-            <img src="/images/ligler-yeşil/superlig.png" />
+            <img src="/images/ligleryesil/superlig.png" />
           </div>
           <div className="lig-kart-header">
             <p>
@@ -20,7 +20,7 @@ const PopülerLigler = () => {
 
         <div className="lig-kart">
           <div className="lig-kart-image">
-            <img src="/images/ligler-yeşil/premierlig.png" />
+            <img src="/images/ligleryesil/superlig.png" />
           </div>
           <div className="lig-kart-header">
             <p>
@@ -31,7 +31,7 @@ const PopülerLigler = () => {
 
         <div className="lig-kart">
           <div className="lig-kart-image">
-            <img src="/images/ligler-yeşil/laliga.png" />
+            <img src="/images/ligleryesil/superlig.png" />
           </div>
           <div className="lig-kart-header">
             <p>
@@ -42,7 +42,7 @@ const PopülerLigler = () => {
 
         <div className="lig-kart">
           <div className="lig-kart-image">
-            <img src="/images/ligler-yeşil/superlig.png" />
+            <img src="/images/ligleryesil/superlig.png" />
           </div>
           <div className="lig-kart-header">
             <p>
@@ -52,7 +52,7 @@ const PopülerLigler = () => {
         </div>
         <div className="lig-kart">
           <div className="lig-kart-image">
-            <img src="/images/ligler-yeşil/superlig.png" />
+            <img src="/images/ligleryesil/superlig.png" />
           </div>
           <div className="lig-kart-header">
             <p>

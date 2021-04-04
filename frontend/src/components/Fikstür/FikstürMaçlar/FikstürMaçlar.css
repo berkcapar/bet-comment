@@ -35,4 +35,14 @@ display: none;
     .fikstür-lig-header{
       justify-content: space-between;
     }
+    .fikstür-text{
+        width: 100%;
+        font-weight: bolder;
+        background-color: #48b42c;
+        color: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+    }
+   
 }    

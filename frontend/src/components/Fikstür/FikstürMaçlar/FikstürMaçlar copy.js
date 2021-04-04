@@ -36,7 +36,23 @@ const FikstürMaçlar = () => {
     dispatch(fetchSuperLeagueFikstür())
   }, [dispatch])
 
-  switch (SuperLigFixtureState.status) {
+  useEffect(() => {
+    dispatch(fetchPremierLeagueFikstür())
+  }, [dispatch])
+  useEffect(() => {
+    dispatch(fetchBundesligaFikstür())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchLaLigaFikstür())
+  }, [dispatch])
+
+  switch (
+    SuperLigFixtureState.status &&
+    PremierLigFixtureState.status &&
+    BundesligaFixtureState.status &&
+    LaLigaFikstürState.status
+  ) {
     case 'failure':
       return 'oopsanerror'
     case 'loading':
@@ -52,6 +68,21 @@ const FikstürMaçlar = () => {
       const SuperLigFormatteduniqueSortedDates = SuperLiguniqueSortedDates.map(
         (uniqueSortedDate) => uniqueSortedDate.slice(5, 12)
       )
+      const PremierLeagueGameDates = PremierLigFixtureState.data.map(
+        (game) => game.tarih
+      )
+      const PremierLigSortedDates = PremierLeagueGameDates.sort((a, b) => a - b)
+      const PremierLiguniqueSortedDates = [...new Set(PremierLigSortedDates)]
+
+      const BundesligaGameDates = BundesligaFixtureState.data.map(
+        (game) => game.tarih
+      )
+      const BundesligaSortedDates = BundesligaGameDates.sort((a, b) => a - b)
+      const BundesligauniqueSortedDates = [...new Set(BundesligaSortedDates)]
+
+      const LaLigaGameDates = LaLigaFikstürState.data.map((game) => game.tarih)
+      const LaLigaSortedDates = LaLigaGameDates.sort((a, b) => a - b)
+      const LaLigauniqueSortedDates = [...new Set(LaLigaSortedDates)]
 
       return (
         <div>
@@ -92,7 +123,14 @@ const FikstürMaçlar = () => {
                     </div>
                   </div>
                   <div className="tek-mac">
-                    <div className="tek-mac"></div>
+                    <div className="tek-mac">
+                      {PremierLigFixtureState.data.map(
+                        (match) =>
+                          match.tarih === PremierLiguniqueSortedDates[0] && (
+                            <FikstürTekMaç key={match.link} match={match} />
+                          )
+                      )}
+                    </div>
                   </div>
                   <div className="fikstür-lig-header">
                     <div className="logo-name">
@@ -107,7 +145,14 @@ const FikstürMaçlar = () => {
                       <p>İhtimal</p>
                     </div>
                   </div>
-                  <div className="tek-mac"></div>
+                  <div className="tek-mac">
+                    {BundesligaFixtureState.data.map(
+                      (match) =>
+                        match.tarih === BundesligauniqueSortedDates[0] && (
+                          <FikstürTekMaç key={match.link} match={match} />
+                        )
+                    )}
+                  </div>
                   <div className="fikstür-lig-header">
                     <div className="logo-name">
                       <img src="/images/ligler/laliga.jpg" alt="laliga" />
@@ -118,7 +163,14 @@ const FikstürMaçlar = () => {
                       <p>İhtimal</p>
                     </div>
                   </div>
-                  <div className="tek-mac"></div>
+                  <div className="tek-mac">
+                    {LaLigaFikstürState.data.map(
+                      (match) =>
+                        match.tarih === LaLigauniqueSortedDates[0] && (
+                          <FikstürTekMaç key={match.link} match={match} />
+                        )
+                    )}
+                  </div>
                   <div className="fikstür-lig-header">
                     <div className="logo-name">
                       <img src="/images/ligler/seriea.jpg" alt="serie a" />
