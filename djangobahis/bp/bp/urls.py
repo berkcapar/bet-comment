@@ -59,17 +59,28 @@ urlpatterns = [
     path('fiksturligue1', views.Ligue1Fikstur.as_view()),
     path('<int:pk>', views.Deneme6.as_view()),
 
-######################################## Oyuncular #########################################################
+######################################## Oyuncular (Bitmedi) #########################################################
 
     path('superligoyuncu', views.SuperligOyuncular.as_view()),
     path('<int:pk>', views.Deneme12.as_view()),
 
 
 
-######################################## Puan Tablosu #########################################################
+######################################## Puan Tablosu (Bitmedi) #########################################################
 
     path('puanalmanya', views.PuanTablosuAlmanya.as_view()),
     path('<int:pk>', views.Deneme18.as_view()),
+
+
+######################################## Takımlar, Değerleri, Logo (Bitmedi) #########################################################
+
+    path('takimlar', views.ButunTakimlar.as_view()),
+    path('<int:pk>', views.Deneme25.as_view()),
+
+######################################## Bütün Fikstürler #########################################################
+
+    path('butunfikstur', views.ButunFikstur.as_view()),
+    path('<int:pk>', views.Deneme26.as_view()),
 
 ]
 

@@ -1,8 +1,8 @@
 # todos/views.py
 from rest_framework import generics
 
-from .models import LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga
-from .serializers import LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya
+from .models import FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,Takimlar
+from .serializers import FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya
 
 ######################################## Ligler #########################################################
 
@@ -125,3 +125,26 @@ class PuanTablosuAlmanya(generics.ListCreateAPIView):
 class Deneme18(generics.RetrieveUpdateDestroyAPIView):
     queryset = PuanBundesliga.objects.all()
     serializer_class = PuanAlmanya
+
+
+######################################## Takımlar, Değerleri, Logo #########################################################
+
+class ButunTakimlar(generics.ListCreateAPIView):
+    queryset = Takimlar.objects.all()
+    serializer_class = ButunTakimlarDegerLogo
+
+
+class Deneme25(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Takimlar.objects.all()
+    serializer_class = ButunTakimlarDegerLogo
+
+######################################## Bütün Fikstürler #########################################################
+
+class ButunFikstur(generics.ListCreateAPIView):
+    queryset = FiksturAll.objects.all()
+    serializer_class = FiksAll
+
+
+class Deneme26(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FiksturAll.objects.all()
+    serializer_class = FiksAll

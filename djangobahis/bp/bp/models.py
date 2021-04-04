@@ -139,6 +139,24 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
+class FiksturAll(models.Model):
+    takim1 = models.CharField(max_length=30)
+    takim2 = models.CharField(max_length=30)
+    tarih = models.DateField(blank=True, null=True)
+    lig = models.CharField(max_length=30, blank=True, null=True)
+    hafta = models.IntegerField(blank=True, null=True)
+    saat = models.CharField(max_length=5, blank=True, null=True)
+    stadyum = models.CharField(max_length=100, blank=True, null=True)
+    teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
+    teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
+    hakem = models.CharField(max_length=50, blank=True, null=True)
+    link = models.CharField(primary_key=True, max_length=250)
+
+    class Meta:
+        managed = False
+        db_table = 'fikstur_all'
+
+
 class FiksturBundesliga(models.Model):
     takim1 = models.CharField(max_length=30, blank=True, null=True)
     takim2 = models.CharField(max_length=30, blank=True, null=True)
@@ -688,6 +706,7 @@ class PuanBundesliga(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    logo_link = models.CharField(max_length=5000, blank=True, null=True)
 
     class Meta:
         managed = False

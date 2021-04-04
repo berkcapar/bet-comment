@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1
+from .models import FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar
 
 
 ########################################## Fikstür #############################################
@@ -386,3 +386,41 @@ class PuanTablosuTurkey(serializers.ModelSerializer):
         )
         model = PuanSuperlig
         fields = '__all__'
+
+
+######################################## Takımlar, Değerleri, Logo #########################################################
+
+
+class ButunTakimlarDegerLogo(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'team_id',
+            'team_name',
+            'team_league',
+            'team_value',
+            'logo_link',
+        )
+        model = Takimlar
+        fields = '__all__'
+
+
+######################################## Bütün Fikstürler #########################################################
+
+
+class FiksAll(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'takim1',
+            'takim2',
+            'tarih',
+            'lig',
+            'hafta',
+            'saat',
+            'stadyum',
+            'teknikadam1',
+            'teknikadam2',
+            'hakem',
+            'link',
+
+        )
+        model = FiksturAll
