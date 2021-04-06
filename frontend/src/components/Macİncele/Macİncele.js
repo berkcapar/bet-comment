@@ -4,18 +4,18 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import ProgressBar from 'react-animated-progress-bar'
 import { useRouteMatch } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
-import { getSuperLigFiksturFromState } from '../../redux/selectors'
+import {
+  getSuperLigFiksturFromState,
+  getSuperLigPlayedGamesFromState
+} from '../../redux/selectors'
 import { fetchSuperLeagueFikstür } from '../../redux/reducers/fikstür/SuperLigFikstürReducer'
 import { fetchSuperLigPlayers } from '../../redux/reducers/players/SuperLigPlayersReducer'
 import { useEffect } from 'react'
 import { getSuperLigPlayersFromState } from '../../redux/selectors'
 import players from '../../services/players'
+import { fetchSuperLeaguePlayedGames } from '../../redux/reducers/playedgames/SuperLeaguePlayedGamesReducer'
 
-const Macİncele = ({ game, matchingtest1 }) => {
-  // let evsahibi = SuperLigFixtureState.data.map((match) => match.takim1)
-  //let deplasman = SuperLigFixtureState.data.map((match) => match.takim2)
-  // let tarih = SuperLigFixtureState.data.map((match) => match.tarih)
-
+const Macİncele = ({ game, matchingtest1, uniquePlayedGamesTeamOne, uniquePlayedGamesTeamTwo,  uniquePlayedGamesTarih }) => {
   return (
     <div>
       <Navigation />
@@ -35,6 +35,8 @@ const Macİncele = ({ game, matchingtest1 }) => {
                 <p>{game.saat}</p>
               </div>
               <div className="macincele-header-macinfo-skor">
+             
+              
                 <h1>2</h1> <h1>-</h1>
                 <h1>0</h1>
               </div>
@@ -903,6 +905,7 @@ const Macİncele = ({ game, matchingtest1 }) => {
 const MacInceleContainer = () => {
   const SuperLigFixtureState = useSelector(getSuperLigFiksturFromState)
   const SuperLigPlayerState = useSelector(getSuperLigPlayersFromState)
+  const SuperLigPlayedGames = useSelector(getSuperLigPlayedGamesFromState)
   let match = useRouteMatch('/mac-incele/:takim1/:takim2/:tarih')
   const dispatch = useDispatch()
 
@@ -913,6 +916,10 @@ const MacInceleContainer = () => {
   useEffect(() => {
     dispatch(fetchSuperLigPlayers())
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchSuperLeaguePlayedGames())
+  })
 
   switch (SuperLigFixtureState.status) {
     case 'failure':
@@ -949,8 +956,35 @@ const MacInceleContainer = () => {
             (teamname) =>
               teamname.takim_adi.toString() === matchingteam1.toString()
           )
+          switch (SuperLigPlayedGames.status) {
+            case 'failure':
+              return 'error'
+            case 'loading':
+            default:
+              return 'loading'
+            case 'success':
+              const playedGamesTeamOne = SuperLigPlayedGames.data.map(
+                (playedgameone) => playedgameone.takim1
+              )
+              const uniquePlayedGamesTeamOne = [...new Set(playedGamesTeamOne)]
 
-          return <Macİncele matchingtest1={matchingtest1} game={game} />
+              const playedGamesTeamTwo = SuperLigPlayedGames.data.map(
+                (playedgametwo) => playedgametwo.takim2
+              )
+              const uniquePlayedGamesTeamTwo = [...new Set(playedGamesTeamTwo)]
+
+              const playedGamesTarih = SuperLigPlayedGames.data.map(
+                (playedgameDate) => playedgameDate.tarih
+              )
+              const uniquePlayedGamesTarih = [...new Set(playedGamesTarih)]
+
+
+
+           
+            {game.takim1 === {uniquePlayedGamesTeamOne} && game.takim2 === uniquePlayedGamesTeamTwo && game.tarih === uniquePlayedGamesTarih ? 
+             
+              return <Macİncele matchingtest1={matchingtest1} game={game} />
+          }
       }
   }
 }

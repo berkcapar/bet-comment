@@ -10,6 +10,7 @@ import BundesligaFikstürReducer from './reducers/fikstür/BundesLigaFikstürRed
 import LaLigaFikstürReducer from './reducers/fikstür/LaLigaFikstürReducer'
 import LigueOneFikstürReducer from './reducers/fikstür/LigueOneFikstürReducer'
 import SuperLigPlayerReducer from './reducers/players/SuperLigPlayersReducer'
+import SuperLigPlayedGamesReducer from './reducers/playedgames/SuperLeaguePlayedGamesReducer'
 
 const reducer = combineReducers({
   league: leagueReducer,
@@ -20,7 +21,8 @@ const reducer = combineReducers({
   LaLigaFikstür: LaLigaFikstürReducer,
   LigueOneFikstür: LigueOneFikstürReducer,
   SuperLigPlayers: SuperLigPlayerReducer,
-  fetchAllFikstür: FetchAllFikstür
+  fetchAllFikstür: FetchAllFikstür,
+  SuperLigPlayedGames: SuperLigPlayedGamesReducer
 })
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
