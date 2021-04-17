@@ -64,6 +64,17 @@ urlpatterns = [
     path('superligoyuncu', views.SuperligOyuncular.as_view()),
     path('<int:pk>', views.Deneme12.as_view()),
 
+    path('premieroyuncu', views.PremierOyuncular.as_view()),
+    path('<int:pk>', views.Deneme13.as_view()),
+
+    path('serieaoyuncu', views.SeriaOyuncular.as_view()),
+    path('<int:pk>', views.Deneme14.as_view()),
+
+    path('laligaoyuncu', views.LaligaOyuncular.as_view()),
+    path('<int:pk>', views.Deneme15.as_view()),
+
+    path('bundesligaoyuncu', views.BundesligaOyuncular.as_view()),
+    path('<int:pk>', views.Deneme16.as_view()),
 
 
 ######################################## Puan Tablosu (Bitmedi) #########################################################
@@ -71,6 +82,20 @@ urlpatterns = [
     path('puanalmanya', views.PuanTablosuAlmanya.as_view()),
     path('<int:pk>', views.Deneme18.as_view()),
 
+    path('puanturkiye', views.PuanTablosuTurkiye.as_view()),
+    path('<int:pk>', views.Deneme19.as_view()),
+
+    path('puanispanya', views.PuanTablosuIspanya.as_view()),
+    path('<int:pk>', views.Deneme20.as_view()),
+
+    path('puaningiltere', views.PuanTablosuIngiltere.as_view()),
+    path('<int:pk>', views.Deneme21.as_view()),
+
+    path('puanitalya', views.PuanTablosuItalya.as_view()),
+    path('<int:pk>', views.Deneme22.as_view()),
+
+    path('puanfransa', views.PuanTablosuFransa.as_view()),
+    path('<int:pk>', views.Deneme23.as_view()),
 
 ######################################## Takımlar, Değerleri, Logo (Bitmedi) #########################################################
 

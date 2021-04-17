@@ -661,6 +661,171 @@ class LigSuperligBackup(models.Model):
         db_table = 'lig_superlig_backup'
 
 
+class OyuncularBundesliga(models.Model):
+    takim_adi = models.CharField(max_length=30)
+    oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
+    oyuncu_soyadi = models.CharField(max_length=30)
+    oyuncu_pozisyon = models.CharField(max_length=30)
+    oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
+    oyuncu_uyruk = models.CharField(max_length=30)
+    oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
+    guncel_tarih = models.DateField(blank=True, null=True)
+    oyuncu_yas = models.FloatField(blank=True, null=True)
+    oyuncu_boy = models.IntegerField(blank=True, null=True)
+    oyuncu_piyasadegeri = models.FloatField(blank=True, null=True)
+    oyuncu_ortalama = models.FloatField(blank=True, null=True)
+    oyuncu_hucum = models.IntegerField(blank=True, null=True)
+    oyuncu_defans = models.IntegerField(blank=True, null=True)
+    oyuncu_teknik = models.IntegerField(blank=True, null=True)
+    oyuncu_zihinsel = models.IntegerField(blank=True, null=True)
+    oyuncu_fiziksel = models.IntegerField(blank=True, null=True)
+    oyuncu_hiz = models.IntegerField(blank=True, null=True)
+    oyuncu_rate2021 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1920 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1819 = models.IntegerField(blank=True, null=True)
+    oyuncu_mac = models.IntegerField(blank=True, null=True)
+    oyuncu_gol = models.IntegerField(blank=True, null=True)
+    oyuncu_asist = models.IntegerField(blank=True, null=True)
+    oyuncu_kollektif = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oyuncular_bundesliga'
+
+
+class OyuncularLaliga(models.Model):
+    takim_adi = models.CharField(max_length=30)
+    oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
+    oyuncu_soyadi = models.CharField(max_length=30)
+    oyuncu_pozisyon = models.CharField(max_length=30)
+    oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
+    oyuncu_uyruk = models.CharField(max_length=30)
+    oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
+    guncel_tarih = models.DateField(blank=True, null=True)
+    oyuncu_yas = models.FloatField(blank=True, null=True)
+    oyuncu_boy = models.IntegerField(blank=True, null=True)
+    oyuncu_piyasadegeri = models.FloatField(blank=True, null=True)
+    oyuncu_ortalama = models.FloatField(blank=True, null=True)
+    oyuncu_hucum = models.IntegerField(blank=True, null=True)
+    oyuncu_defans = models.IntegerField(blank=True, null=True)
+    oyuncu_teknik = models.IntegerField(blank=True, null=True)
+    oyuncu_zihinsel = models.IntegerField(blank=True, null=True)
+    oyuncu_fiziksel = models.IntegerField(blank=True, null=True)
+    oyuncu_hiz = models.IntegerField(blank=True, null=True)
+    oyuncu_rate2021 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1920 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1819 = models.IntegerField(blank=True, null=True)
+    oyuncu_mac = models.IntegerField(blank=True, null=True)
+    oyuncu_gol = models.IntegerField(blank=True, null=True)
+    oyuncu_asist = models.IntegerField(blank=True, null=True)
+    oyuncu_kollektif = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oyuncular_laliga'
+
+
+class OyuncularLigue1(models.Model):
+    takim_adi = models.CharField(max_length=30)
+    oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
+    oyuncu_soyadi = models.CharField(max_length=30)
+    oyuncu_pozisyon = models.CharField(max_length=30)
+    oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
+    oyuncu_uyruk = models.CharField(max_length=30)
+    oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
+    guncel_tarih = models.DateField(blank=True, null=True)
+    oyuncu_yas = models.FloatField(blank=True, null=True)
+    oyuncu_boy = models.IntegerField(blank=True, null=True)
+    oyuncu_piyasadegeri = models.FloatField(blank=True, null=True)
+    oyuncu_ortalama = models.FloatField(blank=True, null=True)
+    oyuncu_hucum = models.IntegerField(blank=True, null=True)
+    oyuncu_defans = models.IntegerField(blank=True, null=True)
+    oyuncu_teknik = models.IntegerField(blank=True, null=True)
+    oyuncu_zihinsel = models.IntegerField(blank=True, null=True)
+    oyuncu_fiziksel = models.IntegerField(blank=True, null=True)
+    oyuncu_hiz = models.IntegerField(blank=True, null=True)
+    oyuncu_rate2021 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1920 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1819 = models.IntegerField(blank=True, null=True)
+    oyuncu_mac = models.IntegerField(blank=True, null=True)
+    oyuncu_gol = models.IntegerField(blank=True, null=True)
+    oyuncu_asist = models.IntegerField(blank=True, null=True)
+    oyuncu_kollektif = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oyuncular_ligue1'
+
+
+class OyuncularPremier(models.Model):
+    takim_adi = models.CharField(max_length=30)
+    oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
+    oyuncu_soyadi = models.CharField(max_length=30)
+    oyuncu_pozisyon = models.CharField(max_length=30)
+    oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
+    oyuncu_uyruk = models.CharField(max_length=30)
+    oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
+    guncel_tarih = models.DateField(blank=True, null=True)
+    oyuncu_yas = models.FloatField(blank=True, null=True)
+    oyuncu_boy = models.IntegerField(blank=True, null=True)
+    oyuncu_piyasadegeri = models.FloatField(blank=True, null=True)
+    oyuncu_ortalama = models.FloatField(blank=True, null=True)
+    oyuncu_hucum = models.IntegerField(blank=True, null=True)
+    oyuncu_defans = models.IntegerField(blank=True, null=True)
+    oyuncu_teknik = models.IntegerField(blank=True, null=True)
+    oyuncu_zihinsel = models.IntegerField(blank=True, null=True)
+    oyuncu_fiziksel = models.IntegerField(blank=True, null=True)
+    oyuncu_hiz = models.IntegerField(blank=True, null=True)
+    oyuncu_rate2021 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1920 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1819 = models.IntegerField(blank=True, null=True)
+    oyuncu_mac = models.IntegerField(blank=True, null=True)
+    oyuncu_gol = models.IntegerField(blank=True, null=True)
+    oyuncu_asist = models.IntegerField(blank=True, null=True)
+    oyuncu_kollektif = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oyuncular_premier'
+
+
+class OyuncularSeriea(models.Model):
+    takim_adi = models.CharField(max_length=30)
+    oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
+    oyuncu_soyadi = models.CharField(max_length=30)
+    oyuncu_pozisyon = models.CharField(max_length=30)
+    oyuncu_yanpozisyon = models.CharField(max_length=30, blank=True, null=True)
+    transfermarkt_id = models.CharField(primary_key=True, max_length=2500)
+    oyuncu_uyruk = models.CharField(max_length=30)
+    oyuncu_dogum_tarihi = models.DateField(blank=True, null=True)
+    guncel_tarih = models.DateField(blank=True, null=True)
+    oyuncu_yas = models.FloatField(blank=True, null=True)
+    oyuncu_boy = models.IntegerField(blank=True, null=True)
+    oyuncu_piyasadegeri = models.FloatField(blank=True, null=True)
+    oyuncu_ortalama = models.FloatField(blank=True, null=True)
+    oyuncu_hucum = models.IntegerField(blank=True, null=True)
+    oyuncu_defans = models.IntegerField(blank=True, null=True)
+    oyuncu_teknik = models.IntegerField(blank=True, null=True)
+    oyuncu_zihinsel = models.IntegerField(blank=True, null=True)
+    oyuncu_fiziksel = models.IntegerField(blank=True, null=True)
+    oyuncu_hiz = models.IntegerField(blank=True, null=True)
+    oyuncu_rate2021 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1920 = models.IntegerField(blank=True, null=True)
+    oyuncu_rate1819 = models.IntegerField(blank=True, null=True)
+    oyuncu_mac = models.IntegerField(blank=True, null=True)
+    oyuncu_gol = models.IntegerField(blank=True, null=True)
+    oyuncu_asist = models.IntegerField(blank=True, null=True)
+    oyuncu_kollektif = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oyuncular_seriea'
+
+
 class OyuncularSuperlig(models.Model):
     takim_adi = models.CharField(max_length=30)
     oyuncu_adi = models.CharField(max_length=30, blank=True, null=True)
@@ -696,7 +861,7 @@ class OyuncularSuperlig(models.Model):
 
 class PuanBundesliga(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)
@@ -706,7 +871,6 @@ class PuanBundesliga(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
-    logo_link = models.CharField(max_length=5000, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -715,7 +879,7 @@ class PuanBundesliga(models.Model):
 
 class PuanLaliga(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)
@@ -733,7 +897,7 @@ class PuanLaliga(models.Model):
 
 class PuanLigue1(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)
@@ -751,7 +915,7 @@ class PuanLigue1(models.Model):
 
 class PuanPremier(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)
@@ -769,7 +933,7 @@ class PuanPremier(models.Model):
 
 class PuanSeriea(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)
@@ -787,7 +951,7 @@ class PuanSeriea(models.Model):
 
 class PuanSuperlig(models.Model):
     pos = models.IntegerField(blank=True, null=True)
-    team = models.TextField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
     mp = models.IntegerField(blank=True, null=True)
     w = models.IntegerField(blank=True, null=True)
     d = models.IntegerField(blank=True, null=True)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FiksturAll,Takimlar,LigSuperlig,LigSeriea,LigLaliga,LigLigue1,LigPremier,LigBundesliga,FiksturLaliga,FiksturSeriea,FiksturLigue1,FiksturPremier,FiksturSuperlig,OyuncularSuperlig,PuanBundesliga
+from .models import FiksturAll,Takimlar,LigSuperlig,LigSeriea,LigLaliga,LigLigue1,LigPremier,LigBundesliga,FiksturLaliga,FiksturSeriea,FiksturLigue1,FiksturPremier,FiksturSuperlig,OyuncularSuperlig,OyuncularLaliga,OyuncularBundesliga,OyuncularSeriea,OyuncularPremier,OyuncularLigue1,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1
 
 admin.site.register(LigSuperlig)
 admin.site.register(LigBundesliga)
@@ -15,7 +15,17 @@ admin.site.register(FiksturPremier)
 admin.site.register(FiksturSuperlig)
 
 admin.site.register(OyuncularSuperlig)
+admin.site.register(OyuncularPremier)
+admin.site.register(OyuncularLaliga)
+admin.site.register(OyuncularSeriea)
+admin.site.register(OyuncularBundesliga)
+
 admin.site.register(PuanBundesliga)
+admin.site.register(PuanSeriea)
+admin.site.register(PuanPremier)
+admin.site.register(PuanLaliga)
+admin.site.register(PuanLigue1)
+admin.site.register(PuanSuperlig)
 
 admin.site.register(Takimlar)
 admin.site.register(FiksturAll)
