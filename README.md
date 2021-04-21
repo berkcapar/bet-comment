@@ -4,7 +4,7 @@ Starting server
 
 -cd djangobahis
 -cd bp
--python manage.py runserver
+-python3 manage.py runserver
 
 Endpointler (X=ligadi)
 1-fikstürX (gelecek maçlar)
