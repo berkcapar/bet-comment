@@ -451,6 +451,27 @@ class LigBundesligaBackup(models.Model):
         db_table = 'lig_bundesliga_backup'
 
 
+class LigButunligler(models.Model):
+    takim1 = models.CharField(max_length=30)
+    ms = models.CharField(max_length=10, blank=True, null=True)
+    takim2 = models.CharField(max_length=30)
+    iy = models.CharField(max_length=10, blank=True, null=True)
+    tarih = models.DateField(blank=True, null=True)
+    lig = models.CharField(max_length=30, blank=True, null=True)
+    hafta = models.IntegerField(blank=True, null=True)
+    saat = models.CharField(max_length=5, blank=True, null=True)
+    stadyum = models.CharField(max_length=100, blank=True, null=True)
+    goller = models.CharField(max_length=10000, blank=True, null=True)
+    teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
+    teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
+    hakem = models.CharField(max_length=50, blank=True, null=True)
+    link = models.CharField(primary_key=True, max_length=250)
+
+    class Meta:
+        managed = False
+        db_table = 'lig_butunligler'
+
+
 class LigLaliga(models.Model):
     takim1 = models.CharField(max_length=30, blank=True, null=True)
     ms = models.CharField(max_length=10, blank=True, null=True)

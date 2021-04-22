@@ -1,10 +1,18 @@
 # todos/views.py
 from rest_framework import generics
 
-from .models import FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
-from .serializers import FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
+from .models import LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
+from .serializers import ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
 
 ######################################## Ligler #########################################################
+
+class LigButunLigler(generics.ListCreateAPIView):
+    queryset = LigButunligler.objects.all()
+    serializer_class = ButunLigler
+
+class Deneme34(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LigButunligler.objects.all()
+    serializer_class = ButunLigler
 
 class Superlig(generics.ListCreateAPIView):
     queryset = LigSuperlig.objects.all()

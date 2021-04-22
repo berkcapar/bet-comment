@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
+from .models import LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
 
 
 ########################################## Fikstür #############################################
@@ -115,6 +115,27 @@ class FiksPremier(serializers.ModelSerializer):
         model = FiksturPremier
 
 ########################################## Ligler #############################################
+
+class ButunLigler(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'takim1',
+            'ms',
+            'takim2',
+            'iy',
+            'tarih',
+            'lig',
+            'hafta',
+            'saat',
+            'stadyum',
+            'goller',
+            'teknikadam1',
+            'teknikadam2',
+            'hakem',
+            'link',
+
+        )
+        model = LigButunligler
 
 class LigTurkey(serializers.ModelSerializer):
     class Meta:

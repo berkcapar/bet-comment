@@ -39,6 +39,9 @@ urlpatterns = [
     path('ligue1', views.Ligue1.as_view()),
     path('<int:pk>', views.Deneme11.as_view()),
 
+    path('butunligler', views.LigButunLigler.as_view()),
+    path('<int:pk>', views.Deneme34.as_view()),
+
 ######################################## Fikstür #########################################################
 
     path('fiksturbundesliga', views.BundesligaFikstur.as_view()),
