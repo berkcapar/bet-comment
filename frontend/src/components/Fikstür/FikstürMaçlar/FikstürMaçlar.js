@@ -2,41 +2,38 @@ import FikstürTekMaç from '../FikstürTekMaç/FikstürTekMaç'
 import './FikstürMaçlar.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {
-  getPremierLigFikstürFromState,
   getSuperLigFiksturFromState,
-  getBundesligaFikstürFromState,
-  getLaLigaFikstürFromState,
-  getLigueOneFikstürFromState
+  getAllFikstürFromState
 } from '../../../redux/selectors'
 import { useEffect, useState } from 'react'
 import { fetchSuperLeagueFikstür } from '../../../redux/reducers/fikstür/SuperLigFikstürReducer'
-import { fetchPremierLeagueFikstür } from '../../../redux/reducers/fikstür/PremierLigFikstürReducer'
-import { fetchBundesligaFikstür } from '../../../redux/reducers/fikstür/BundesLigaFikstürReducer'
-import { fetchLigueOneFikstür } from '../../../redux/reducers/fikstür/LigueOneFikstürReducer'
-import Calendar from 'react-calendar'
+import { fetchAllFikstür } from '../../../redux/reducers/fikstür/AllFikstürReducer'
 import Tabs, { TabPane } from 'rc-tabs'
 import '../../../../node_modules/rc-tabs/assets/index.css'
-import { fetchLaLigaFikstür } from '../../../redux/reducers/fikstür/LaLigaFikstürReducer'
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 const FikstürMaçlar = () => {
   const SuperLigFixtureState = useSelector(getSuperLigFiksturFromState)
-  const PremierLigFixtureState = useSelector(getPremierLigFikstürFromState)
-  const BundesligaFixtureState = useSelector(getBundesligaFikstürFromState)
-  const LaLigaFikstürState = useSelector(getLaLigaFikstürFromState)
+  const AllLigFixtureState = useSelector(getAllFikstürFromState)
 
-  console.log(SuperLigFixtureState)
-  console.log(LaLigaFikstürState)
-  console.log(PremierLigFixtureState)
+  const [startDate, setStartDate] = useState(new Date())
 
   const dispatch = useDispatch()
-  const [date, setDate] = useState(new Date())
   const callback = function (key) {}
 
   useEffect(() => {
     dispatch(fetchSuperLeagueFikstür())
   }, [dispatch])
 
-  switch (SuperLigFixtureState.status) {
+  useEffect(() => {
+    dispatch(fetchAllFikstür())
+  }, [dispatch])
+
+  switch (AllLigFixtureState.status) {
     case 'failure':
       return 'oopsanerror'
     case 'loading':
@@ -52,23 +49,32 @@ const FikstürMaçlar = () => {
       const SuperLigFormatteduniqueSortedDates = SuperLiguniqueSortedDates.map(
         (uniqueSortedDate) => uniqueSortedDate.slice(5, 12)
       )
+      const SelectedDatesGames = AllLigFixtureState.data.filter(
+        (sdg) => sdg.tarih
+      )
+      console.log(SelectedDatesGames)
 
       return (
         <div>
-          <div className="fikstür-lig">
+          <div className="fikstür-lig-container">
             <div className="date-area">
-              <p className="fikstür-text">Fikstür</p>
-              <Tabs defaultActiveKey="2" onChange={callback}>
+              <p className="fikstür-text">Karşılaşmalar</p>
+              <CalendarTodayIcon />
+
+              <DatePicker
+                dateFormat="dd/MM/yyyy"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+              />
+
+              <Tabs defaultActiveKey="1" onChange={callback}>
                 <div className="fikstür-lig-header">
                   <div className="logo-name">
                     <img src="/images/ligler/superlig.jpg" alt="superlig" />
                     <p>Türkiye Süper Lig</p>
                   </div>
-                  <div className="ihtimal">
-                    <p>En İyi Seçim</p>
-                    <p>İhtimal</p>
-                  </div>
                 </div>
+
                 <TabPane tab={SuperLigFormatteduniqueSortedDates[0]} key="1">
                   <div className="tek-mac">
                     {SuperLigFixtureState.data.map(
@@ -86,10 +92,6 @@ const FikstürMaçlar = () => {
                       />
                       <p>İngiltere Premier Lig</p>
                     </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
                   </div>
                   <div className="tek-mac">
                     <div className="tek-mac"></div>
@@ -102,10 +104,6 @@ const FikstürMaçlar = () => {
                       />
                       <p>Almanya Bundesliga</p>
                     </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
                   </div>
                   <div className="tek-mac"></div>
                   <div className="fikstür-lig-header">
@@ -113,20 +111,12 @@ const FikstürMaçlar = () => {
                       <img src="/images/ligler/laliga.jpg" alt="laliga" />
                       <p>İspanya La Liga</p>
                     </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
                   </div>
                   <div className="tek-mac"></div>
                   <div className="fikstür-lig-header">
                     <div className="logo-name">
                       <img src="/images/ligler/seriea.jpg" alt="serie a" />
                       <p>İtalya Serie A</p>
-                    </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
                     </div>
                   </div>
                   <div className="tek-mac">
@@ -140,10 +130,6 @@ const FikstürMaçlar = () => {
                       />
                       <p>Fransa Lig 1</p>
                     </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
                   </div>
                   <div className="tek-mac"></div>
                   <div className="fikstür-lig-header">
@@ -154,44 +140,10 @@ const FikstürMaçlar = () => {
                       />
                       <p>Hollanda Eredevise</p>
                     </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
                   </div>
                   <div className="tek-mac">
                     <FikstürTekMaç />
                   </div>
-                </TabPane>
-                <TabPane
-                  tab={SuperLigFormatteduniqueSortedDates[1]}
-                  className="date-single-slide"
-                  key="2"
-                >
-                  <div className="fikstür-lig-header">
-                    <div className="logo-name">
-                      <img
-                        src="/images/ligler/premierlig.jpg"
-                        alt="premierlig"
-                      />
-                      <p>İngiltere Premier Lig</p>
-                    </div>
-                    <div className="ihtimal">
-                      <p>En İyi Seçim</p>
-                      <p>İhtimal</p>
-                    </div>
-                  </div>
-
-                  <div className="tek-mac">
-                    <FikstürTekMaç />
-                  </div>
-                </TabPane>
-                <TabPane
-                  tab={SuperLigFormatteduniqueSortedDates[2]}
-                  className="date-single-slide"
-                  key="3"
-                >
-                  third
                 </TabPane>
               </Tabs>
             </div>
@@ -209,3 +161,10 @@ export default FikstürMaçlar
 //    <AdminPanelPropertyItem key={property.id} property={property} />
 //  ))}
 //</div>
+
+//{SuperLigFixtureState.data.filter(
+// (match) =>
+// match.tarih === { setStartDate } && (
+// <FikstürTekMaç key={match.link} match={match} />
+// )
+//)}

@@ -1,0 +1,29 @@
+.highlightedclub-container{
+width: 100%;
+display: flex;
+flex-direction: column;
+}
+.highlightedclub-container img{
+width: 100%;
+}
+.highlightedclub-club-details{
+background-color: white;
+}
+@media(min-width:675px){
+    .highlightedclub-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .highlightedclub-club-details{
+       width: 29%;
+    }
+    .highlightedclub-club-details h3{
+       font-size: small;
+       text-align: center;
+       color:#14B02B
+     }
+    .highlightedclub-player-image{
+        width: 70%;
+    }
+}

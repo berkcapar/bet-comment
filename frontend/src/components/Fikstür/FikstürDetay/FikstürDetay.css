@@ -9,14 +9,14 @@
      display: flex;
      flex-direction: row;
      margin-top: 1rem;
+     width: 70%;
+     justify-content: space-around;
 }
 .fikstür{
     width: 70%;
 }
 .fikstürdetay-other{
-    width: 30%;
+    width: 25%;
     display: flex;
-
 }
-
 }

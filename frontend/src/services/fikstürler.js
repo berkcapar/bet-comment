@@ -32,6 +32,11 @@ const getLeagueOneFikstür = async () => {
   const response = await axios.get(baseUrl)
   return response.data
 }
+const getAllFikstur = async () => {
+  const baseUrl = `${API_URL}/butunfikstur`
+  const response = await axios.get(baseUrl)
+  return response.data
+}
 
 export default {
   getSuperLigFikstür,
@@ -39,5 +44,6 @@ export default {
   getBundesligaFikstür,
   getLaligaFikstür,
   getSerieAFikstür,
-  getLeagueOneFikstür
+  getLeagueOneFikstür,
+  getAllFikstur
 }
