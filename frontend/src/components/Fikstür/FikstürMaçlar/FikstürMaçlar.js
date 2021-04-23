@@ -49,10 +49,17 @@ const FikstürMaçlar = () => {
       const SuperLigFormatteduniqueSortedDates = SuperLiguniqueSortedDates.map(
         (uniqueSortedDate) => uniqueSortedDate.slice(5, 12)
       )
-      const SelectedDatesGames = AllLigFixtureState.data.filter(
+      const SelectedDatesGames1 = AllLigFixtureState.data.map(
         (sdg) => sdg.tarih
       )
-      console.log(SelectedDatesGames)
+      console.log(SelectedDatesGames1)
+
+      const handleSelect = (date) => {
+        const SelectedDatesGames = AllLigFixtureState.data.filter(
+          (sdg) => sdg.tarih === setStartDate(date)
+        )
+        console.log(SelectedDatesGames)
+      }
 
       return (
         <div>
@@ -62,11 +69,11 @@ const FikstürMaçlar = () => {
               <CalendarTodayIcon />
 
               <DatePicker
-                dateFormat="dd/MM/yyyy"
+                dateFormat="yyyy-MM-dd"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                onSelect={handleSelect}
               />
-
               <Tabs defaultActiveKey="1" onChange={callback}>
                 <div className="fikstür-lig-header">
                   <div className="logo-name">

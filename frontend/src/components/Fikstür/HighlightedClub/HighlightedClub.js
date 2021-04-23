@@ -28,10 +28,10 @@ const HighligtedClub = () => {
       return 'loading'
     case 'success':
       const TeamHasBestWinRate = LaLigaPuanDurumu.data.filter(
-        (bestteam) => bestteam.w / bestteam.mp >= 0.6
+        (bestteam) => bestteam.w / bestteam.mp >= 0.5
       )
       const BestRatedTeamDetails = TeamHasBestWinRate.filter(
-        (t) => t.team === TeamHasBestWinRate[0].team
+        (t) => t.team === TeamHasBestWinRate[3].team
       )
       const BestRatedTeamWinRate = Math.floor(
         (BestRatedTeamDetails[0].w / BestRatedTeamDetails[0].mp) * 100
@@ -44,9 +44,8 @@ const HighligtedClub = () => {
           return 'loading'
         case 'success':
           const findMatchingTeam = TeamDetails.data.filter(
-            (tm) => tm.team_name === TeamHasBestWinRate[0].team
+            (tm) => tm.team_name === TeamHasBestWinRate[3].team
           )
-          console.log(findMatchingTeam)
           return (
             <div className="highlightedclub-container">
               <div className="highlightedclub-player-image">
@@ -56,16 +55,44 @@ const HighligtedClub = () => {
                 />
               </div>
               <div className="highlightedclub-club-details">
-                <h3>Haftanın Öne Çıkan Takımı</h3>
-                {TeamHasBestWinRate[0].team}
-                Win Rate:{BestRatedTeamWinRate}% Sıralama
-                {TeamHasBestWinRate[0].pos}
-                Galibiyet: {TeamHasBestWinRate[0].w}
-                Form Durumu {TeamHasBestWinRate[0].last5}
-                <img
-                  alt="haftanın takımı"
-                  src={findMatchingTeam[0].logo_link}
-                />
+                <h3>HAFTANIN ÖNE ÇIKAN TAKIMI</h3>
+                <div className="highlightedclub-club-header">
+                  <div className="highlightedclub-club-image">
+                    <img
+                      alt="haftanın takımı"
+                      src={findMatchingTeam[0].logo_link}
+                    />
+                  </div>
+
+                  <div className="highlightedclub-club-header-rate-container">
+                    <p className="highlightedclub-club-header-name">
+                      {TeamHasBestWinRate[3].team}
+                    </p>
+                    <h2 className="highlightedclub-club-header-rate">
+                      {BestRatedTeamWinRate}%
+                    </h2>
+                    <p className="highlightedclub-club-header-rate-text">
+                      Win Rate
+                    </p>
+                  </div>
+                </div>
+                <div className="highlighted-club-subdetails">
+                  <div className="hightlighted-club-pos">
+                    <h1>{TeamHasBestWinRate[3].pos}</h1>
+                    <p>SIRALAMA</p>
+                  </div>
+                  <div className="hightlighted-club-win">
+                    <h1>{TeamHasBestWinRate[3].w}</h1>
+                    <p>GALİBİYET</p>
+                  </div>
+                  <div className="hightlighted-club-form">
+                    <h1>{TeamHasBestWinRate[3].last5.replace(/,/g, '')}</h1>
+                    <p>FORM</p>
+                  </div>
+                </div>
+                <div className="highlighted-club-cta">
+                  <p>TAKIM DETAYI</p>
+                </div>
               </div>
             </div>
           )
