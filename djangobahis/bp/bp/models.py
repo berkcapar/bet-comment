@@ -150,7 +150,7 @@ class FiksturAll(models.Model):
     teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
     teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
     hakem = models.CharField(max_length=50, blank=True, null=True)
-    link = models.CharField(max_length=250, blank=True, null=True)
+    link = models.CharField(primary_key=True, max_length=250)
 
     class Meta:
         managed = False
