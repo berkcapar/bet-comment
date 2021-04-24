@@ -3,7 +3,7 @@ body {
   padding:0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Lato';
+  font-family: 'Poppins';
   background-color: #D6D4D4;
   
 
@@ -12,7 +12,7 @@ body {
   --speed:500ms
 }
 
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
