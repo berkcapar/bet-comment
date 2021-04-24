@@ -1,22 +1,39 @@
 import teamService from '../../services/team'
 
-export const initLeagues = () => {
+const INITIAL_STATE = { status: 'loading' }
+
+export const fetchTeamDetails = () => {
   return async (dispatch) => {
-    const data = await teamService.getLeagues()
-    dispatch({
-      type: 'INIT_TEAMS',
-      data: data.teams
-    })
+    try {
+      const data = await teamService.getTeams()
+      dispatch({
+        type: 'FETCH_TEAM_DETAILS_SUCCESS',
+        data: data
+      })
+    } catch (error) {
+      dispatch({
+        type: 'FETCH_TEAM_DETAILS_FAILURE',
+        data: error
+      })
+    }
   }
 }
 
-const teamReducer = (state = [], action) => {
+const TeamDetailsReducer = (state = [INITIAL_STATE], action) => {
   switch (action.type) {
-    case 'INIT_TEAMS':
-      return action.data
+    case 'FETCH_TEAM_DETAILS_SUCCESS':
+      return {
+        data: action.data,
+        status: 'success'
+      }
+    case 'FETCH_TEAM_DETAILS_FAILURE':
+      return {
+        status: 'failure',
+        error: action.error
+      }
     default:
       return state
   }
 }
 
-export default teamReducer
+export default TeamDetailsReducer

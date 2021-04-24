@@ -1,0 +1,106 @@
+.highlightedclub-container{
+width: 100%;
+display: flex;
+flex-direction: column;
+}
+.highlightedclub-container img{
+width: 100%;
+}
+.highlightedclub-club-details{
+background-color: white;
+}
+.highlightedclub-club-header{
+    display: flex;
+}
+.highlightedclub-club-header-rate-container{
+    display: flex;
+}
+@media(min-width:675px){
+    .highlightedclub-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .highlightedclub-club-details{
+       width: 34%;
+       display: flex;
+       flex-direction: column;
+    }
+    .highlightedclub-club-details h3{
+       font-size: small;
+       text-align: center;
+       color:#14B02B
+     }
+    .highlightedclub-player-image{
+        width: 65%;
+    }
+    .highlightedclub-club-image{
+        width: 30%;
+    }
+    .highlightedclub-club-header{
+       border: 1px solid #DCDDE1 ;
+       border-radius: 0.2rem;  
+       margin: 0 auto;
+       width: 90%;  
+       display: flex;
+       padding-top: 0.5rem;
+       padding-bottom: 0.5rem;
+       justify-content: space-around;
+    }
+    .highlightedclub-club-header-rate-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .highlightedclub-club-header-rate{
+     margin-bottom: 0;
+     margin-top: 0;
+     color:#14B02B ;
+    }
+    .highlightedclub-club-header-rate-text{
+        color:#14B02B ;
+        font-weight: bolder;
+       }
+    .highlighted-club-subdetails{
+       display: flex;
+       margin-top: 0.5rem;
+       justify-content: space-around;
+    }
+    .hightlighted-club-pos{
+        border-right: 1px solid #DCDDE1;
+        text-align: center;
+        width: 30%;
+    }
+    .hightlighted-club-pos h1{
+       font-size: 18px;
+    }
+    .hightlighted-club-win{
+        border-right: 1px solid #DCDDE1;
+        text-align: center;
+        width: 32%;
+    }
+    .hightlighted-club-win h1{
+        font-size: 18px
+    }
+    .hightlighted-club-form{
+        text-align: center;
+        width: 30%;
+    }
+    .hightlighted-club-form h1{
+        font-size: 18px
+    }
+    .hightlighted-club-pos p,
+    .hightlighted-club-win p,
+    .hightlighted-club-form p{
+        color: #718093 ;
+        font-size: smaller;
+    }
+    .highlighted-club-cta{
+        color:#14B02B ;
+        border: 1px solid #14B02B;
+        border-radius: 0.2rem;
+        width: 50%;
+        padding: 1rem;
+        text-align: center;
+        margin: 1.5rem auto;
+    }
+
+}

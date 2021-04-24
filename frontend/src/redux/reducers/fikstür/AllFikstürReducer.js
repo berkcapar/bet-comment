@@ -4,34 +4,31 @@ import fiksturService from '../../../services/fikstürler'
 
 const INITIAL_STATE = { status: 'loading' }
 
-export const FetchAllFikstür = () => {
+export const fetchAllFikstür = () => {
   return async (dispatch) => {
     try {
-      const SuperLigdata = await fiksturService.getSuperLigFikstür()
-      const PremierLigdata = await fiksturService.getPremierLigFikstür()
-      const data = [...SuperLigdata, ...PremierLigdata]
-
+      const data = await fiksturService.getAllFikstur()
       dispatch({
-        type: 'FETCH_ALL_LEAGUE_SUCCESS',
+        type: 'FETCH_ALL_SUCCESS',
         data
       })
     } catch (error) {
       dispatch({
-        type: 'FETCH_ALL_LEAGUE_FAILURE',
+        type: 'FETCH_ALL_FAILURE',
         error
       })
     }
   }
 }
 
-const FetchAllFikstürReducer = (state = INITIAL_STATE, action) => {
+const AllFikstürReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'FETCH_ALL_LEAGUE_SUCCESS':
+    case 'FETCH_ALL_SUCCESS':
       return {
         status: 'success',
         data: action.data
       }
-    case 'FETCH_ALL_LEAGUE_FAILURE':
+    case 'FETCH_ALL_FAILURE':
       return {
         status: 'failure',
         error: action.error
@@ -40,4 +37,4 @@ const FetchAllFikstürReducer = (state = INITIAL_STATE, action) => {
       return state
   }
 }
-export default FetchAllFikstürReducer
+export default AllFikstürReducer

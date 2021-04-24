@@ -15,7 +15,7 @@ import { getSuperLigPlayersFromState } from '../../redux/selectors'
 import players from '../../services/players'
 import { fetchSuperLeaguePlayedGames } from '../../redux/reducers/playedgames/SuperLeaguePlayedGamesReducer'
 
-const Macİncele = ({ game, matchingtest1, uniquePlayedGamesTeamOne, uniquePlayedGamesTeamTwo,  uniquePlayedGamesTarih }) => {
+const Macİncele = ({ game, matchingtest1 }) => {
   return (
     <div>
       <Navigation />
@@ -35,8 +35,6 @@ const Macİncele = ({ game, matchingtest1, uniquePlayedGamesTeamOne, uniquePlaye
                 <p>{game.saat}</p>
               </div>
               <div className="macincele-header-macinfo-skor">
-             
-              
                 <h1>2</h1> <h1>-</h1>
                 <h1>0</h1>
               </div>
@@ -978,12 +976,14 @@ const MacInceleContainer = () => {
               )
               const uniquePlayedGamesTarih = [...new Set(playedGamesTarih)]
 
+              const testa =
+                game.takim1 === uniquePlayedGamesTeamOne &&
+                game.takim2 === uniquePlayedGamesTeamTwo &&
+                game.tarih === uniquePlayedGamesTarih ? (
+                  <Macİncele matchingtest1={matchingtest1} game={game} />
+                ) : null
 
-
-           
-            {game.takim1 === {uniquePlayedGamesTeamOne} && game.takim2 === uniquePlayedGamesTeamTwo && game.tarih === uniquePlayedGamesTarih ? 
-             
-              return <Macİncele matchingtest1={matchingtest1} game={game} />
+              return [testa]
           }
       }
   }
