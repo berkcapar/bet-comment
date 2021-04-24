@@ -100,7 +100,10 @@ urlpatterns = [
     path('puanfransa', views.PuanTablosuFransa.as_view()),
     path('<int:pk>', views.Deneme23.as_view()),
 
-######################################## Takımlar, Değerleri, Logo (Bitmedi) #########################################################
+    path('puanhepsi', views.PuanTablosuAll.as_view()),
+    path('<int:pk>', views.Deneme40.as_view()),
+
+    ######################################## Takımlar, Değerleri, Logo (Bitmedi) #########################################################
 
     path('takimlar', views.ButunTakimlar.as_view()),
     path('<int:pk>', views.Deneme25.as_view()),

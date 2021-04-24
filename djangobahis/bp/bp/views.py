@@ -1,8 +1,8 @@
 # todos/views.py
 from rest_framework import generics
 
-from .models import LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
-from .serializers import ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
+from .models import PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
+from .serializers import PuanButunUlkeler,ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
 
 ######################################## Ligler #########################################################
 
@@ -204,6 +204,15 @@ class PuanTablosuFransa(generics.ListCreateAPIView):
 class Deneme23(generics.RetrieveUpdateDestroyAPIView):
     queryset = PuanLigue1.objects.all()
     serializer_class = PuanFransa
+
+
+class PuanTablosuAll(generics.ListCreateAPIView):
+    queryset = PuanAll.objects.all()
+    serializer_class = PuanButunUlkeler
+
+class Deneme40(generics.RetrieveUpdateDestroyAPIView):
+    queryset = PuanAll.objects.all()
+    serializer_class = PuanButunUlkeler
 
 
 ######################################## Takımlar, Değerleri, Logo #########################################################

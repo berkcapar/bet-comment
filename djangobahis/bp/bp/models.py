@@ -140,21 +140,22 @@ class DjangoSession(models.Model):
 
 
 class FiksturAll(models.Model):
-    takim1 = models.CharField(max_length=30)
-    takim2 = models.CharField(max_length=30)
+    takim1 = models.CharField(max_length=30, blank=True, null=True)
+    takim2 = models.CharField(max_length=30, blank=True, null=True)
     tarih = models.DateField(blank=True, null=True)
     lig = models.CharField(max_length=30, blank=True, null=True)
     hafta = models.IntegerField(blank=True, null=True)
-    saat = models.CharField(max_length=5, blank=True, null=True)
+    saat = models.TimeField(blank=True, null=True)
     stadyum = models.CharField(max_length=100, blank=True, null=True)
     teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
     teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
     hakem = models.CharField(max_length=50, blank=True, null=True)
-    link = models.CharField(primary_key=True, max_length=250)
+    link = models.CharField(max_length=250, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'fikstur_all'
+        unique_together = (('takim1', 'takim2', 'tarih'),)
 
 
 class FiksturBundesliga(models.Model):
@@ -880,6 +881,25 @@ class OyuncularSuperlig(models.Model):
         db_table = 'oyuncular_superlig'
 
 
+class PuanAll(models.Model):
+    pos = models.IntegerField(blank=True, null=True)
+    team = models.TextField(primary_key=True)
+    mp = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    d = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    f = models.IntegerField(blank=True, null=True)
+    a = models.IntegerField(blank=True, null=True)
+    diff = models.IntegerField(blank=True, null=True)
+    p = models.IntegerField(blank=True, null=True)
+    last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'puan_all'
+
+
 class PuanBundesliga(models.Model):
     pos = models.IntegerField(blank=True, null=True)
     team = models.TextField(primary_key=True)
@@ -892,6 +912,7 @@ class PuanBundesliga(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -910,6 +931,7 @@ class PuanLaliga(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -928,6 +950,7 @@ class PuanLigue1(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -946,6 +969,7 @@ class PuanPremier(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -964,6 +988,7 @@ class PuanSeriea(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -982,6 +1007,7 @@ class PuanSuperlig(models.Model):
     diff = models.IntegerField(blank=True, null=True)
     p = models.IntegerField(blank=True, null=True)
     last5 = models.TextField(blank=True, null=True)
+    league = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False

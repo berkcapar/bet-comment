@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
+from .models import PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
 
 
 ########################################## Fikstür #############################################
@@ -540,6 +540,25 @@ class PuanTurkey(serializers.ModelSerializer):
             'last5',
         )
         model = PuanSuperlig
+        fields = '__all__'
+
+class PuanButunUlkeler(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'pos',
+            'team',
+            'mp',
+            'w',
+            'd',
+            'l',
+            'f',
+            'a',
+            'diff',
+            'p',
+            'last5',
+            'league',
+        )
+        model = PuanAll
         fields = '__all__'
 
 
