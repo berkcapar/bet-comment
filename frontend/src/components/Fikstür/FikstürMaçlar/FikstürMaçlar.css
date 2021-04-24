@@ -18,9 +18,13 @@ display: flex;
 display: none;
 }
 .tek-mac{
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     }
+ .date-area{
+     background-color: #FFFFFF;
+     display: flex;
+ }   
 @media(min-width:675px){
     .ihtimal{
       display: inline;
@@ -32,6 +36,8 @@ display: none;
     }
     .fikstür-lig-header{
       justify-content: space-between;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
      
     }
     .fikstür-text{
@@ -41,8 +47,8 @@ display: none;
         color: white;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        padding-left: 1rem;
     }
+   
    
    
 }    

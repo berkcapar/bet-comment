@@ -1,6 +1,15 @@
 .navigation-container{
     background-color: white;
 }
+.navigation-ustbant{
+    background-color: #48b42c;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    font-weight: 700;
+}
 
 .logo-icon{
     display: flex;
@@ -51,14 +60,10 @@
         background-color: white;
     }
     .navigation-ustbant{
-        background-color: #48b42c;
-        color: white;
-        width: 100%;
         display: flex;
         justify-content: center;
         font-size: small;
         font-weight: 700;
-      
     }
     .navigation-ustbant-icons-text{
        display: flex;

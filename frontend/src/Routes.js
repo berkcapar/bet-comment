@@ -3,9 +3,9 @@ import LigDetay from './components/LigDetay/LigDetay'
 import HomePage from './pages/HomePage/HomePage'
 import FikstürDetay from './components/Fikstür/FikstürDetay/FikstürDetay'
 import TakımDetay from './components/Takımİnceleme/TakımDetay/TakımDetay'
-import Macİncele from './components/Macİncele/Macİncele'
 import SignupForm from './components/Signup/SignupForm'
 import MacInceleContainer from './components/Macİncele/Macİncele'
+import Contact from './components/Contact/Contact'
 
 const Routes = () => {
   return (
@@ -29,6 +29,9 @@ const Routes = () => {
         <Route path="/profil"></Route>
         <Route path="/kaydol">
           <SignupForm />
+        </Route>
+        <Route path="/bize-ulasin">
+          <Contact />
         </Route>
       </Switch>
     </BrowserRouter>
