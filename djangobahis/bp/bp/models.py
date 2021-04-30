@@ -74,6 +74,27 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user', 'permission'),)
 
 
+class ButunLigFikstur(models.Model):
+    takim1 = models.CharField(max_length=30, blank=True, null=True)
+    ms = models.CharField(max_length=10, blank=True, null=True)
+    takim2 = models.CharField(max_length=30, blank=True, null=True)
+    iy = models.CharField(max_length=10, blank=True, null=True)
+    tarih = models.DateField(blank=True, null=True)
+    lig = models.CharField(max_length=30, blank=True, null=True)
+    hafta = models.IntegerField(blank=True, null=True)
+    saat = models.TimeField(blank=True, null=True)
+    stadyum = models.CharField(max_length=100, blank=True, null=True)
+    goller = models.CharField(max_length=10000, blank=True, null=True)
+    teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
+    teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
+    hakem = models.CharField(max_length=50, blank=True, null=True)
+    link = models.CharField(primary_key=True, max_length=250)
+
+    class Meta:
+        managed = False
+        db_table = 'butun_lig_fikstur'
+
+
 class DatabasePost(models.Model):
     takim1 = models.CharField(max_length=200, blank=True, null=True)
     ms = models.CharField(max_length=200, blank=True, null=True)
@@ -151,6 +172,9 @@ class FiksturAll(models.Model):
     teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
     hakem = models.CharField(max_length=50, blank=True, null=True)
     link = models.CharField(primary_key=True, max_length=250)
+    ms = models.TextField(blank=True, null=True)
+    iy = models.TextField(blank=True, null=True)
+    goller = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False

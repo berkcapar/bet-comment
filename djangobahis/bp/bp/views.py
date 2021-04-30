@@ -1,8 +1,8 @@
 # todos/views.py
 from rest_framework import generics
 
-from .models import PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
-from .serializers import PuanButunUlkeler,ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
+from .models import ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
+from .serializers import Butun_Fikstur_Ligler,PuanButunUlkeler,ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
 
 ######################################## Ligler #########################################################
 
@@ -61,6 +61,15 @@ class Ligue1(generics.ListCreateAPIView):
 class Deneme11(generics.RetrieveUpdateDestroyAPIView):
     queryset = LigLigue1.objects.all()
     serializer_class = LigFrance
+
+class ButunFiksturLig(generics.ListCreateAPIView):
+    queryset = ButunLigFikstur.objects.all()
+    serializer_class = Butun_Fikstur_Ligler
+
+class Deneme50(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ButunLigFikstur.objects.all()
+    serializer_class = Butun_Fikstur_Ligler
+
 
 ######################################## Fikstür #########################################################
 
