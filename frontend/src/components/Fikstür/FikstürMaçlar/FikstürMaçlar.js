@@ -39,13 +39,15 @@ const FikstürMaçlar = (date) => {
             <p className="fikstür-text">Karşılaşmalar</p>
             <div className="date-area">
               <CalendarTodayIcon />
-              <ArrowBackIosIcon />
-              <DatePicker
-                dateFormat="yyyy-MM-dd"
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-              />
-              <ArrowForwardIosIcon />
+              <div className="date-area-data-arrows">
+                <ArrowBackIosIcon />
+                <DatePicker
+                  dateFormat="yyyy-MM-dd"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+                <ArrowForwardIosIcon />
+              </div>
             </div>
             <div className="fikstür-lig-header">
               <div className="logo-name">
@@ -106,7 +108,7 @@ const FikstürMaçlar = (date) => {
             <div className="tek-mac">
               {SelectedDatesGames.map(
                 (match) =>
-                  match.lig === 'Serie A' && <FikstürTekMaç match={match} />
+                  match.lig === 'Serie A ' && <FikstürTekMaç match={match} />
               )}
             </div>
             <div className="fikstür-lig-header">

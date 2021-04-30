@@ -11,6 +11,7 @@ export const getSuperLigPlayersFromState = (state) => state.SuperLigPlayers
 export const getSuperLigPlayedGamesFromState = (state) =>
   state.SuperLigPlayedGames
 //puan durumu
+export const getAllPuanDurumuFromState = (state) => state.AllPuanDurumu
 export const getSuperLigPuanDurumuFromState = (state) =>
   state.SuperLigPuanDurumu
 export const getPremierLigPuanDurumuFromState = (state) =>

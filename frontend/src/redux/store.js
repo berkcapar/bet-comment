@@ -17,6 +17,7 @@ import LaLigaPuanDurumuReducer from './reducers/puandurumu/LaLigaPuanDurumuReduc
 import SerieAPuanDurumuReducer from './reducers/puandurumu/SerieAPuanDurumuReducer'
 import LigueOnePuanDurumuReducer from './reducers/puandurumu/LigueOnePuanDurumuReducer'
 import TeamDetailsReducer from './reducers/teamReducer'
+import AllPuanDurumuReducer from './reducers/puandurumu/AllPuanDurumuReducer'
 
 const reducer = combineReducers({
   league: leagueReducer,
@@ -31,6 +32,7 @@ const reducer = combineReducers({
   //playedgames
   SuperLigPlayedGames: SuperLigPlayedGamesReducer,
   //puan durumu
+  AllPuanDurumu: AllPuanDurumuReducer,
   SuperLigPuanDurumu: SuperLigPuanDurumuReducer,
   PremierLigPuanDurumu: PremierLigPuanDurumuReducer,
   BundesligaPuanDurumu: BundesligaPuanDurumuReducer,

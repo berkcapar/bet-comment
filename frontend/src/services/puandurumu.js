@@ -33,11 +33,18 @@ const getLeagueOnePuanDurumu = async () => {
   return response.data
 }
 
+const getAllPuanDurumu = async () => {
+  const baseUrl = `${API_URL}/puanhepsi`
+  const response = await axios.get(baseUrl)
+  return response.data
+}
+
 export default {
   getSuperLigPuanDurumu,
   getPremierLigPuanDurumu,
   getBundesligaPuanDurumu,
   getLaligaPuanDurumu,
   getSerieAPuanDurumu,
-  getLeagueOnePuanDurumu
+  getLeagueOnePuanDurumu,
+  getAllPuanDurumu
 }

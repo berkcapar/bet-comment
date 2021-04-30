@@ -5,14 +5,21 @@ import { useRouteMatch } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   getAllFikstürFromState,
+  getAllPuanDurumuFromState,
   getTeamDetailsFromState
 } from '../../redux/selectors'
 import { useEffect } from 'react'
 
 import { fetchAllFikstür } from '../../redux/reducers/fikstür/AllFikstürReducer'
 import { fetchTeamDetails } from '../../redux/reducers/teamReducer'
+import { fetchAllPuanDurumu } from '../../redux/reducers/puandurumu/AllPuanDurumuReducer'
 
-const Macİncele = ({ HomeTeamDetails, AwayTeamDetails, game }) => {
+const Macİncele = ({
+  HomeTeamDetails,
+  AwayTeamDetails,
+  game,
+  FindPuanDurumuforTeams
+}) => {
   return (
     <div>
       <Navigation />
@@ -70,31 +77,97 @@ const Macİncele = ({ HomeTeamDetails, AwayTeamDetails, game }) => {
             </div>
           </div>
           <div className="macincele-ust-menu">
-            <Tabs>
+            <Tabs
+              style={{
+                width: '60%',
+                margin: '0 auto'
+              }}
+            >
               <TabList>
-                <Tab>Title 1</Tab>
-                <Tab>Title 2</Tab>
+                <Tab>İstatistikler</Tab>
+                <Tab>Akıllı Tahmin</Tab>
               </TabList>
-              <TabPanel>
-                <h2>Any content 1</h2>
-              </TabPanel>
-              <TabPanel>
-                <h2>Any content 2</h2>
-              </TabPanel>
             </Tabs>
           </div>
           <div className="macincele-alt-menu"></div>
         </div>
         <div className="macincele-content-container">
           <div className="macincele-detay">
-            <div className="macincele-ozet-bilgi"></div>
-            <div className="macincele-tahmin"></div>
-            <div className="macincele-istatistikler"></div>
-            <div className="macincele-atılan-goller"></div>
-            <div className="macincele-yenilen-goller"></div>
+            <TabPanel>
+              <div className="macincele-tahmin-ev-sahibi">
+                <h1>Maç Önü İstatistikler</h1>
+                <div>
+                  <div className="ortalama-goller">
+                    <p>Ort. Goller</p>
+                    <div>2.68 Lig: 2.47</div>
+                  </div>
+                  <div className="karşılıklı-gol"></div>
+                  <div className="birbuçuk-üst"></div>
+                  <div className="ikibuçuk-üst"></div>
+                </div>
+              </div>
+              <div className="macincele-tahmin-deplasman"></div>
+              <div className="macincele-istatistikler"></div>
+              <div className="macincele-atılan-goller"></div>
+              <div className="macincele-yenilen-goller"></div>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 2</h2>
+            </TabPanel>
           </div>
           <div className="macincele-other">
-            <div className="macincele-puan-durumu"></div>
+            <div className="macincele-puan-durumu">
+              <div className="mac-incele-puan-durumu-üst-header">
+                {[
+                  ...new Set(
+                    FindPuanDurumuforTeams.map((league) => league.league)
+                  )
+                ]}{' '}
+                Puan Durumu
+              </div>
+              <ul className="macincele-puan-durumu-header">
+                <div className="macincele-puan-durumu-header-takım">
+                  <li className="macincele-puan-durumu-header-takım-pos">#</li>
+                  <li className="macincele-puan-durumu-header-takım-takım">
+                    Takım
+                  </li>
+                </div>
+                <div className="macincele-puan-durumu-header-other">
+                  <li>OM</li>
+                  <li>G</li>
+                  <li>B</li>
+                  <li>M</li>
+                  <li>AG</li>
+                  <li>YG</li>
+                  <li>A</li>
+                  <li>P</li>
+                </div>
+              </ul>
+              {FindPuanDurumuforTeams.map((p) => {
+                return (
+                  <ul className="macincele-puan-durumu-elements">
+                    <div className="macincele-puan-durumu-elements-pos-team">
+                      <li className="macincele-puan-durumu-elements-pos-team-pos">
+                        {p.pos}
+                      </li>
+                      <li className="macincele-puan-durumu-elements-pos-team-team">
+                        {p.team}
+                      </li>
+                    </div>
+                    <div className="macincele-puan-durumu-elements-other">
+                      <li>{p.mp}</li>
+                      <li>{p.w}</li>
+                      <li>{p.d}</li>
+                      <li>{p.l}</li>
+                      <li>{p.f}</li>
+                      <li>{p.a}</li>
+                      <li>{p.diff}</li>
+                      <li>{p.p}</li>
+                    </div>
+                  </ul>
+                )
+              })}
+            </div>
             <div className="macincele-yaklasan-diger"></div>
           </div>
         </div>
@@ -106,6 +179,7 @@ const Macİncele = ({ HomeTeamDetails, AwayTeamDetails, game }) => {
 const MacInceleContainer = () => {
   const AllLigFixtureState = useSelector(getAllFikstürFromState)
   const TeamDetailsState = useSelector(getTeamDetailsFromState)
+  const AllLigPuanDurumuState = useSelector(getAllPuanDurumuFromState)
 
   let match = useRouteMatch('/mac-incele/:takim1/:takim2/:tarih')
   const dispatch = useDispatch()
@@ -116,6 +190,10 @@ const MacInceleContainer = () => {
 
   useEffect(() => {
     dispatch(fetchTeamDetails())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchAllPuanDurumu())
   }, [dispatch])
 
   switch (AllLigFixtureState.status) {
@@ -147,14 +225,26 @@ const MacInceleContainer = () => {
           const AwayTeamDetails = TeamDetailsState.data.filter(
             (team) => team.team_name === game.takim2
           )
-
-          return (
-            <Macİncele
-              game={game}
-              HomeTeamDetails={HomeTeamDetails}
-              AwayTeamDetails={AwayTeamDetails}
-            />
-          )
+          switch (AllLigPuanDurumuState.status) {
+            case 'failure':
+              return 'error'
+            case 'loading':
+            default:
+              return 'loading'
+            case 'success':
+              const FindPuanDurumuforTeams = AllLigPuanDurumuState.data.filter(
+                (puandurumu) => puandurumu.league === game.lig
+              )
+              console.log(FindPuanDurumuforTeams)
+              return (
+                <Macİncele
+                  game={game}
+                  HomeTeamDetails={HomeTeamDetails}
+                  AwayTeamDetails={AwayTeamDetails}
+                  FindPuanDurumuforTeams={FindPuanDurumuforTeams}
+                />
+              )
+          }
       }
   }
 }

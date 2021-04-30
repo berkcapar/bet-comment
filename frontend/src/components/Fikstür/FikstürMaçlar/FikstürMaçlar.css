@@ -24,7 +24,12 @@ display: none;
  .date-area{
      background-color: #FFFFFF;
      display: flex;
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
  }   
+ .date-area-data-arrows{
+     margin-left: 0.5rem;
+ }
 @media(min-width:675px){
     .ihtimal{
       display: inline;

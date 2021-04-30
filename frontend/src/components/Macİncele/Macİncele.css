@@ -114,11 +114,82 @@
 .macincele-detay{
     width: 100%;
 }
-.macincele-other{
-    width: 100%;
+
+.macincele-tahmin-ev-sahibi{
+background-color:#718093;
+border: 1px solid red;
+}
+
+.macincele-tahmin-ev-sahibi h1{
+color:#FFFFFF ;
 }
 
 
+
+.macincele-other{
+    width: 100%;
+}
+.macincele-ust-menu{
+    background-color: #44BD32;
+}
+.macincele-puan-durumu{
+background-color: #FFFFFF;
+width: 70%;
+margin-top: 1rem;
+}
+.mac-incele-puan-durumu-üst-header{
+    background-color:#44BD32 ;
+    color: white;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.macincele-puan-durumu-header{
+display: flex;
+padding-left: 0;
+color: #718093
+}
+.macincele-puan-durumu-header-takım{
+    width: 40%;
+    display: flex;
+}
+
+.macincele-puan-durumu-header-takım-takım{
+    padding-left: 0.5rem;
+}
+
+.macincele-puan-durumu-header-other{
+    width: 58%;
+    display: flex;
+    justify-content: space-around;
+}
+.macincele-puan-durumu-header-other li{
+    width: 7%;
+}
+
+.macincele-puan-durumu-elements{
+    display: flex;
+    padding-left: 0;
+    border-bottom: 0.125rem solid #718093 ;
+}
+
+.macincele-puan-durumu-elements-pos-team{
+    width: 40%;
+    display: flex;
+}
+.macincele-puan-durumu-elements-pos-team-team{
+    padding-left: 0.5rem;
+}
+.macincele-puan-durumu-elements-other{
+    width: 60%;
+    display: flex;
+    padding-left: 0;
+    justify-content: space-around;
+    color: #718093;
+}
+.macincele-puan-durumu-elements-other li{
+    width: 8%;
+}
 
 @media(min-width:675px){
 .macincele-allpage{
