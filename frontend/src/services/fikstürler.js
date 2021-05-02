@@ -37,6 +37,11 @@ const getAllFikstur = async () => {
   const response = await axios.get(baseUrl)
   return response.data
 }
+const getAllFiksturPlusPlayed = async () => {
+  const baseUrl = `${API_URL}/butunliglerfiksturler`
+  const response = await axios.get(baseUrl)
+  return response.data
+}
 
 export default {
   getSuperLigFikstür,
@@ -45,5 +50,6 @@ export default {
   getLaligaFikstür,
   getSerieAFikstür,
   getLeagueOneFikstür,
-  getAllFikstur
+  getAllFikstur,
+  getAllFiksturPlusPlayed
 }

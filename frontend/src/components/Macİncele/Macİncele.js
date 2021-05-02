@@ -76,101 +76,288 @@ const Macİncele = ({
               </div>
             </div>
           </div>
+        </div>
+        <Tabs>
           <div className="macincele-ust-menu">
-            <Tabs
-              style={{
-                width: '60%',
-                margin: '0 auto'
-              }}
-            >
-              <TabList>
-                <Tab>İstatistikler</Tab>
-                <Tab>Akıllı Tahmin</Tab>
-              </TabList>
-            </Tabs>
+            <TabList>
+              <Tab>İstatistikler</Tab>
+              <Tab>Akıllı Tahmin</Tab>
+            </TabList>
           </div>
           <div className="macincele-alt-menu"></div>
-        </div>
-        <div className="macincele-content-container">
-          <div className="macincele-detay">
-            <TabPanel>
-              <div className="macincele-tahmin-ev-sahibi">
-                <h1>Maç Önü İstatistikler</h1>
-                <div>
-                  <div className="ortalama-goller">
-                    <p>Ort. Goller</p>
-                    <div>2.68 Lig: 2.47</div>
+          <div className="macincele-content-container">
+            <div className="mac-incele-content-tab-detail">
+              <TabPanel>
+                <div className="macincele-detay">
+                  <div className="macincele-tahmin-ev-sahibi">
+                    <h2>Maç Önü İstatistikler - Ev Sahibi</h2>
+                    <div className="macincele-tahmin-ev-sahibi-box-container">
+                      <div className="ortalama-goller">
+                        <h3>Ort. Goller</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="karşılıklı-gol">
+                        <h3>Karşılıklı Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="birbuçuk-üst">
+                        <h3>1.5 Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="ikibuçuk-üst">
+                        <h3>2.5 Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="karşılıklı-gol"></div>
-                  <div className="birbuçuk-üst"></div>
-                  <div className="ikibuçuk-üst"></div>
-                </div>
-              </div>
-              <div className="macincele-tahmin-deplasman"></div>
-              <div className="macincele-istatistikler"></div>
-              <div className="macincele-atılan-goller"></div>
-              <div className="macincele-yenilen-goller"></div>
-            </TabPanel>
-            <TabPanel>
-              <h2>Any content 2</h2>
-            </TabPanel>
-          </div>
-          <div className="macincele-other">
-            <div className="macincele-puan-durumu">
-              <div className="mac-incele-puan-durumu-üst-header">
-                {[
-                  ...new Set(
-                    FindPuanDurumuforTeams.map((league) => league.league)
-                  )
-                ]}{' '}
-                Puan Durumu
-              </div>
-              <ul className="macincele-puan-durumu-header">
-                <div className="macincele-puan-durumu-header-takım">
-                  <li className="macincele-puan-durumu-header-takım-pos">#</li>
-                  <li className="macincele-puan-durumu-header-takım-takım">
-                    Takım
-                  </li>
-                </div>
-                <div className="macincele-puan-durumu-header-other">
-                  <li>OM</li>
-                  <li>G</li>
-                  <li>B</li>
-                  <li>M</li>
-                  <li>AG</li>
-                  <li>YG</li>
-                  <li>A</li>
-                  <li>P</li>
-                </div>
-              </ul>
-              {FindPuanDurumuforTeams.map((p) => {
-                return (
-                  <ul className="macincele-puan-durumu-elements">
-                    <div className="macincele-puan-durumu-elements-pos-team">
-                      <li className="macincele-puan-durumu-elements-pos-team-pos">
-                        {p.pos}
-                      </li>
-                      <li className="macincele-puan-durumu-elements-pos-team-team">
-                        {p.team}
-                      </li>
+                  <div className="macincele-tahmin-deplasman">
+                    <h2>Maç Önü İstatistikler - Deplasman </h2>
+                    <div className="macincele-tahmin-ev-sahibi-box-container">
+                      <div className="ortalama-goller">
+                        <h3>Ort. Goller</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="karşılıklı-gol">
+                        <h3>Karşılıklı Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="birbuçuk-üst">
+                        <h3>1.5 Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
+                      <div className="ikibuçuk-üst">
+                        <h3>2.5 Gol</h3>
+                        <p>2.68</p>
+                        <p>Lig: 2.47</p>
+                      </div>
                     </div>
-                    <div className="macincele-puan-durumu-elements-other">
-                      <li>{p.mp}</li>
-                      <li>{p.w}</li>
-                      <li>{p.d}</li>
-                      <li>{p.l}</li>
-                      <li>{p.f}</li>
-                      <li>{p.a}</li>
-                      <li>{p.diff}</li>
-                      <li>{p.p}</li>
+                  </div>
+                  <div className="macincele-istatistikler">
+                    <div className="istatistikler-ev-sahibi">
+                      <div className="istatistikler-ev-sahibi-sıralama">
+                        <h3>Ev Sahibi İstatistikleri</h3>
+                        <img alt="ev-sahibi-takım-görseli" />
+                        <div className="istatistikler-ev-sahibi-sıralama-text">
+                          <p>Takım Adı</p>
+                          <p>Sıralama 3/20</p>
+                          <p>Lig Adı</p>
+                        </div>
+                      </div>
+                      <div className="istatistikler-ev-sahibi-form">
+                        <table>
+                          <tr>
+                            <th>Form</th>
+                            <th>Son 5</th>
+                            <th>MBP</th>
+                          </tr>
+                          <tr>
+                            <td>Toplam</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                          <tr>
+                            <td>Ev Sahibi</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                          <tr>
+                            <td>Deplasman</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div className="istatistikler-ev-sahibi-detay-stats">
+                        <table>
+                          <tr>
+                            <th>İstatistikler</th>
+                            <th>Toplam</th>
+                            <th>Ev</th>
+                            <th>Deplasman</th>
+                          </tr>
+                          <tr>
+                            <td>Galibiyet</td>
+                            <td>%69</td>
+                            <td>%69</td>
+                            <td>%69</td>
+                          </tr>
+                          <tr>
+                            <td>Atılan Gol</td>
+                            <td>3.17</td>
+                            <td>3.17</td>
+                            <td>3.17</td>
+                          </tr>
+                          <tr>
+                            <td>Yenilen Gol</td>
+                            <td>1.14</td>
+                            <td>1.14</td>
+                            <td>1.14</td>
+                          </tr>
+                          <tr>
+                            <td>GYM</td>
+                            <td>41%</td>
+                            <td>41%</td>
+                            <td>41%</td>
+                          </tr>
+                          <tr>
+                            <td>GAM</td>
+                            <td>7%</td>
+                            <td>7%</td>
+                            <td>7%</td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
-                  </ul>
-                )
-              })}
+                    <div className="istatistikler-ev-sahibi">
+                      <div className="istatistikler-ev-sahibi-sıralama">
+                        <h3>Deplasman İstatistikleri</h3>
+                        <img alt="deplasman-takım-görseli" />
+                        <div className="istatistikler-ev-sahibi-sıralama-text">
+                          <p>Takım Adı</p>
+                          <p>Sıralama 3/20</p>
+                          <p>Lig Adı</p>
+                        </div>
+                      </div>
+                      <div className="istatistikler-ev-sahibi-form">
+                        <table>
+                          <tr>
+                            <th>Form</th>
+                            <th>Son 5</th>
+                            <th>MBP</th>
+                          </tr>
+                          <tr>
+                            <td>Toplam</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                          <tr>
+                            <td>Ev Sahibi</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                          <tr>
+                            <td>Deplasman</td>
+                            <td>WWWW</td>
+                            <td>1.28</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div className="istatistikler-ev-sahibi-detay-stats">
+                        <table>
+                          <tr>
+                            <th>İstatistikler</th>
+                            <th>Toplam</th>
+                            <th>Ev</th>
+                            <th>Deplasman</th>
+                          </tr>
+                          <tr>
+                            <td>Galibiyet</td>
+                            <td>%69</td>
+                            <td>%69</td>
+                            <td>%69</td>
+                          </tr>
+                          <tr>
+                            <td>Atılan Gol</td>
+                            <td>3.17</td>
+                            <td>3.17</td>
+                            <td>3.17</td>
+                          </tr>
+                          <tr>
+                            <td>Yenilen Gol</td>
+                            <td>1.14</td>
+                            <td>1.14</td>
+                            <td>1.14</td>
+                          </tr>
+                          <tr>
+                            <td>GYM</td>
+                            <td>41%</td>
+                            <td>41%</td>
+                            <td>41%</td>
+                          </tr>
+                          <tr>
+                            <td>GAM</td>
+                            <td>7%</td>
+                            <td>7%</td>
+                            <td>7%</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="macincele-atılan-goller"></div>
+                  <div className="macincele-yenilen-goller"></div>
+                </div>
+              </TabPanel>
+              <TabPanel>
+                <h2>Çok Yakında...</h2>
+              </TabPanel>
             </div>
-            <div className="macincele-yaklasan-diger"></div>
+            <div className="macincele-other">
+              <div className="macincele-puan-durumu">
+                <div className="mac-incele-puan-durumu-üst-header">
+                  {[
+                    ...new Set(
+                      FindPuanDurumuforTeams.map((league) => league.league)
+                    )
+                  ]}{' '}
+                  Puan Durumu
+                </div>
+                <ul className="macincele-puan-durumu-header">
+                  <div className="macincele-puan-durumu-header-takım">
+                    <li className="macincele-puan-durumu-header-takım-pos">
+                      #
+                    </li>
+                    <li className="macincele-puan-durumu-header-takım-takım">
+                      Takım
+                    </li>
+                  </div>
+                  <div className="macincele-puan-durumu-header-other">
+                    <li>OM</li>
+                    <li>G</li>
+                    <li>B</li>
+                    <li>M</li>
+                    <li>AG</li>
+                    <li>YG</li>
+                    <li>A</li>
+                    <li>P</li>
+                  </div>
+                </ul>
+                {FindPuanDurumuforTeams.map((p) => {
+                  return (
+                    <ul className="macincele-puan-durumu-elements">
+                      <div className="macincele-puan-durumu-elements-pos-team">
+                        <li className="macincele-puan-durumu-elements-pos-team-pos">
+                          {p.pos}
+                        </li>
+                        <li className="macincele-puan-durumu-elements-pos-team-team">
+                          {p.team}
+                        </li>
+                      </div>
+                      <div className="macincele-puan-durumu-elements-other">
+                        <li>{p.mp}</li>
+                        <li>{p.w}</li>
+                        <li>{p.d}</li>
+                        <li>{p.l}</li>
+                        <li>{p.f}</li>
+                        <li>{p.a}</li>
+                        <li>{p.diff}</li>
+                        <li>{p.p}</li>
+                      </div>
+                    </ul>
+                  )
+                })}
+              </div>
+              <div className="macincele-yaklasan-diger"></div>
+            </div>
           </div>
-        </div>
+        </Tabs>
       </div>
     </div>
   )

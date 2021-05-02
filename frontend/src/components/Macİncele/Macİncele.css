@@ -116,26 +116,108 @@
 }
 
 .macincele-tahmin-ev-sahibi{
-background-color:#718093;
-border: 1px solid red;
 }
 
-.macincele-tahmin-ev-sahibi h1{
+.macincele-tahmin-ev-sahibi h2,
+.macincele-tahmin-deplasman h2{
 color:#FFFFFF ;
+background-color: #718093;
+margin-bottom: 0;
+padding-left: 0.5rem;
 }
-
-
-
-.macincele-other{
+.macincele-tahmin-ev-sahibi-box-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.ortalama-goller,
+.karşılıklı-gol,
+.birbuçuk-üst,
+.ikibuçuk-üst{
+width: 22%;
+text-align: center;
+border: 1px solid  #718093;
+background-color: #F5F6FA;
+}
+.ortalama-goller h3,
+.karşılıklı-gol h3,
+.birbuçuk-üst h3,
+.ikibuçuk-üst h3{
+    background-color: #FFFFFF;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+   color: #353B48
 }
+.ortalama-goller p,
+.karşılıklı-gol p,
+.birbuçuk-üst p,
+.ikibuçuk-üst p
+{
+    padding-top: 0;
+}
+.ortalama-goller p:nth-child(2),
+.karşılıklı-gol p:nth-child(2),
+.birbuçuk-üst p:nth-child(2),
+.ikibuçuk-üst p:nth-child(2)
+ {
+   color: #718093;
+}
+  .ortalama-goller p:nth-child(3),
+  .karşılıklı-gol p:nth-child(3),
+  .birbuçuk-üst p:nth-child(3),
+  .ikibuçuk-üst p:nth-child(3) {
+    color: #44BD32
+   }
+.macincele-istatistikler{
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFFFFF
+}
+.istatistikler-ev-sahibi{
+    width: 48%;
+    background-color: #F5F6FA;
+}
+.istatistikler-ev-sahibi-sıralama-text{
+   
+}
+
+   .istatistikler-ev-sahibi-form table{
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    width: 90%;
+    margin: 0 auto;
+   }
+   .istatistikler-ev-sahibi-form th,
+   .istatistikler-ev-sahibi-form td{
+   text-align: center;
+   border: 1px solid #DCDDE1;
+   }
+   .istatistikler-ev-sahibi-detay-stats table{
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    width: 90%;
+    margin: 0 auto;
+   }
+   .istatistikler-ev-sahibi-detay-stats th,
+   .istatistikler-ev-sahibi-detay-stats td{
+    text-align: center;
+    border: 1px solid #DCDDE1;
+   }
+
+
 .macincele-ust-menu{
     background-color: #44BD32;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .macincele-puan-durumu{
 background-color: #FFFFFF;
-width: 70%;
-margin-top: 1rem;
+width: 100%;
+margin-top: 0.5rem;
 }
 .mac-incele-puan-durumu-üst-header{
     background-color:#44BD32 ;
@@ -192,8 +274,7 @@ color: #718093
 }
 
 @media(min-width:675px){
-.macincele-allpage{
-} 
+
 .macincele-header{
     width: 100%; 
     margin: 0 auto;
@@ -204,11 +285,21 @@ color: #718093
 }
 .macincele-content-container{
     flex-direction: row;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-around;
+    border: 2px solid red;
 }
-.macincele-detay{
-    width: 70%;
+.mac-incele-content-tab-detail{
+    width: 100%;
+    border: 1px solid blue;
 }
 .macincele-other{
-    width: 30%;
+    width: 50%;
+    border: 1px solid yellow;
 }
+.macincele-detay{
+    width: 100%;
+}
+
 }
