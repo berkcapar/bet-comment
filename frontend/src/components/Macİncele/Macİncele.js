@@ -9,10 +9,10 @@ import {
   getTeamDetailsFromState
 } from '../../redux/selectors'
 import { useEffect } from 'react'
-
 import { fetchAllFikstür } from '../../redux/reducers/fikstür/AllFikstürReducer'
 import { fetchTeamDetails } from '../../redux/reducers/teamReducer'
 import { fetchAllPuanDurumu } from '../../redux/reducers/puandurumu/AllPuanDurumuReducer'
+import ProgressBar from '@ramonak/react-progress-bar'
 
 const Macİncele = ({
   HomeTeamDetails,
@@ -90,7 +90,7 @@ const Macİncele = ({
               <TabPanel>
                 <div className="macincele-detay">
                   <div className="macincele-tahmin-ev-sahibi">
-                    <h2>Maç Önü İstatistikler - Ev Sahibi</h2>
+                    <h3>Maç Önü İstatistikler - Ev Sahibi</h3>
                     <div className="macincele-tahmin-ev-sahibi-box-container">
                       <div className="ortalama-goller">
                         <h3>Ort. Goller</h3>
@@ -115,7 +115,7 @@ const Macİncele = ({
                     </div>
                   </div>
                   <div className="macincele-tahmin-deplasman">
-                    <h2>Maç Önü İstatistikler - Deplasman </h2>
+                    <h3>Maç Önü İstatistikler - Deplasman </h3>
                     <div className="macincele-tahmin-ev-sahibi-box-container">
                       <div className="ortalama-goller">
                         <h3>Ort. Goller</h3>
@@ -139,10 +139,13 @@ const Macİncele = ({
                       </div>
                     </div>
                   </div>
+                  <h3 className="istatistikler-header">
+                    Karşılaşma İstastikleri
+                  </h3>
                   <div className="macincele-istatistikler">
                     <div className="istatistikler-ev-sahibi">
                       <div className="istatistikler-ev-sahibi-sıralama">
-                        <h3>Ev Sahibi İstatistikleri</h3>
+                        <h3>Ev Sahibi</h3>
                         <img alt="ev-sahibi-takım-görseli" />
                         <div className="istatistikler-ev-sahibi-sıralama-text">
                           <p>Takım Adı</p>
@@ -291,8 +294,45 @@ const Macİncele = ({
                       </div>
                     </div>
                   </div>
-                  <div className="macincele-atılan-goller"></div>
-                  <div className="macincele-yenilen-goller"></div>
+                  <h3 className="atılan-goller-header">Atılan Goller</h3>
+                  <div className="macincele-atılan-goller">
+                    <div className="atılan-goller-ev-sahibi">
+                      <p>Takım Adı</p>
+                      <h3>Toplam 126 Gol</h3>
+                    </div>
+                    <div className="atılan-goller-kıyaslama">
+                      <ProgressBar
+                        completed={Math.round((130 / (130 + 126)) * 100)}
+                        bgColor={'#44BD32'}
+                      />
+                    </div>
+                    <div className="atılan-goller-deplasman">
+                      <p>Takım Adı</p>
+                      <h3>Toplam 130 Gol</h3>
+                    </div>
+                  </div>
+
+                  <h3 className="atılan-goller-header">Yenilen Goller</h3>
+                  <div className="macincele-atılan-goller">
+                    <div className="atılan-goller-ev-sahibi">
+                      <p style={{ borderBottom: '1px solid #FF0000 ' }}>
+                        Takım Adı
+                      </p>
+                      <h3>Toplam 67 Gol</h3>
+                    </div>
+                    <div className="atılan-goller-kıyaslama">
+                      <ProgressBar
+                        completed={Math.round((71 / (67 + 71)) * 100)}
+                        bgColor={'#FF0000'}
+                      />
+                    </div>
+                    <div className="atılan-goller-deplasman">
+                      <p style={{ borderBottom: '1px solid #FF0000 ' }}>
+                        Takım Adı
+                      </p>
+                      <h3>Toplam 71 Gol</h3>
+                    </div>
+                  </div>
                 </div>
               </TabPanel>
               <TabPanel>

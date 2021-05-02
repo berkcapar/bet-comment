@@ -115,15 +115,16 @@
     width: 100%;
 }
 
-.macincele-tahmin-ev-sahibi{
-}
-
-.macincele-tahmin-ev-sahibi h2,
-.macincele-tahmin-deplasman h2{
+.macincele-tahmin-ev-sahibi h3,
+.macincele-tahmin-deplasman h3,
+.istatistikler-header,
+.atılan-goller-header
+{
 color:#FFFFFF ;
 background-color: #718093;
 margin-bottom: 0;
 padding-left: 0.5rem;
+margin-top: 0.5rem;
 }
 .macincele-tahmin-ev-sahibi-box-container{
     display: flex;
@@ -136,7 +137,7 @@ padding-left: 0.5rem;
 .karşılıklı-gol,
 .birbuçuk-üst,
 .ikibuçuk-üst{
-width: 22%;
+width: 21%;
 text-align: center;
 border: 1px solid  #718093;
 background-color: #F5F6FA;
@@ -174,14 +175,22 @@ background-color: #F5F6FA;
 .macincele-istatistikler{
     display: flex;
     justify-content: space-around;
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
+    padding-bottom: 1rem;
 }
 .istatistikler-ev-sahibi{
     width: 48%;
     background-color: #F5F6FA;
 }
-.istatistikler-ev-sahibi-sıralama-text{
-   
+.istatistikler-ev-sahibi-sıralama h3{
+   text-align: center;
+   color: white;
+   background-color: black;
+}
+.istatistikler-ev-sahibi-form{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
    .istatistikler-ev-sahibi-form table{
@@ -195,6 +204,13 @@ background-color: #F5F6FA;
    text-align: center;
    border: 1px solid #DCDDE1;
    }
+
+.istatistikler-ev-sahibi-detay-stats{
+margin-top: 1rem;
+margin-bottom: 1rem;
+width: 100%;
+}
+
    .istatistikler-ev-sahibi-detay-stats table{
     border-collapse: collapse;
     background-color: #FFFFFF;
@@ -205,6 +221,33 @@ background-color: #F5F6FA;
    .istatistikler-ev-sahibi-detay-stats td{
     text-align: center;
     border: 1px solid #DCDDE1;
+   }
+   .macincele-atılan-goller{
+       display: flex;
+       justify-content: space-around;
+       background-color: #F5F6FA;
+      margin-top: 0.5rem;
+   }
+   .atılan-goller-ev-sahibi,
+   .atılan-goller-kıyaslama,
+   .atılan-goller-deplasman{
+       width: 30%;
+   }
+   .atılan-goller-ev-sahibi h3,
+   .atılan-goller-deplasman h3{
+       margin-top: 0.5rem;
+   }
+   .atılan-goller-ev-sahibi p,
+   .atılan-goller-deplasman p{
+       border-bottom: 1px solid #44BD32;
+       color: #718093;
+   }
+   .atılan-goller-deplasman{
+       text-align: end;
+   }
+   .atılan-goller-kıyaslama{
+      margin-top: 2rem;
+     
    }
 
 
