@@ -1,9 +1,15 @@
 import FikstürTekMaç from '../FikstürTekMaç/FikstürTekMaç'
 import './FikstürMaçlar.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllFikstürFromState } from '../../../redux/selectors'
+import {
+  getAllFikstürFromState,
+  getAllLigPLayedGamesFromState
+} from '../../../redux/selectors'
+import { getPlayedPlusFikstürFromState } from '../../../redux/selectors'
 import { useEffect, useState } from 'react'
 import { fetchAllFikstür } from '../../../redux/reducers/fikstür/AllFikstürReducer'
+import { fetchAllLeaguePlayedGames } from '../../../redux/reducers/playedgames/AllLeaguePGReducer'
+import { fetchAllPlusPlayedFikstür } from '../../../redux/reducers/playedplusfikstür/PlayedPlusFikstürReducer'
 import '../../../../node_modules/rc-tabs/assets/index.css'
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday'
 import DatePicker from 'react-datepicker'
@@ -13,15 +19,20 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 const FikstürMaçlar = (date) => {
   const AllLigFixtureState = useSelector(getAllFikstürFromState)
+  const AllLigPlayedPlusFikstürState = useSelector(
+    getPlayedPlusFikstürFromState
+  )
+  const AllLigPlayedGamesState = useSelector(getAllLigPLayedGamesFromState)
+
   const [startDate, setStartDate] = useState(new Date())
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchAllFikstür())
+    dispatch(fetchAllPlusPlayedFikstür())
   }, [dispatch])
 
-  switch (AllLigFixtureState.status) {
+  switch (AllLigPlayedPlusFikstürState.status) {
     case 'failure':
       return 'oopsanerror'
     case 'loading':
@@ -30,22 +41,27 @@ const FikstürMaçlar = (date) => {
 
     case 'success':
       const formattedDate = startDate.toISOString().slice(0, 10)
-      const SelectedDatesGames = AllLigFixtureState.data.filter((sdg) => {
-        return sdg.tarih === formattedDate
-      })
+      const SelectedDatesGames = AllLigPlayedPlusFikstürState.data.filter(
+        (sdg) => {
+          return sdg.tarih === formattedDate
+        }
+      )
+      console.log(AllLigPlayedPlusFikstürState)
       return (
         <div>
           <div className="fikstür-lig-container">
             <p className="fikstür-text">Karşılaşmalar</p>
             <div className="date-area">
               <CalendarTodayIcon />
-              <ArrowBackIosIcon />
-              <DatePicker
-                dateFormat="yyyy-MM-dd"
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-              />
-              <ArrowForwardIosIcon />
+              <div className="date-area-data-arrows">
+                <ArrowBackIosIcon />
+                <DatePicker
+                  dateFormat="yyyy-MM-dd"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+                <ArrowForwardIosIcon />
+              </div>
             </div>
             <div className="fikstür-lig-header">
               <div className="logo-name">
@@ -106,7 +122,7 @@ const FikstürMaçlar = (date) => {
             <div className="tek-mac">
               {SelectedDatesGames.map(
                 (match) =>
-                  match.lig === 'Serie A' && <FikstürTekMaç match={match} />
+                  match.lig === 'Serie A ' && <FikstürTekMaç match={match} />
               )}
             </div>
             <div className="fikstür-lig-header">
