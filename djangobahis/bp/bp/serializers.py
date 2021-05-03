@@ -1,6 +1,6 @@
 # todos/serializers.py
 from rest_framework import serializers
-from .models import ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
+from .models import SezonLigFikstur,ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturPremier,FiksturSeriea,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularBundesliga,OyuncularPremier,OyuncularLaliga,OyuncularSeriea,OyuncularLigue1
 
 
 ########################################## Fikstür #############################################
@@ -284,6 +284,26 @@ class Butun_Fikstur_Ligler(serializers.ModelSerializer):
         )
         model = ButunLigFikstur
 
+class Sezon_Fikstur_Ligler(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'takim1',
+            'ms',
+            'takim2',
+            'iy',
+            'tarih',
+            'lig',
+            'hafta',
+            'saat',
+            'stadyum',
+            'goller',
+            'teknikadam1',
+            'teknikadam2',
+            'hakem',
+            'link',
+
+        )
+        model = SezonLigFikstur
 ########################################## Oyuncular #############################################
 
 class OyuncuTurkey(serializers.ModelSerializer):

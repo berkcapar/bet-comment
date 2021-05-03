@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,Takimlar,LigSuperlig,LigSeriea,LigLaliga,LigLigue1,LigPremier,LigBundesliga,FiksturLaliga,FiksturSeriea,FiksturLigue1,FiksturPremier,FiksturSuperlig,OyuncularSuperlig,OyuncularLaliga,OyuncularBundesliga,OyuncularSeriea,OyuncularPremier,OyuncularLigue1,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1
+from .models import SezonLigFikstur,ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,Takimlar,LigSuperlig,LigSeriea,LigLaliga,LigLigue1,LigPremier,LigBundesliga,FiksturLaliga,FiksturSeriea,FiksturLigue1,FiksturPremier,FiksturSuperlig,OyuncularSuperlig,OyuncularLaliga,OyuncularBundesliga,OyuncularSeriea,OyuncularPremier,OyuncularLigue1,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1
 
 admin.site.register(LigSuperlig)
 admin.site.register(LigBundesliga)
@@ -9,6 +9,7 @@ admin.site.register(LigSeriea)
 admin.site.register(LigLigue1)
 admin.site.register(LigButunligler)
 admin.site.register(ButunLigFikstur)
+admin.site.register(SezonLigFikstur)
 
 admin.site.register(FiksturLaliga)
 admin.site.register(FiksturSeriea)

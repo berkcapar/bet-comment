@@ -1038,6 +1038,27 @@ class PuanSuperlig(models.Model):
         db_table = 'puan_superlig'
 
 
+class SezonLigFikstur(models.Model):
+    takim1 = models.CharField(max_length=30, blank=True, null=True)
+    ms = models.CharField(max_length=10, blank=True, null=True)
+    takim2 = models.CharField(max_length=30, blank=True, null=True)
+    iy = models.CharField(max_length=10, blank=True, null=True)
+    tarih = models.DateField(blank=True, null=True)
+    lig = models.CharField(max_length=30, blank=True, null=True)
+    hafta = models.IntegerField(blank=True, null=True)
+    saat = models.TimeField(blank=True, null=True)
+    stadyum = models.CharField(max_length=100, blank=True, null=True)
+    goller = models.CharField(max_length=10000, blank=True, null=True)
+    teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
+    teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
+    hakem = models.CharField(max_length=50, blank=True, null=True)
+    link = models.CharField(primary_key=True, max_length=250)
+
+    class Meta:
+        managed = False
+        db_table = 'sezon_lig_fikstur'
+
+
 class Takimlar(models.Model):
     team_id = models.AutoField(primary_key=True)
     team_name = models.CharField(max_length=50)
@@ -1048,6 +1069,27 @@ class Takimlar(models.Model):
     class Meta:
         managed = False
         db_table = 'takimlar'
+
+
+class TempAsync(models.Model):
+    takim1 = models.CharField(max_length=30, blank=True, null=True)
+    ms = models.CharField(max_length=10, blank=True, null=True)
+    takim2 = models.CharField(max_length=30, blank=True, null=True)
+    iy = models.CharField(max_length=10, blank=True, null=True)
+    tarih = models.DateField(blank=True, null=True)
+    lig = models.CharField(max_length=30, blank=True, null=True)
+    hafta = models.IntegerField(blank=True, null=True)
+    saat = models.TimeField(blank=True, null=True)
+    stadyum = models.CharField(max_length=100, blank=True, null=True)
+    goller = models.CharField(max_length=10000, blank=True, null=True)
+    teknikadam1 = models.CharField(max_length=50, blank=True, null=True)
+    teknikadam2 = models.CharField(max_length=50, blank=True, null=True)
+    hakem = models.CharField(max_length=50, blank=True, null=True)
+    link = models.CharField(max_length=250, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'temp_async'
 
 
 class Tmp(models.Model):

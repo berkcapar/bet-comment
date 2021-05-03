@@ -1,8 +1,8 @@
 # todos/views.py
 from rest_framework import generics
 
-from .models import ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
-from .serializers import Butun_Fikstur_Ligler,PuanButunUlkeler,ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
+from .models import SezonLigFikstur,ButunLigFikstur,PuanAll,LigButunligler,FiksturAll,LigSuperlig,FiksturBundesliga,FiksturLaliga,FiksturSeriea,FiksturPremier,FiksturSuperlig,FiksturLigue1,LigLaliga,LigSeriea,LigPremier,LigBundesliga,LigLigue1,OyuncularSuperlig,PuanBundesliga,PuanLaliga,PuanSeriea,PuanSuperlig,PuanPremier,PuanLigue1,Takimlar,OyuncularLaliga,OyuncularSeriea,OyuncularBundesliga,OyuncularPremier,OyuncularLigue1
+from .serializers import Sezon_Fikstur_Ligler,Butun_Fikstur_Ligler,PuanButunUlkeler,ButunLigler,FiksAll,ButunTakimlarDegerLogo,LigTurkey,LigSpain,LigGermany,LigFrance,LigEngland,LigItaly,FiksBundesliga, FiksLaliga, FiksPremier, FiksLigue1, FiksSeriea,FiksSuperlig,OyuncuTurkey,PuanAlmanya,OyuncuIspanya,OyuncuAlmanya,OyuncuIngiltere,OyuncuItalya,PuanFransa,PuanIngiltere,PuanIspanya,PuanItalya,PuanTurkey
 
 ######################################## Ligler #########################################################
 
@@ -70,6 +70,23 @@ class Deneme50(generics.RetrieveUpdateDestroyAPIView):
     queryset = ButunLigFikstur.objects.all()
     serializer_class = Butun_Fikstur_Ligler
 
+class SezonFiksturLig(generics.ListCreateAPIView):
+    queryset = SezonLigFikstur.objects.all()
+    serializer_class = Sezon_Fikstur_Ligler
+
+class Deneme51(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ButunLigFikstur.objects.all()
+    serializer_class = Sezon_Fikstur_Ligler
+
+'''
+class SezonDeneme(generics.ListCreateAPIView):
+    queryset = ButunLigFikstur.objects.raw("SELECT * FROM butun_lig_fikstur where tarih > '2020-01-01' AND ms is null")
+    serializer_class = Butun_Fikstur_Ligler
+
+class Deneme52(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ButunLigFikstur.objects.all()
+    serializer_class = Butun_Fikstur_Ligler
+'''
 
 ######################################## Fikstür #########################################################
 

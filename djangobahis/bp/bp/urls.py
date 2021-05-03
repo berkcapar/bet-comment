@@ -45,6 +45,13 @@ urlpatterns = [
     path('butunliglerfiksturler', views.ButunFiksturLig.as_view()),
     path('<int:pk>', views.Deneme50.as_view()),
 
+    path('sezonligfikstur', views.SezonFiksturLig.as_view()),
+    path('<int:pk>', views.Deneme51.as_view()),
+
+#    path('sezondeneme', views.SezonDeneme.as_view()),
+#   path('<int:pk>', views.Deneme52.as_view()),
+
+
 ######################################## Fikstür #########################################################
 
     path('fiksturbundesliga', views.BundesligaFikstur.as_view()),
