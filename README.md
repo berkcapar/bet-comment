@@ -1,5 +1,9 @@
 # bet-comment
 
+This project gives you the data which has all the football information you need from 2012 to now. There are several endpoints you can use on the server-side. Also, there is react project which has the basics pages you will need. 
+
+
+
 Starting server
 
 -cd djangobahis
